@@ -16,6 +16,9 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
 
+  # Allow sudo commands to be run with biometrics
+  security.pam.enableSudoTouchIdAuth = true;
+
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 5;
 
