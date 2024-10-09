@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     vim
+    neofetch
+    bat
   ];
 
   # Auto upgrade nix package and the daemon service.
