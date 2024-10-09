@@ -22,6 +22,9 @@
   # Disable mouse acceleration
   system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
 
+  # Set the dock to automatically hide
+  system.defaults.dock.autohide = true;
+
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 5;
 
