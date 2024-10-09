@@ -19,6 +19,9 @@
   # Allow sudo commands to be run with biometrics
   security.pam.enableSudoTouchIdAuth = true;
 
+  # Disable mouse acceleration
+  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
+
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 5;
 
