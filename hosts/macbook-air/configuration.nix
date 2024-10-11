@@ -7,6 +7,8 @@
     vim
     neofetch
     bat
+    nixd # Nix LSP
+    nixfmt-rfc-style # Nix formatter
   ];
 
   # Auto upgrade nix package and the daemon service.

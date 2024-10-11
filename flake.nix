@@ -9,27 +9,35 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
-  let
-    configuration = { pkgs, ... }: {
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-    };
-  in
-  {
-    darwinConfigurations."macbook-air" = nix-darwin.lib.darwinSystem {
-      modules = [
-        configuration
-        ./hosts/macbook-air/configuration.nix
-        home-manager.darwinModules.home-manager
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+    }:
+    let
+      configuration =
+        { ... }:
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ethanbrady = import ./hosts/macbook-air/home.nix;
-        }
-      ];
-    };
+          system.configurationRevision = self.rev or self.dirtyRev or null;
+        };
+    in
+    {
+      darwinConfigurations."macbook-air" = nix-darwin.lib.darwinSystem {
+        modules = [
+          configuration
+          ./hosts/macbook-air/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ethanbrady = import ./hosts/macbook-air/home.nix;
+          }
+        ];
+      };
 
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."macbook-air".pkgs;
-  };
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations."macbook-air".pkgs;
+    };
 }
