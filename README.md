@@ -4,7 +4,7 @@
 
 ### MacOS
 
-[Nix Darwin Githug Repo](https://github.com/LnL7/nix-darwin/blob/master/README.md)
+[Nix Darwin Github Repo](https://github.com/LnL7/nix-darwin/blob/master/README.md)
 
 1. Install Nix
 
