@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  users.users.ethanbrady.home = "/Users/ethanbrady";
+
   environment.systemPackages = with pkgs; [
     vim
     neofetch
