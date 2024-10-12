@@ -7,7 +7,7 @@
   config = {
     bat.enable = lib.mkDefault true;
 
-    programs = lib.mkIf config.zoxide.enable {
+    programs = lib.mkIf config.bat.enable {
       bat.enable = true;
       zsh.shellAliases.cat = "bat";
     };

@@ -7,7 +7,7 @@
   config = {
     zsh.enable = lib.mkDefault true;
 
-    programs.zsh = lib.mkIf config.zoxide.enable {
+    programs.zsh = lib.mkIf config.zsh.enable {
       enable = true;
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
