@@ -2,10 +2,8 @@
 
 {
   imports = [
-    ../../modules/home/git.nix
+    ../../profiles/home/programming.nix
   ];
-
-  git.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
