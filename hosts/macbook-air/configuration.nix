@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ../../modules/darwin/yabai.nix
+    ../../modules/darwin/skhd.nix
+  ];
+
   users.users.ethanbrady.home = "/Users/ethanbrady";
 
   environment.systemPackages = with pkgs; [
