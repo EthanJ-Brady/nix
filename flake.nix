@@ -25,7 +25,7 @@
     in
     {
       # Minecraft Server
-      nixosConfiguration."mohs" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/mohs/configuration.nix
         ];
