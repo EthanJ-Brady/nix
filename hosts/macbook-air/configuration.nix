@@ -11,6 +11,10 @@
     nixfmt-rfc-style # Nix formatter
   ];
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
