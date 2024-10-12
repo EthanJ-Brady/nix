@@ -3,6 +3,7 @@
 {
   imports = [
     ../../profiles/home/programming.nix
+    ../../profiles/home/shell.nix
   ];
 
   # This value determines the Home Manager release that your
