@@ -4,8 +4,10 @@
     git.enable = lib.mkEnableOption "Enable git";
   };
 
-  config = lib.mkIf config.git.enable {
-    programs.git = {
+  config = {
+    git.enable = lib.mkDefault true;
+
+    programs.git = lib.mkIf config.git.enable {
       enable = true;
       aliases = {
         graph = "log --oneline --graph --decorate --all";
