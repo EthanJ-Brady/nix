@@ -4,6 +4,7 @@
   imports = [
     ../../modules/darwin/yabai.nix
     ../../modules/darwin/skhd.nix
+    ../../modules/darwin/jankyborders.nix
   ];
 
   users.users.ethanbrady.home = "/Users/ethanbrady";
