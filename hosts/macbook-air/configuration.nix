@@ -32,9 +32,8 @@
   # Allow sudo commands to be run with biometrics
   security.pam.enableSudoTouchIdAuth = true;
 
-  # Disable mouse acceleration
-  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
-
+  # Set mouse tracking speed
+  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
   # Set the dock to automatically hide
   system.defaults.dock.autohide = true;
   # Don't rearrange spaces based on most recently used
