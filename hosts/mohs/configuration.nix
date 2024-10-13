@@ -61,6 +61,10 @@
     packages = [ ];
   };
 
+  users.users.minecraft = {
+    shell = "${pkgs.bash}/bin/bash";
+  };
+
   # Enable automatic login for the user
   services.getty.autologinUser = "mohs";
 
