@@ -109,6 +109,10 @@
     jvmOpts = "-Xmx12000M -Xms12000M -XX:+UseG1GC";
   };
 
+  systemd.tmpfiles.rules = [
+    "d /var/lib/vanilla 0755 mohs mohs - -"
+  ];
+
   # systemd.services.mc-git-auto-commit = {
   #   description = "Automatically commit changes to the Minecraft server";
   #   serviceConfig = {
