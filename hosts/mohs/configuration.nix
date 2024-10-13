@@ -106,7 +106,7 @@
       Webhead1202 = "e1b22812-0efc-438b-8209-f32230f34dfc";
     };
 
-    jvmOpts = "-Xmx12000M -Xms12000M -XX: +UseG1GC";
+    # jvmOpts = "-Xmx12000M -Xms12000M -XX: +UseG1GC";
   };
 
   # systemd.services.mc-git-auto-commit = {
