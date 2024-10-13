@@ -1,6 +1,5 @@
 {
   pkgs,
-  builtins,
   ...
 }:
 {
@@ -26,7 +25,7 @@
   ];
 
   # Networking
-  networking.hostName = "nixos";
+  networking.hostName = "mohs";
   networking.networkmanager.enable = true;
 
   # Locale
@@ -71,6 +70,7 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    temurin-bin
   ];
 
   # State version
@@ -129,17 +129,17 @@
   #   wantedBy = [ "timers.target" ];
   # };
 
-  # systemd.services.autossh-minecraft = {
-  #   description = "AutoSSH Reverse Tunnel for Minecraft Server";
-  #   after = [ "network.target" ];
+  systemd.services.ssh-tunnel = {
+    enable = true;
+    description = "SSH tunnel for the minecraft server";
+    after = [ "network.target" ];
 
-  #   serviceConfig = {
-  #     EnvironmentFile = "/etc/autossh.env";
-  #     ExecStart = "${pkgs.autossh}/bin/ssh -NT -o ServerAliveInterval=60 -L 25565:localhost:25565 ${builtins.getEnv "AUTOSSH_REMOTE_HOST"}";
-  #     Restart = "always";
-  #     RestartSec = "10s";
-  #   };
+    serviceConfig = {
+      ExecStart = "/run/current-system/sw/bin/ssh -NT -o ServerAliveInterval=60 -R 25565:localhost:25565 morse";
+      Restart = "always";
+      RestartSec = "10s";
+    };
 
-  #   wantedBy = [ "multi-user.target" ];
-  # };
+    wantedBy = [ "multi-user.target" ];
+  };
 }
