@@ -24,6 +24,13 @@
         };
     in
     {
+      # Minecraft Server
+      nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/mohs/configuration.nix
+        ];
+      };
+
       darwinConfigurations."macbook-air" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
