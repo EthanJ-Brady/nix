@@ -3,7 +3,6 @@
   ...
 }:
 {
-
   imports = [
     ./hardware-configuration.nix
   ];
@@ -113,26 +112,6 @@
 
     jvmOpts = "-Xmx12000M -Xms12000M -XX:+UseG1GC";
   };
-
-  # systemd.services.mc-git-auto-commit = {
-  #   description = "Automatically commit changes to the Minecraft server";
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     WorkingDirectory = "/var/lib/vanilla";
-  #     ExecStart = [
-  #       "${pkgs.git}/bin/git add -A"
-  #       "${pkgs.git}/bin/git commit -m 'Automatic weekly commit'"
-  #       "${pkgs.git}/bin/git push origin main"
-  #     ];
-  #   };
-  # };
-
-  # systemd.timers.mc-git-auto-commit = {
-  #   description = "Run mc git auto commit weekly";
-  #   timerConfig.OnCalendar = "weekly";
-  #   timerConfig.Persistent = true;
-  #   wantedBy = [ "timers.target" ];
-  # };
 
   systemd.services.ssh-tunnel = {
     enable = true;
