@@ -7,6 +7,10 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -15,6 +19,7 @@
       nixpkgs,
       nix-darwin,
       home-manager,
+      nixvim,
     }:
     let
       configuration =
@@ -39,7 +44,14 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ethanbrady = import ./hosts/macbook-air/home.nix;
+            home-manager.users.ethanbrady =
+              { ... }:
+              {
+                imports = [
+                  ./hosts/macbook-air/home.nix
+                  nixvim.homeManagerModules.nixvim
+                ];
+              };
           }
         ];
       };
