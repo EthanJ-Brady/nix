@@ -13,6 +13,8 @@
 
     programs.nixvim = lib.mkIf config.neovim.enable {
       enable = true;
+      colorscheme = "onedark";
+      colorschemes."onedark".enable = true;
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
@@ -39,6 +41,128 @@
         undofile = true; # Persist undo history between editing sessions
         fillchars = {
           eob = " "; # Replace the '~' character at the end of buffer with a space
+        };
+        scrolloff = 8; # Keep at least 8 lines above and below the cursor when scrolling
+      };
+
+      keymaps = [
+        {
+          action = "<cmd>noh<CR>";
+          key = "<Esc>";
+          mode = "n";
+          options = {
+            desc = "clear search highlight";
+            silent = true;
+          };
+        }
+        {
+          action = "<leader>/";
+          key = "gcc";
+          mode = "n";
+          options = {
+            desc = "toggle comment";
+            remap = true;
+            silent = true;
+          };
+        }
+        {
+          action = "gc";
+          key = "<leader>/";
+          mode = "v";
+          options = {
+            desc = "toggle comment";
+            remap = true;
+            silent = true;
+          };
+        }
+        {
+          action = "<cmd>NvimTreeToggle<CR>";
+          key = "<C-n>";
+          mode = "n";
+          options = {
+            desc = "nvimtree toggle window";
+            silent = true;
+          };
+        }
+        {
+          action = "<cmd>Telescope find_files<CR>";
+          key = "<leader>ff";
+          mode = "n";
+          options = {
+            desc = "telescope find files";
+            silent = true;
+          };
+        }
+        {
+          action = "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>";
+          key = "<leader>fa";
+          mode = "n";
+          options = {
+            desc = "telescope find all files";
+            silent = true;
+          };
+        }
+        {
+          action = "<C-u>";
+          key = "<PageUp>";
+          mode = [
+            "n"
+            "i"
+            "v"
+          ];
+          options = {
+            remap = true;
+            desc = "scroll up";
+            silent = true;
+          };
+        }
+        {
+          action = "<C-d>";
+          key = "<PageDown>";
+          mode = [
+            "n"
+            "i"
+            "v"
+          ];
+          options = {
+            remap = true;
+            desc = "scroll down";
+            silent = true;
+          };
+        }
+      ];
+
+      plugins = {
+        indent-blankline = {
+          enable = true;
+          settings = {
+            indent = {
+              char = "│";
+            };
+          };
+        };
+        lualine = {
+          enable = true;
+        };
+        neoscroll = {
+          enable = true;
+        };
+        nvim-tree = {
+          autoClose = true;
+          enable = true;
+          hijackCursor = true;
+        };
+        telescope = {
+          enable = true;
+        };
+        treesitter = {
+          enable = true;
+        };
+        web-devicons = {
+          enable = true;
+        };
+        which-key = {
+          enable = true;
         };
       };
     };
