@@ -13,6 +13,7 @@
 
     programs.nixvim = lib.mkIf config.neovim.enable {
       enable = true;
+      globals.mapleader = " ";
       colorscheme = "onedark";
       colorschemes."onedark".enable = true;
       defaultEditor = true;
@@ -103,6 +104,15 @@
           };
         }
         {
+          action = "<cmd>Telescope live_grep<CR>";
+          key = "<leader>fg";
+          mode = "n";
+          options = {
+            desc = "Find grep (live grep)";
+            silent = true;
+          };
+        }
+        {
           action = "<C-u>";
           key = "<PageUp>";
           mode = [
@@ -130,6 +140,30 @@
             silent = true;
           };
         }
+        {
+          action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+          key = "gd";
+          mode = "n";
+          options = {
+            desc = "Go to definition";
+          };
+        }
+        {
+          action = "<cmd>lua vim.lsp.buf.declaration()<CR>";
+          key = "gD";
+          mode = "n";
+          options = {
+            desc = "Go to declaration";
+          };
+        }
+        {
+          action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+          key = "cd";
+          mode = "n";
+          options = {
+            desc = "Change definition (rename symbol)";
+          };
+        }
       ];
 
       plugins = {
@@ -153,6 +187,9 @@
               "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
             };
           };
+        };
+        gitgutter = {
+          enable = true;
         };
         indent-blankline = {
           enable = true;
@@ -190,11 +227,21 @@
         };
         treesitter = {
           enable = true;
+          settings = {
+            auto_install = true;
+            ensure_installed = "all";
+            highlight = {
+              enable = true;
+            };
+          };
         };
         web-devicons = {
           enable = true;
         };
         which-key = {
+          enable = true;
+        };
+        vim-css-color = {
           enable = true;
         };
       };
