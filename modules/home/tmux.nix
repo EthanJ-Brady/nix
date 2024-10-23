@@ -13,6 +13,7 @@
         terminal = "screen-256color";
         shell = "\$SHELL";
         sensibleOnTop = true;
+        prefix = "C-Space";
         plugins = with pkgs; [
           {
             # This plugin allows you to interoperably navigate between tmux and nvim with ctrl + left/up/right/down or nvim directional keys
