@@ -222,6 +222,9 @@
           enable = true;
           hijackCursor = true;
         };
+        oil = {
+          enable = true;
+        };
         telescope = {
           enable = true;
         };
