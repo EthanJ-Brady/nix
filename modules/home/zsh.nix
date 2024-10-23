@@ -7,15 +7,10 @@
   config = {
     zsh.enable = lib.mkDefault true;
 
-    programs.zsh = lib.mkIf config.zsh.enable {
-      enable = true;
-      syntaxHighlighting.enable = true;
-      oh-my-zsh = {
+    programs = lib.mkIf config.zsh.enable {
+      zsh = {
         enable = true;
-        theme = "awesomepanda";
-        plugins = [
-          "git"
-        ];
+        syntaxHighlighting.enable = true;
       };
     };
   };
