@@ -8,5 +8,6 @@
     ../../modules/home/zoxide.nix
     ../../modules/home/zsh.nix
     ../../modules/home/oh-my-posh/default.nix
+    ../../modules/home/tmux.nix
   ];
 }
