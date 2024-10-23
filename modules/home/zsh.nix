@@ -7,15 +7,13 @@
   config = {
     zsh.enable = lib.mkDefault true;
 
-    programs.zsh = lib.mkIf config.zsh.enable {
-      enable = true;
-      syntaxHighlighting.enable = true;
-      oh-my-zsh = {
+    programs = lib.mkIf config.zsh.enable {
+      zsh = {
         enable = true;
-        theme = "awesomepanda";
-        plugins = [
-          "git"
-        ];
+        syntaxHighlighting.enable = true;
+        autosuggestion.enable = true;
+        # This is only here to make the up arrow key only suggest commands that match the already typed in characters. If there is a better way to do this, I should probably change this.
+        oh-my-zsh.enable = true; 
       };
     };
   };
