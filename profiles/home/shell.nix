@@ -7,5 +7,6 @@
     ../../modules/home/kitty.nix
     ../../modules/home/zoxide.nix
     ../../modules/home/zsh.nix
+    ../../modules/home/oh-my-posh/default.nix
   ];
 }
