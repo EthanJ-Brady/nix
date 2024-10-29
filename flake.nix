@@ -17,15 +17,7 @@
       nix-darwin,
       home-manager,
       ...
-    }@inputs:
-    let
-      configuration =
-        { ... }:
-        {
-          system.configurationRevision = self.rev or self.dirtyRev or null;
-        };
-    in
-    {
+    }@inputs: {
       # Minecraft Server
       nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
         modules = [
@@ -34,21 +26,17 @@
       };
 
       # Macbook Air
-      darwinConfigurations."macbook-air" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."newton" = nix-darwin.lib.darwinSystem {
         modules = [
-          configuration
-          ./hosts/macbook-air/configuration.nix
+          ./hosts/newton/configuration.nix
           home-manager.darwinModules.home-manager
           {
             nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ethanbrady = import ./hosts/macbook-air/home.nix;
+            home-manager.users.ethanbrady = import ./hosts/newton/home.nix;
           }
         ];
       };
-
-      # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."macbook-air".pkgs;
     };
 }
