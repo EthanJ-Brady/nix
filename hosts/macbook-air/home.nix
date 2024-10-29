@@ -4,6 +4,7 @@
   imports = [
     ../../profiles/home/programming.nix
     ../../profiles/home/shell.nix
+    ../../modules/home/firefox.nix
   ];
 
   # This value determines the Home Manager release that your
@@ -18,6 +19,10 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.firefox = {
+    package = pkgs.firefox-bin;
+  };
 
   home.packages = with pkgs; [ ];
 }

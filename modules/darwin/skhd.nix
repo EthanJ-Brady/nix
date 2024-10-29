@@ -11,7 +11,7 @@
       enable = true;
       skhdConfig = ''
         # Launching applications
-        alt + shift + ctrl - b : open -a arc
+        alt + shift + ctrl - b : open -a firefox
         alt + shift + ctrl - c : open -a zed
         alt + shift + ctrl - d : open -a discord
         alt + shift + ctrl - f : open -a finder

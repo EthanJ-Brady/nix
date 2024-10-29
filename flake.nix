@@ -1,5 +1,5 @@
 {
-  description = "Darwin System Flake";
+  description = "My NixOS configuration flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -7,6 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
   };
 
   outputs =
@@ -15,7 +16,8 @@
       nixpkgs,
       nix-darwin,
       home-manager,
-    }:
+      ...
+    }@inputs:
     let
       configuration =
         { ... }:
@@ -31,12 +33,14 @@
         ];
       };
 
+      # Macbook Air
       darwinConfigurations."macbook-air" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           ./hosts/macbook-air/configuration.nix
           home-manager.darwinModules.home-manager
           {
+            nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.ethanbrady = import ./hosts/macbook-air/home.nix;
