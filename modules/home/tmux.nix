@@ -14,6 +14,7 @@
         shell = "\$SHELL";
         sensibleOnTop = true;
         prefix = "C-Space";
+        tmuxinator.enable = true;
         plugins = with pkgs; [
           {
             # This plugin allows you to interoperably navigate between tmux and nvim with ctrl + left/up/right/down or nvim directional keys
@@ -58,5 +59,10 @@
         '';
       };
     };
+
+    home.packages = lib.mkIf config.tmux.enable [
+      pkgs.ruby
+      pkgs.rubyPackages.erubi 
+    ];
   };
 }
