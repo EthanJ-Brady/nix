@@ -53,9 +53,10 @@
           }
           tmuxPlugins.onedark-theme
         ];
-        # At least on Mac, this line was needed to get tmux to use zsh instead of sh
+        # At least on Mac, 'set -g default-command $SHELL' was needed to get tmux to use zsh instead of sh
         extraConfig = ''
           set -g default-command $SHELL
+          set -s escape-time 0
         '';
       };
     };
