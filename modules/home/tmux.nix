@@ -57,6 +57,11 @@
         extraConfig = ''
           set -g default-command $SHELL
           set -s escape-time 0
+
+          set-option -g status-position top
+
+          unbind r
+          bind r source-file ~/.config/tmux/tmux.conf
         '';
       };
     };
