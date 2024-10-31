@@ -54,7 +54,6 @@
               bind-key -n 'C-Right' if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
             '';
           }
-          tmuxPlugins.onedark-theme
         ];
         # At least on Mac, 'set -g default-command $SHELL' was needed to get tmux to use zsh instead of sh
         extraConfig = ''
