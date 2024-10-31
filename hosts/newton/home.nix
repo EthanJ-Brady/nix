@@ -5,6 +5,7 @@
     ../../profiles/home/programming.nix
     ../../profiles/home/shell.nix
     ../../modules/home/firefox.nix
+    ../../modules/home/catppuccin
   ];
 
   # This value determines the Home Manager release that your
