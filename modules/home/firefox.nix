@@ -1,3 +1,5 @@
+# TODO - Setup themes and extensions
+
 { pkgs, config, lib, ... }:
 {
   options = {
