@@ -10,10 +10,13 @@
     programs = lib.mkIf config.tmux.enable {
       tmux = {
         enable = true;
-        terminal = "screen-256color";
+        terminal = "tmux-256color";
         shell = "\$SHELL";
         sensibleOnTop = true;
+        escapeTime = 0;
+        mouse = true;
         prefix = "C-Space";
+        keyMode = "vi";
         tmuxinator.enable = true;
         plugins = with pkgs; [
           {
@@ -56,7 +59,6 @@
         # At least on Mac, 'set -g default-command $SHELL' was needed to get tmux to use zsh instead of sh
         extraConfig = ''
           set -g default-command $SHELL
-          set -s escape-time 0
 
           set-option -g status-position top
 
