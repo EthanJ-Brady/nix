@@ -18,7 +18,10 @@
         name = "FiraCode Nerd Font";
         package = pkgs.fira-code-nerdfont;
       };
-      themeFile = "OneDark";
+      extraConfig = ''
+        hide_window_decorations titlebar-only
+        window_padding_width 8
+      '';
     };
   };
 }
