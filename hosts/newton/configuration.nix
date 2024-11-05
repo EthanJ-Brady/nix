@@ -10,9 +10,7 @@
   users.users.ethanbrady.home = "/Users/ethanbrady";
 
   environment.systemPackages = with pkgs; [
-    vim
     neofetch
-    bat
     nixd # Nix LSP
     nixfmt-rfc-style # Nix formatter
   ];
