@@ -2,6 +2,7 @@
 {
   imports = [
     ./bat.nix
+    ./bun.nix
     ./catppuccin
     ./eza.nix
     ./firefox.nix
