@@ -6,10 +6,8 @@
     firefox.enable = lib.mkEnableOption "Enables firefox and it's settings";
   };
 
-  config = {
-    firefox.enable = lib.mkDefault true;
-
-    programs.firefox = lib.mkIf config.firefox.enable {
+  config = lib.mkIf config.firefox.enable {
+    programs.firefox = {
       enable = true;
       profiles.default = {
         search = {

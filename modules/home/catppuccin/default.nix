@@ -15,8 +15,4 @@
       description = "The flavor of the theme to use";
     };
   };
-
-  config = {
-    catppuccin.enable = lib.mkDefault true;
-  };
 }

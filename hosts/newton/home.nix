@@ -2,10 +2,10 @@
 
 {
   imports = [
+    ../../profiles/home/apps.nix
     ../../profiles/home/programming.nix
     ../../profiles/home/shell.nix
-    ../../modules/home/firefox.nix
-    ../../modules/home/catppuccin
+    ../../profiles/home/theme.nix
   ];
 
   # This value determines the Home Manager release that your

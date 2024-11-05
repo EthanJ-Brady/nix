@@ -4,10 +4,8 @@
     tmux.enable = lib.mkEnableOption "Enable tmux along with it's corresponding configuration";
   };
 
-  config = {
-    tmux.enable = lib.mkDefault true;
-
-    programs = lib.mkIf config.tmux.enable {
+  config = lib.mkIf config.tmux.enable {
+    programs = {
       tmux = {
         enable = true;
         terminal = "tmux-256color";
@@ -70,7 +68,7 @@
       };
     };
 
-    home.packages = lib.mkIf config.tmux.enable [
+    home.packages = [
       pkgs.ruby
       pkgs.rubyPackages.erubi 
     ];

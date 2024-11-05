@@ -9,10 +9,8 @@
     kitty.enable = lib.mkEnableOption "Enables kitty terminal emulator";
   };
 
-  config = {
-    kitty.enable = lib.mkDefault true;
-
-    programs.kitty = lib.mkIf config.kitty.enable {
+  config = lib.mkIf config.kitty.enable {
+    programs.kitty = {
       enable = true;
       font = {
         name = "FiraCode Nerd Font";

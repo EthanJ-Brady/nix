@@ -4,10 +4,8 @@
     eza.enable = lib.mkEnableOption "Enables eza and creates shell aliases for it.";
   };
 
-  config = {
-    eza.enable = lib.mkDefault true;
-
-    programs = lib.mkIf config.eza.enable {
+  config = lib.mkIf config.eza.enable {
+    programs = {
       eza = {
         enable = true;
         enableZshIntegration = true;
@@ -15,10 +13,12 @@
         icons = true;
       };
 
-      zsh.shellAliases.ls = "eza";
-      zsh.shellAliases.ll = "eza -lh";
-      zsh.shellAliases.l = "eza -lah";
-      zsh.shellAliases.tree = "eza -T";
+      zsh = lib.mkIf config.zsh.enable {
+        shellAliases.ls = "eza";
+        shellAliases.ll = "eza -lh";
+        shellAliases.l = "eza -lah";
+        shellAliases.tree = "eza -T";
+      };
     };
   };
 }

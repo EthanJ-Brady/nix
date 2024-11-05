@@ -4,10 +4,8 @@
     bat.enable = lib.mkEnableOption "Enable bat and cat shell alias";
   };
 
-  config = {
-    bat.enable = lib.mkDefault true;
-
-    programs = lib.mkIf config.bat.enable {
+  config = lib.mkIf config.bat.enable {
+    programs = {
       bat.enable = true;
       zsh.shellAliases.cat = "bat";
     };
