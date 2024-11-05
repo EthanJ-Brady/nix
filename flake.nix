@@ -37,6 +37,8 @@
             home-manager.users.ethanbrady = {
               imports = [
                 ./hosts/newton/home.nix
+                ./modules/home
+                ./profiles/home
               ];
             };
           }

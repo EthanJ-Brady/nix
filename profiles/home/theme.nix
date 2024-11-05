@@ -1,8 +1,10 @@
-{ lib, ... }:
+{ config, lib, ... }:
 {
-  imports = [
-    ../../modules/home/catppuccin
-  ];
+  options = {
+    profiles.theme = lib.mkEnableOption "Enables user wide themes";
+  };
 
-  catppuccin.enable = lib.mkDefault true;
+  config = lib.mkIf config.profiles.theme {
+    catppuccin.enable = lib.mkDefault true;
+  };
 }

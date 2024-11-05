@@ -1,10 +1,11 @@
-{ lib, ... }:
+{ config, lib, ... }:
 {
-  imports = [
-    ../../modules/home/firefox.nix
-    ../../modules/home/kitty.nix
-  ];
-  
-  firefox.enable = lib.mkDefault true;
-  kitty.enable = lib.mkDefault true;
+  options = {
+    profiles.apps = lib.mkEnableOption "Enables basic system apps";
+  };
+
+  config = lib.mkIf config.profiles.apps {
+    firefox.enable = lib.mkDefault true;
+    kitty.enable = lib.mkDefault true;
+  };
 }
