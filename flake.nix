@@ -34,7 +34,11 @@
             nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ethanbrady = import ./hosts/newton/home.nix;
+            home-manager.users.ethanbrady = {
+              imports = [
+                ./hosts/newton/home.nix
+              ];
+            };
           }
         ];
       };
