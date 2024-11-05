@@ -11,6 +11,7 @@
     ./kitty.nix
     ./lazygit.nix
     ./oh-my-posh
+    ./ssh.nix
     ./tmux.nix
     ./zoxide.nix
     ./zsh.nix
