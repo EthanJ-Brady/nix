@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  inputs,
   ...
 }:
 {
@@ -8,10 +9,12 @@
     neovim.enable = lib.mkEnableOption "Enables the neovim distribution nixvim";
   };
 
-  config = {
-    neovim.enable = lib.mkDefault true;
+  config = lib.mkIf config.neovim.enable {
+    imports = [
+      inputs.nixvim.homeManagerModules.nixvim
+    ];
 
-    programs.nixvim = lib.mkIf config.neovim.enable {
+    programs.nixvim = {
       enable = true;
       globals.mapleader = " ";
       colorscheme = "onedark";

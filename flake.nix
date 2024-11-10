@@ -45,14 +45,14 @@
             nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ethanbrady =
-              { ... }:
-              {
-                imports = [
-                  ./hosts/macbook-air/home.nix
-                  nixvim.homeManagerModules.nixvim
-                ];
-              };
+            extraSpecialArgs = { inherit inputs; };
+            home-manager.users.ethanbrady = {
+              imports = [
+                ./hosts/newton/home.nix
+                ./modules/home
+                ./profiles/home
+              ];
+            };
           }
         ];
       };
