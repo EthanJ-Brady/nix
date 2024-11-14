@@ -64,6 +64,11 @@
 
           unbind r
           bind r source-file ~/.config/tmux/tmux.conf
+          
+          # Allow tmux to pass through to programs (Needed for yazi image viewer)
+          set -g allow-passthrough all
+          set -ga update-environment TERM
+          set -ga update-environment TERM_PROGRAM
         '';
       };
     };
