@@ -10,7 +10,7 @@
     ./git.nix
     ./kitty.nix
     ./lazygit.nix
-    ./neovim.nix
+    ./neovim
     ./oh-my-posh
     ./ssh.nix
     ./tmux.nix

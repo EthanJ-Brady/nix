@@ -5,15 +5,15 @@
   ...
 }:
 {
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+  ];
+
   options = {
     neovim.enable = lib.mkEnableOption "Enables the neovim distribution nixvim";
   };
 
   config = lib.mkIf config.neovim.enable {
-    imports = [
-      inputs.nixvim.homeManagerModules.nixvim
-    ];
-
     programs.nixvim = {
       enable = true;
       globals.mapleader = " ";

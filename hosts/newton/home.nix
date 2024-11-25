@@ -1,10 +1,13 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../../profiles/home/programming.nix
-    ../../profiles/home/shell.nix
-  ];
+  # Profiles
+  profiles.apps = true;
+  profiles.programming = true;
+  profiles.shell = true;
+  profiles.theme = true;
+
+  ssh.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

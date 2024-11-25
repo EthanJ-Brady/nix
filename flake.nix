@@ -7,6 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,16 +20,8 @@
       nixpkgs,
       nix-darwin,
       home-manager,
-      nixvim,
-    }:
-    let
-      configuration =
-        { ... }:
-        {
-          system.configurationRevision = self.rev or self.dirtyRev or null;
-        };
-    in
-    {
+      ...
+    }@inputs: {
       # Minecraft Server
       nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
         modules = [
@@ -45,7 +38,7 @@
             nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.ethanbrady = {
               imports = [
                 ./hosts/newton/home.nix
