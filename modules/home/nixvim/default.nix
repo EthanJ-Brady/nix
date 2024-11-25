@@ -17,8 +17,6 @@
     programs.nixvim = {
       enable = true;
       globals.mapleader = " ";
-      colorscheme = "onedark";
-      colorschemes."onedark".enable = true;
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
@@ -168,89 +166,6 @@
           };
         }
       ];
-
-      plugins = {
-        cmp = {
-          enable = true;
-          autoEnableSources = true;
-          settings = {
-            sources = [
-              { name = "nvim_lsp"; }
-              { name = "path"; }
-              { name = "buffer"; }
-              { name = "luasnip"; }
-            ];
-            mapping = {
-              "<C-Space>" = "cmp.mapping.complete()";
-              "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-              "<C-e>" = "cmp.mapping.close()";
-              "<C-f>" = "cmp.mapping.scroll_docs(4)";
-              "<CR>" = "cmp.mapping.confirm({ select = true })";
-              "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-              "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-            };
-          };
-        };
-        gitgutter = {
-          enable = true;
-        };
-        indent-blankline = {
-          enable = true;
-          settings = {
-            indent = {
-              char = "│";
-            };
-          };
-        };
-        lsp = {
-          enable = true;
-          servers = {
-            ts_ls.enable = true;
-            lua_ls.enable = true;
-            rust_analyzer = {
-              enable = true;
-              installCargo = true;
-              installRustc = true;
-            };
-          };
-        };
-        lualine = {
-          enable = true;
-        };
-        neoscroll = {
-          enable = true;
-        };
-        nvim-tree = {
-          autoClose = true;
-          enable = true;
-          hijackCursor = true;
-        };
-        oil = {
-          enable = true;
-        };
-        telescope = {
-          enable = true;
-        };
-        treesitter = {
-          enable = true;
-          settings = {
-            auto_install = true;
-            ensure_installed = "all";
-            highlight = {
-              enable = true;
-            };
-          };
-        };
-        web-devicons = {
-          enable = true;
-        };
-        which-key = {
-          enable = true;
-        };
-        vim-css-color = {
-          enable = true;
-        };
-      };
     };
   };
 }

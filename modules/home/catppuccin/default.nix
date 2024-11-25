@@ -4,6 +4,7 @@
 {
   imports = [
     ./kitty.nix
+    ./nixvim.nix
     ./tmux.nix
   ];
 
