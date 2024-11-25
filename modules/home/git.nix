@@ -17,6 +17,7 @@
       aliases = {
         graph = "log --oneline --graph --decorate --all";
         s = "status -s";
+        l = "log --oneline";
       };
     };
   };
