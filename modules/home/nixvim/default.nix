@@ -10,10 +10,10 @@
   ];
 
   options = {
-    neovim.enable = lib.mkEnableOption "Enables the neovim distribution nixvim";
+    nixvim.enable = lib.mkEnableOption "Enables the neovim distribution nixvim";
   };
 
-  config = lib.mkIf config.neovim.enable {
+  config = lib.mkIf config.nixvim.enable {
     programs.nixvim = {
       enable = true;
       globals.mapleader = " ";
