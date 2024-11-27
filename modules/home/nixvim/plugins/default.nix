@@ -17,6 +17,7 @@
   config = lib.mkIf config.nixvim.enable {
     programs.nixvim.plugins = {
       sleuth.enable = true;
+      tmux-navigator.enable = true;
     };
   };
 }
