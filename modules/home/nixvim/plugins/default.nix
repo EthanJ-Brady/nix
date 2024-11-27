@@ -7,6 +7,7 @@
   imports = [
     ./gitsigns.nix
     ./telescope.nix
+    ./todo-comments.nix
     ./whichkey.nix
   ];
 
