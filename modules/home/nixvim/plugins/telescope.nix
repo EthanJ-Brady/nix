@@ -48,6 +48,18 @@
           action = "buffers";
           options.desc = "[ ] Find existing buffers";
         };
+        "gd" = {
+          action = "lsp_definitions";
+          options.desc = "[G]o to [d]efinition";
+        };
+        "gr" = {
+          action = "lsp_references";
+          options.desc = "[G]o to [r]eferences";
+        };
+        "gI" = {
+          action = "lsp_implementations";
+          options.desc = "[G]o to [i]mplementations";
+        };
       };
     };
   };
