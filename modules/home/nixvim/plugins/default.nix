@@ -6,6 +6,7 @@
 {
   imports = [
     ./gitsigns.nix
+    ./mini.nix
     ./telescope.nix
     ./todo-comments.nix
     ./whichkey.nix
