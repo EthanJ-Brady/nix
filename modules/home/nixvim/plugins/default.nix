@@ -6,6 +6,7 @@
 {
   imports = [
     ./gitsigns.nix
+    ./lsp.nix
     ./mini.nix
     ./oil.nix
     ./supermaven.nix
