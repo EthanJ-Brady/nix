@@ -7,6 +7,7 @@
   config = lib.mkIf config.nixvim.enable {
     programs.nixvim.plugins.mini = {
       enable = true;
+      mockDevIcons = true;
       modules = {
         ai.enable = true;
         cursorword.enable = true;
