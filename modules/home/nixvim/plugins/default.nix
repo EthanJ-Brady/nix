@@ -6,6 +6,7 @@
 {
   imports = [
     ./gitsigns.nix
+    ./whichkey.nix
   ];
 
   config = lib.mkIf config.nixvim.enable {
