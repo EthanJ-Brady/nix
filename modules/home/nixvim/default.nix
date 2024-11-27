@@ -10,6 +10,7 @@
     ./opts.nix
     ./keymaps.nix
     ./autocmds.nix
+    ./plugins
   ];
 
   options = {
