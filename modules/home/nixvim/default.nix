@@ -9,6 +9,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./opts.nix
     ./keymaps.nix
+    ./autocmds.nix
   ];
 
   options = {
