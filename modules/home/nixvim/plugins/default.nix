@@ -8,6 +8,7 @@
     ./gitsigns.nix
     ./mini.nix
     ./telescope.nix
+    ./treesitter.nix
     ./todo-comments.nix
     ./whichkey.nix
   ];
