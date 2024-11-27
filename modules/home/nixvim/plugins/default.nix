@@ -7,6 +7,7 @@
   imports = [
     ./gitsigns.nix
     ./mini.nix
+    ./oil.nix
     ./telescope.nix
     ./treesitter.nix
     ./todo-comments.nix
