@@ -18,11 +18,16 @@ let
 in
 {
   config = lib.mkIf config.nixvim.enable {
-    programs.nixvim.extraPlugins = [
-      {
-        plugin = supermaven;
-        config = "lua require(\"supermaven-nvim\").setup({disable_keymaps = true,disable_inline_completion = true,});";
-      }
-    ];
+    programs.nixvim = {
+      plugins.cmp.settings.sources = [
+        { name = "supermaven"; }
+      ];
+      extraPlugins = [
+        {
+          plugin = supermaven;
+          config = "lua require(\"supermaven-nvim\").setup({disable_keymaps = true,disable_inline_completion = true,});";
+        }
+      ];
+    };
   };
 }
