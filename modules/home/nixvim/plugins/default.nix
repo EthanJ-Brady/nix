@@ -8,6 +8,7 @@
     ./gitsigns.nix
     ./mini.nix
     ./oil.nix
+    ./supermaven.nix
     ./telescope.nix
     ./treesitter.nix
     ./todo-comments.nix
