@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./format.nix
     ./gitsigns.nix
     ./lsp.nix
     ./mini.nix
