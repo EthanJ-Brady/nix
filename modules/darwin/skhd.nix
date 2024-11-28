@@ -11,15 +11,15 @@
       enable = true;
       skhdConfig = ''
         # Launching applications
-        alt + shift + ctrl - b : open -a firefox    #[B]rowser
-        alt + shift + ctrl - d : open -a vesktop    #[D]iscord
-        alt + shift + ctrl - f : open -a finder     #[F]iles
-        alt + shift + ctrl - g : open -a ticktick   #[G]et things done
-        alt + shift + ctrl - i : open -a messages   #[I]nstant Messages
-        alt + shift + ctrl - m : open -a mail       #[M]ail
-        alt + shift + ctrl - n : open -a obsidian   #[N]otes
-        alt + shift + ctrl - s : open -a stickies   #[S]tickies
-        alt + shift + ctrl - t : open -a kitty      #[T]erminal
+        alt + shift + ctrl - b : open -a 'zen browser'    #[B]rowser
+        alt + shift + ctrl - d : open -a vesktop          #[D]iscord
+        alt + shift + ctrl - f : open -a finder           #[F]iles
+        alt + shift + ctrl - g : open -a ticktick         #[G]et things done
+        alt + shift + ctrl - i : open -a messages         #[I]nstant Messages
+        alt + shift + ctrl - m : open -a mail             #[M]ail
+        alt + shift + ctrl - n : open -a obsidian         #[N]otes
+        alt + shift + ctrl - s : open -a stickies         #[S]tickies
+        alt + shift + ctrl - t : open -a kitty            #[T]erminal
 
         # Navigation
         alt - left : yabai -m window --focus west
