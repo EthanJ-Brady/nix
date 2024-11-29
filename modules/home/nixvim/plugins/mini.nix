@@ -22,7 +22,6 @@
             ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║
           '';
         };
-        statusline.enable = true;
         surround.enable = true;
       };
     };

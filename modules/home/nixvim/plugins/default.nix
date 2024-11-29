@@ -8,6 +8,7 @@
     ./format.nix
     ./gitsigns.nix
     ./lsp.nix
+    ./lualine.nix
     ./mini.nix
     ./oil.nix
     ./supermaven.nix
