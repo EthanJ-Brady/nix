@@ -7,6 +7,7 @@
   imports = [
     ./format.nix
     ./gitsigns.nix
+    ./hardtime.nix
     ./lsp.nix
     ./lualine.nix
     ./mini.nix
