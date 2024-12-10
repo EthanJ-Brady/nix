@@ -69,6 +69,12 @@
           set -g allow-passthrough all
           set -ga update-environment TERM
           set -ga update-environment TERM_PROGRAM
+
+          # Use `v` to start selecting text
+          bind -T copy-mode-vi v send -X begin-selection
+
+          # use `y` to copy the selected text
+          bind -T copy-mode-vi y send -X copy-selection-and-cancel
         '';
       };
     };
