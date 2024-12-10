@@ -9,8 +9,8 @@
 
     services.jankyborders = lib.mkIf config.jankyborders.enable {
       enable = true;
-      active_color = "0xffc37779";
-      inactive_color = "0xff80abe3";
+      active_color = "0xffe78284";
+      inactive_color = "0xff8caaee";
       width = 7.5;
     };
   };
