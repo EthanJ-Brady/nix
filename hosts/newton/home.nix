@@ -31,5 +31,6 @@
 
   home.packages = with pkgs; [ 
     tlrc
+    glow
   ];
 }
