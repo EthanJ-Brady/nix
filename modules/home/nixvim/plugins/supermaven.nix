@@ -17,7 +17,7 @@ let
   };
 in
 {
-  config = lib.mkIf config.nixvim.enable {
+  config = lib.mkIf (config.nixvim.enable && config.nixvim.ai-codewriter == "supermaven") {
     programs.nixvim = {
       plugins.cmp.settings.sources = [
         { name = "supermaven"; }
@@ -25,8 +25,7 @@ in
       extraPlugins = [
         {
           plugin = supermaven;
-          config = "lua require(\"supermaven-nvim\").setup({disable_keymaps = true,disable_inline_completion = true,});";
-        }
+          config = "lua require(\"supermaven-nvim\").setup({disable_keymaps = true,disable_inline_completion = true,});"; }
       ];
     };
   };
