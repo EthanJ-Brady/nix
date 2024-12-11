@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Get the current timestamp in the format YYYYMMDDHHmm
+timestamp=$(date +%Y%m%d%H%M)
+
+# Function to generate a file name
+function generate_filename() {
+    local input="$1"
+    if [[ -n "$input" ]]; then
+        # Convert input to lowercase, replace spaces with hyphens, and ensure valid filename
+        input=$(echo "$input" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+        # Add .md extension if no extension is provided
+        if [[ "$input" != *.* ]]; then
+            input="$input.md"
+        fi
+        echo "$timestamp-$input"
+    else
+        # Return just the timestamp if no input is provided
+        echo "$timestamp.md"
+    fi
+}
+
+# Main script logic
+if [[ $# -eq 0 ]]; then
+    # No arguments, create a file with the timestamp
+    filename=$(generate_filename)
+elif [[ $# -eq 1 ]]; then
+    # One argument, use it to create the file name
+    filename=$(generate_filename "$1")
+else
+    echo "Usage: zettel [optional: file name or title]"
+    exit 1
+fi
+
+# Create the file and open it with the default editor
+if [[ ! -f "$filename" ]]; then
+    touch "$filename"
+    echo "File created: $filename"
+    ${EDITOR:-nano} "$filename"
+else
+    echo "File already exists: $filename"
+fi
