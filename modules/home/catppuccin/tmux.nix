@@ -6,7 +6,7 @@
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
           set -g @catppuccin_flavour "${lib.strings.toLower config.catppuccin.flavor}"
-          set -g @catppuccin_window_left_separator ""
+          set -g @catppuccin_window_left_separator " "
           set -g @catppuccin_window_right_separator " "
           set -g @catppuccin_window_middle_separator " █"
           set -g @catppuccin_window_number_position "right"
