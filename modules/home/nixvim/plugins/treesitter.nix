@@ -5,11 +5,19 @@
 }:
 {
   config = lib.mkIf config.nixvim.enable {
-    programs.nixvim.plugins.treesitter = {
-      enable = true;
-      settings = {
-        auto_install = true;
-        highlight.enable = true;
+    programs.nixvim = {
+      opts = {
+        foldmethod = "expr";
+        foldexpr = "nvim_treesitter#foldexpr()";
+        foldlevel = 99;
+      };
+      plugins.treesitter = {
+        enable = true;
+        settings = {
+          auto_install = true;
+          highlight.enable = true;
+          indent.enable = true;
+        };
       };
     };
   };
