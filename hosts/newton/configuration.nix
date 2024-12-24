@@ -7,6 +7,10 @@
     ../../modules/darwin/jankyborders.nix
   ];
 
+  yabai.enable = true;
+  skhd.enable = true;
+  jankyborders.enable = true;
+
   users.users.ethanbrady.home = "/Users/ethanbrady";
 
   environment.systemPackages = with pkgs; [

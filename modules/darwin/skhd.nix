@@ -4,10 +4,8 @@
     skhd.enable = lib.mkEnableOption "Enables skhd, a simple hotkey daemon for macOS.";
   };
 
-  config = {
-    skhd.enable = lib.mkDefault true;
-
-    services.skhd = lib.mkIf config.skhd.enable {
+  config = lib.mkIf config.skhd.enable {
+    services.skhd = {
       enable = true;
       skhdConfig = ''
         # Launching applications
