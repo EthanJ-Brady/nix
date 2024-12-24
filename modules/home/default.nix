@@ -8,6 +8,7 @@
     ./firefox.nix
     ./fzf.nix
     ./git.nix
+    ./gnome
     ./kitty.nix
     ./lazygit.nix
     ./nixvim
