@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./bootloader.nix
     ./gamepads.nix
     ./gnome.nix
     ./locale.nix
