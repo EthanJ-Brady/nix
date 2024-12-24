@@ -27,19 +27,19 @@
         modules = [
           ./hosts/bernoulli/configuration.nix
           ./hosts/bernoulli/hardware-configuration.nix
-          # home-manager.nixosModules.home-manager
-          # {
-          #   home-manager.useGlobalPkgs = true;
-          #   home-manager.useUserPackages = true;
-          #   home-manager.extraSpecialArgs = { inherit inputs; };
-          #   home-manager.users.ethan = {
-          #     imports = [
-          #       ./hosts/bernoulli/home.nix
-          #       ./modules/home
-          #       ./profiles/home
-          #     ];
-          #   };
-          # }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.ethan = {
+              imports = [
+                ./hosts/bernoulli/home.nix
+                ./modules/home
+                ./profiles/home
+              ];
+            };
+          }
         ];
       };
 
