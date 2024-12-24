@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../../modules/darwin/yabai.nix
-    ../../modules/darwin/skhd.nix
-    ../../modules/darwin/jankyborders.nix
-  ];
-
   yabai.enable = true;
   skhd.enable = true;
   jankyborders.enable = true;
