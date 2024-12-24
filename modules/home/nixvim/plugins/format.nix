@@ -1,10 +1,15 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 {
   config = lib.mkIf config.nixvim.enable {
+    home.packages = with pkgs; [
+      black
+    ];
+
     programs.nixvim.plugins.conform-nvim = {
       enable = true;
       settings = {
@@ -14,6 +19,9 @@
           stop_after_first = true;
         };
         formatters_by_ft = {
+          python = [
+            "black"
+          ];
           javascript = [
             "prettierd"
             "prettier"
