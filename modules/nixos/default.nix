@@ -10,5 +10,6 @@
     ./nvidia.nix
     ./pipewire.nix
     ./steam.nix
+    ./via.nix
   ];
 }
