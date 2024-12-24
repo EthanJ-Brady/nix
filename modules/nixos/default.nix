@@ -8,6 +8,7 @@
     ./locale.nix
     ./logitech.nix
     ./nvidia.nix
+    ./pipewire.nix
     ./steam.nix
   ];
 }
