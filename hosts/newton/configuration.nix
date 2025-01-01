@@ -2,6 +2,7 @@
 
 {
   yabai.enable = true;
+  sketchybar.enable = true;
   skhd.enable = true;
   jankyborders.enable = true;
 
