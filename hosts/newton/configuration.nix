@@ -16,6 +16,8 @@
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    noto-fonts
+    noto-fonts-monochrome-emoji
   ];
 
   # Auto upgrade nix package and the daemon service.
