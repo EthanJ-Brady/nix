@@ -34,6 +34,10 @@
             "prettierd"
             "prettier"
           ];
+          markdown = [
+            "prettierd"
+            "prettier"
+          ];
           typescript = [
             "prettierd"
             "prettier"
