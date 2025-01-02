@@ -7,6 +7,9 @@
   config = lib.mkIf config.git.enable {
     programs.git = {
       enable = true;
+      extraConfig = {
+        advice.skippedCherryPicks = false;
+      };
       delta = {
         enable = true;
         options = {
