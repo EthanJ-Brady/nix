@@ -19,6 +19,7 @@
         s = "status -s";
         l = "log --oneline";
         d = "diff --name-status";
+        last = "log -1 HEAD";
       };
     };
   };
