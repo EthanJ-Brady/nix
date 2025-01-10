@@ -3,6 +3,16 @@
   ... 
 }:
 {
+  bootloader.enable = true;
+  gamepads.enable = true;
+  gnome.enable = true;
+  laptop.enable = true;
+  logitech.enable = true;
+  nvidia.enable = true;
+  pipewire.enable = true;
+  steam.enable = true;
+  via.enable = true;
+
   security.sudo.wheelNeedsPassword = false;
 
   networking.hostName = "bernoulli";

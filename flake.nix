@@ -27,6 +27,7 @@
         modules = [
           ./hosts/bernoulli/configuration.nix
           ./hosts/bernoulli/hardware-configuration.nix
+          ./modules/nixos
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
