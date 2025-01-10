@@ -6,7 +6,6 @@
   bootloader.enable = true;
   gamepads.enable = true;
   gnome.enable = true;
-  laptop.enable = true;
   logitech.enable = true;
   nvidia.enable = true;
   pipewire.enable = true;
