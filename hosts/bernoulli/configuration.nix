@@ -12,6 +12,9 @@
   steam.enable = true;
   via.enable = true;
 
+  nvidia.amdBusId = "PCI:1:0:0";
+  nvidia.nvidiaBusId = "PCI:5:0:0";
+
   security.sudo.wheelNeedsPassword = false;
 
   networking.hostName = "bernoulli";
