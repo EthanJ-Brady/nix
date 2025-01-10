@@ -42,30 +42,27 @@
 
   environment.systemPackages = with pkgs; [
     firefox
-    gnome.gnome-disk-utility
-    stow
-    pciutils
-    wl-clipboard
+    # gnome-disk-utility
+    # pciutils
+    # wl-clipboard
     vivaldi
-    logseq
-    wineWowPackages.unstable
     libgccjit #reqiured for nvim
-    nodejs_21 #required for nvim
+    nodejs_23 #required for nvim
     binutils #required for nvim
     gcc_multi #required for nvim
     ripgrep #required for nvim
     fd #required for nvim
     cargo
-    gnome-usage
-    dotnet-sdk_8
-    wl-color-picker
+    # gnome-usage
+    # dotnet-sdk_8
+    # wl-color-picker
     home-manager
-    appimage-run
-    pavucontrol 
-    melonDS
-    nh
+    # appimage-run
+    # pavucontrol 
+    # melonDS
+    # nh
     kitty
-    easyeffects
+    # easyeffects
   ];
 
   environment.sessionVariables.FLAKE = "/home/ethan/Dotfiles/nix";
