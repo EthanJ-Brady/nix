@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   options = {
-    logitech.enable = lib.mkEnableOpiton "Enables logitech universal receiver and customization tools";
+    logitech.enable = lib.mkEnableOption "Enables logitech universal receiver and customization tools";
   };
 
   config = lib.mkIf config.logitech.enable {
