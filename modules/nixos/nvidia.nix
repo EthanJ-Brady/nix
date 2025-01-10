@@ -40,5 +40,10 @@
         nvidiaBusId = lib.mkDefault config.nvidia.nvidiaBusId;
       };
     };
+
+    environment.variables = lib.mkIf config.hyprland.enable {
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    };
   };
 }
