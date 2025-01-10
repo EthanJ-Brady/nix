@@ -12,6 +12,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
@@ -28,6 +29,7 @@
           ./hosts/bernoulli/configuration.nix
           ./hosts/bernoulli/hardware-configuration.nix
           ./modules/nixos
+          inputs.nixos-hardware.nixosModules.asus-zephyrus-ga502
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

@@ -25,7 +25,7 @@
   config = lib.mkIf config.nvidia.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
 
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
 
     hardware.nvidia = {
       modesetting.enable = true;
@@ -35,9 +35,9 @@
       prime = {
         offload.enable = false;
         sync.enable = true;
-        intelBusId = config.nvidia.intelBusId;
-        amdgpuBusId = config.nvidia.amdBusId;
-        nvidiaBusId = config.nvidia.nvidiaBusId;
+        intelBusId = lib.mkDefault config.nvidia.intelBusId;
+        amdgpuBusId = lib.mkDefault config.nvidia.amdBusId; 
+        nvidiaBusId = lib.mkDefault config.nvidia.nvidiaBusId;
       };
     };
   };
