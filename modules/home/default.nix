@@ -9,6 +9,7 @@
     ./fzf.nix
     ./git.nix
     ./gnome
+    ./hyprland
     ./kitty.nix
     ./lazygit.nix
     ./nixvim
