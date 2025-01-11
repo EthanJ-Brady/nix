@@ -8,6 +8,7 @@
     ssh.enable = true;
     nixvim.enable = true;
     zettel.enable = true;
+    hyprland.enable = true;
 
     home.username = "ethan";
     home.homeDirectory = "/home/ethan";
