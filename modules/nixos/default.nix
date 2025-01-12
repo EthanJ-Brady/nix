@@ -3,6 +3,7 @@
   imports = [
     ./bootloader.nix
     ./gamepads.nix
+    ./gamescope.nix
     ./gnome.nix
     ./hyprland.nix
     ./laptop.nix

@@ -5,6 +5,7 @@
 {
   bootloader.enable = true;
   gamepads.enable = true;
+  gamescope.enable = true;
   hyprland.enable = true;
   logitech.enable = true;
   nvidia.enable = true;
