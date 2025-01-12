@@ -31,8 +31,7 @@
     shell = pkgs.zsh;
   };
 
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "ethan";
+  services.getty.autologinUser = "ethan";
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.system = "x86_64-linux";
