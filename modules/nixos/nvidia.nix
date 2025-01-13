@@ -30,7 +30,7 @@
     hardware.nvidia = {
       modesetting.enable = true;
       open = false;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
       powerManagement.enable = true;
       prime = {
         offload.enable = false;

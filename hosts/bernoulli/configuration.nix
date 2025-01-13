@@ -32,7 +32,13 @@
     shell = pkgs.zsh;
   };
 
-  services.getty.autologinUser = "ethan";
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "ethan";
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.system = "x86_64-linux";
