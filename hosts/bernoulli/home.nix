@@ -9,6 +9,7 @@
     nixvim.enable = true;
     zettel.enable = true;
     hyprland.enable = true;
+    bananaCursor.enable = true;
 
     wayland.windowManager.hyprland.settings = {
       # Determine monitors with `hyprctl monitors all`

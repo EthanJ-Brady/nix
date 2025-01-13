@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./banana-cursor.nix
     ./bat.nix
     ./bun.nix
     ./catppuccin
