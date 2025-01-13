@@ -30,7 +30,7 @@
         enable = true;
         servers = {
           eslint.enable = true;
-          java_language_server.enable = true;
+          jdtls.enable = true;
           jsonnet_ls.enable = true;
           lua_ls.enable = true;
           marksman.enable = true;

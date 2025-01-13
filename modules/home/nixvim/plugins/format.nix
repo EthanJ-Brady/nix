@@ -8,6 +8,7 @@
   config = lib.mkIf config.nixvim.enable {
     home.packages = with pkgs; [
       black
+      google-java-format
     ];
 
     programs.nixvim.plugins.conform-nvim = {
@@ -21,6 +22,9 @@
         formatters_by_ft = {
           python = [
             "black"
+          ];
+          java = [
+            "google-java-format"
           ];
           javascript = [
             "prettierd"
