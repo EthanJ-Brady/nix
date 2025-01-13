@@ -10,6 +10,7 @@
     zettel.enable = true;
     hyprland.enable = true;
     bananaCursor.enable = true;
+    wofi.enable = true;
 
     wayland.windowManager.hyprland.settings = {
       # Determine monitors with `hyprctl monitors all`

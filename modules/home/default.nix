@@ -17,6 +17,7 @@
     ./oh-my-posh
     ./ssh.nix
     ./tmux.nix
+    ./wofi.nix
     ./zettel
     ./zoxide.nix
     ./zsh.nix
