@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 {
@@ -61,5 +62,10 @@
         ];
       };
     };
+
+    home.packages = with pkgs; [
+      hyprpicker
+      hyprsunset
+    ];
   };
 }
