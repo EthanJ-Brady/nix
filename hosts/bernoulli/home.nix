@@ -15,6 +15,9 @@
     bananaCursor.enable = true;
     wofi.enable = true;
 
+    programs.git.userEmail = "git@ethanbrady.xyz";
+    programs.git.userName = "EthanJ-Brady";
+
     wayland.windowManager.hyprland.settings = {
       # Determine monitors with `hyprctl monitors all`
       monitor = [
