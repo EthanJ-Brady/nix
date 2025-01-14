@@ -2,6 +2,7 @@
 {
   options = {
     tmux.enable = lib.mkEnableOption "Enable tmux along with it's corresponding configuration";
+    tmux.autostart.enable = lib.mkEnableOption "Automatically connect to a new tmux session when starting a new shell";
   };
 
   config = lib.mkIf config.tmux.enable {
@@ -78,6 +79,12 @@
         '';
       };
     };
+
+    programs.zsh.initExtraFirst = lib.mkIf config.tmux.autostart.enable (lib.mkAfter ''
+      if [ -z "$TMUX" ]; then
+        tmux attach -t default || tmux new -s default
+      fi
+    '');
 
     home.packages = [
       pkgs.ruby

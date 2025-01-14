@@ -15,11 +15,6 @@
         shellAliases = {
           "nvim-kickstart" = "NVIM_APPNAME=\"nvim-kickstart\" nvim";
         };
-        initExtraFirst = ''
-          if [ -z "$TMUX" ]; then
-            tmux attach -t default || tmux new -s default
-          fi
-        '';
         initExtra = ''
           # Enables vim mode for zsh
           bindkey -v
