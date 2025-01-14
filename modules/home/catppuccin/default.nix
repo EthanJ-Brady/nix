@@ -7,6 +7,7 @@
     ./nixvim.nix
     ./tmux.nix
     ./wofi
+    ./zellij.nix
   ];
 
   options = {
