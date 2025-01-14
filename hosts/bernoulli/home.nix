@@ -1,4 +1,7 @@
-{ ... }:
+{
+  pkgs,
+  ...
+}:
 {
     profiles.apps = true;
     profiles.programming = true;
@@ -27,4 +30,8 @@
     home.stateVersion = "23.11";
 
     programs.home-manager.enable = true;
+
+    home.packages = with pkgs; [
+      vesktop
+    ];
 }

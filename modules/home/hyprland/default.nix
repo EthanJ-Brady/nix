@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -17,10 +18,11 @@
         "$mod" = "ALT";
         "$mod_alt" = "ALT_SHIFT";
         bind = [
-          "$appLauncher, B, exec, vivaldi"
-          "$appLauncher, D, exec, vesktop"
-          "$appLauncher, T, exec, kitty"
-          "$appLauncher, S, exec, steam"
+          # Find clients by looking for `class: <class>` in `hyprctl clients`
+          "$appLauncher, B, exec, raise -c \"Vivaldi-stable\" -e \"vivaldi\""
+          "$appLauncher, D, exec, raise -c \"vesktop\" -e \"vesktop\""
+          "$appLauncher, T, exec, raise -c \"kitty\" -e \"kitty\""
+          "$appLauncher, S, exec, raise -c \"steam\" -e \"steam\""
           "SUPER, Q, killactive"
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
@@ -66,6 +68,7 @@
     home.packages = with pkgs; [
       hyprpicker
       hyprsunset
+      inputs.raise.defaultPackage.x86_64-linux
     ];
   };
 }
