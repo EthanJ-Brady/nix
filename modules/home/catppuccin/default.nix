@@ -6,6 +6,7 @@
     ./kitty.nix
     ./nixvim.nix
     ./tmux.nix
+    ./wofi
   ];
 
   options = {
