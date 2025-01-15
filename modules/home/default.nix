@@ -18,7 +18,7 @@
     ./ssh.nix
     ./tmux.nix
     ./wofi.nix
-    ./zellij.nix
+    ./zellij
     ./zettel
     ./zoxide.nix
     ./zsh.nix

@@ -9,12 +9,13 @@
   };
 
   config = lib.mkIf config.zellij.enable {
+    home.file.".config/zellij/config.kdl" = {
+      text = builtins.readFile ./config.kdl;
+    };
+
     programs.zellij = {
       enable = true;
       enableZshIntegration = lib.mkIf config.zsh.enable true;
-      settings = {
-        ui.pane_frames.rounded_corners = true;
-      };
     };
   };
 }
