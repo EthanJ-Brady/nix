@@ -111,6 +111,70 @@
           silent = true;
         };
       }
+      {
+        action = "<C-w>h";
+        key = "<C-h>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
+      {
+        action = "<C-w>j";
+        key = "<C-j>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
+      {
+        action = "<C-w>k";
+        key = "<C-k>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
+      {
+        action = "<C-w>l";
+        key = "<C-l>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
+      {
+        action = "<C-w>h";
+        key = "<C-Left>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
+      {
+        action = "<C-w>j";
+        key = "<C-Down>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
+      {
+        action = "<C-w>k";
+        key = "<C-Up>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
+      {
+        action = "<C-w>l";
+        key = "<C-Right>";
+        options = {
+          remap = true;
+          silent = true;
+        };
+      }
     ];
   };
 }
