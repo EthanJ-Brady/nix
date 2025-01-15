@@ -86,6 +86,10 @@
       fi
     '');
 
+    programs.nixvim.plugins = lib.mkIf config.nixvim.enable {
+      tmux-navigator.enable = true;
+    };
+
     home.packages = [
       pkgs.ruby
       pkgs.rubyPackages.erubi 
