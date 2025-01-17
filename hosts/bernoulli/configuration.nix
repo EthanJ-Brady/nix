@@ -51,7 +51,7 @@
     firefox
     # gnome-disk-utility
     # pciutils
-    # wl-clipboard
+    wl-clipboard
     vivaldi
     libgccjit #reqiured for nvim
     nodejs_23 #required for nvim
