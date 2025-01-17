@@ -9,6 +9,7 @@
     home.packages = with pkgs; [
       black
       google-java-format
+      nixfmt-rfc-style
     ];
 
     programs.nixvim.plugins.conform-nvim = {
@@ -41,6 +42,9 @@
           markdown = [
             "prettierd"
             "prettier"
+          ];
+          nix = [
+            "nixfmt"
           ];
           typescript = [
             "prettierd"
