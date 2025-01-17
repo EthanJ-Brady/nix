@@ -20,6 +20,10 @@
   ];
 
   config = lib.mkIf config.nixvim.enable {
+    nixvim.plugins = {
+      hardtime.enable = lib.mkDefault false;
+    };
+
     programs.nixvim.plugins = {
       sleuth.enable = true;
     };

@@ -4,7 +4,11 @@
   ...
 }:
 {
-  config = lib.mkIf config.nixvim.enable {
+  options = {
+    nixvim.plugins.hardtime.enable = lib.mkEnableOption "Enables the nixvim hardtime plugin";
+  };
+
+  config = lib.mkIf (config.nixvim.enable && config.nixvim.plugins.hardtime.enable) {
     programs.nixvim.plugins.hardtime = {
       enable = true;
       settings = {
