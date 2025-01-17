@@ -18,8 +18,8 @@
     services.gnome.core-utilities.enable = false;
     environment.gnome.excludePackages = [ pkgs.gnome-tour ];
     environment.systemPackages = with pkgs; [
-        gnome.adwaita-icon-theme
-        gnome.gnome-tweaks
+      gnome.adwaita-icon-theme
+      gnome.gnome-tweaks
     ];
   };
 }

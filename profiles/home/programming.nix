@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   options = {
     profiles.programming = lib.mkEnableOption "Enables programming related tools";
@@ -9,7 +14,7 @@
     git.enable = lib.mkDefault true;
     lazygit.enable = lib.mkDefault true;
 
-    home.packages = with pkgs; [     
+    home.packages = with pkgs; [
       rustc # Rust compiler
       cargo # Rust package manager
     ];

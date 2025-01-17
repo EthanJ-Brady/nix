@@ -36,7 +36,10 @@
       {
         action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
         key = "<leader>ca";
-        mode = ["n" "x"];
+        mode = [
+          "n"
+          "x"
+        ];
         options = {
           desc = "[C]ode [A]ction";
           silent = true;

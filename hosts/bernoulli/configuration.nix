@@ -1,6 +1,6 @@
-{ 
-  pkgs, 
-  ... 
+{
+  pkgs,
+  ...
 }:
 {
   bootloader.enable = true;
@@ -18,7 +18,10 @@
   networking.hostName = "bernoulli";
   networking.networkmanager.enable = true;
 
-  nix.settings.experimental-features = [ "flakes" "nix-command" ];
+  nix.settings.experimental-features = [
+    "flakes"
+    "nix-command"
+  ];
 
   services.printing.enable = true;
   hardware.bluetooth.enable = true;
@@ -30,7 +33,11 @@
   users.users.ethan = {
     isNormalUser = true;
     description = "Ethan Brady";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -53,12 +60,12 @@
     # pciutils
     wl-clipboard
     vivaldi
-    libgccjit #reqiured for nvim
-    nodejs_23 #required for nvim
-    binutils #required for nvim
-    gcc_multi #required for nvim
-    ripgrep #required for nvim
-    fd #required for nvim
+    libgccjit # reqiured for nvim
+    nodejs_23 # required for nvim
+    binutils # required for nvim
+    gcc_multi # required for nvim
+    ripgrep # required for nvim
+    fd # required for nvim
     cargo
     # gnome-usage
     # dotnet-sdk_8

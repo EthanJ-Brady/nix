@@ -36,7 +36,7 @@
         offload.enable = false;
         sync.enable = true;
         intelBusId = lib.mkDefault config.nvidia.intelBusId;
-        amdgpuBusId = lib.mkDefault config.nvidia.amdBusId; 
+        amdgpuBusId = lib.mkDefault config.nvidia.amdBusId;
         nvidiaBusId = lib.mkDefault config.nvidia.nvidiaBusId;
       };
     };

@@ -19,10 +19,22 @@
           "<Right>".__raw = "{}";
         };
         restricted_keys = {
-          "<Up>" = [ "n" "x" ];
-          "<Down>" = [ "n" "x" ];
-          "<Left>" = [ "n" "x" ];
-          "<Right>" = [ "n" "x" ];
+          "<Up>" = [
+            "n"
+            "x"
+          ];
+          "<Down>" = [
+            "n"
+            "x"
+          ];
+          "<Left>" = [
+            "n"
+            "x"
+          ];
+          "<Right>" = [
+            "n"
+            "x"
+          ];
         };
       };
     };

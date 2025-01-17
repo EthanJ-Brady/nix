@@ -1,7 +1,12 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   config = lib.mkIf (config.catppuccin.enable && config.tmux.enable) {
-    programs.tmux.plugins = with pkgs;[
+    programs.tmux.plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''

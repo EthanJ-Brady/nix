@@ -10,14 +10,23 @@
       settings = {
         options = {
           component_separators = "";
-          section_separators = { left = ""; right = ""; };
+          section_separators = {
+            left = "";
+            right = "";
+          };
         };
         sections = {
           lualine_a = [ "mode" ];
-          lualine_b = [ "filename" "branch" ];
+          lualine_b = [
+            "filename"
+            "branch"
+          ];
           lualine_c = [ "diagnostics" ];
           lualine_x = [ "%=" ];
-          lualine_y = [ "filetype" "progress" ];
+          lualine_y = [
+            "filetype"
+            "progress"
+          ];
           lualine_z = [ "location" ];
         };
         inactive_sections = {

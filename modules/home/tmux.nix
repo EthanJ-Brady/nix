@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   options = {
     tmux.enable = lib.mkEnableOption "Enable tmux along with it's corresponding configuration";
@@ -65,7 +70,7 @@
 
           unbind r
           bind r source-file ~/.config/tmux/tmux.conf
-          
+
           # Allow tmux to pass through to programs (Needed for yazi image viewer)
           set -g allow-passthrough all
           set -ga update-environment TERM
@@ -80,11 +85,13 @@
       };
     };
 
-    programs.zsh.initExtraFirst = lib.mkIf config.tmux.autostart.enable (lib.mkAfter ''
-      if [ -z "$TMUX" ]; then
-        tmux attach -t default || tmux new -s default
-      fi
-    '');
+    programs.zsh.initExtraFirst = lib.mkIf config.tmux.autostart.enable (
+      lib.mkAfter ''
+        if [ -z "$TMUX" ]; then
+          tmux attach -t default || tmux new -s default
+        fi
+      ''
+    );
 
     programs.nixvim.plugins = lib.mkIf config.nixvim.enable {
       tmux-navigator.enable = true;
@@ -92,7 +99,7 @@
 
     home.packages = [
       pkgs.ruby
-      pkgs.rubyPackages.erubi 
+      pkgs.rubyPackages.erubi
     ];
   };
 }

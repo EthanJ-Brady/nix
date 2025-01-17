@@ -18,6 +18,6 @@
         useOSProber = true;
         configurationLimit = 10;
       };
-    }; 
+    };
   };
 }

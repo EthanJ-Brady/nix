@@ -16,7 +16,11 @@
       ignorecase = true; # Make searches case-insensitive by default
       laststatus = 3; # Always display the status line at the bottom, even with only one window open
       list = true; # Show whitespace
-      listchars = { tab = "» "; trail = "·"; nbsp = "␣"; };
+      listchars = {
+        tab = "» ";
+        trail = "·";
+        nbsp = "␣";
+      };
       number = true; # Display line numbers on the left side of the editor
       numberwidth = 2; # Set the minimum width of the line number column
       relativenumber = true; # Show relative line numbers

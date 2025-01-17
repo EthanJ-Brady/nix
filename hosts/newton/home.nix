@@ -31,7 +31,7 @@
     package = pkgs.firefox-bin;
   };
 
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     tlrc
     glow
   ];

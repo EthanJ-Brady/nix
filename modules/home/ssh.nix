@@ -5,7 +5,7 @@
   };
 
   config = lib.mkIf config.ssh.enable {
-    home.activation.generateSSHKey = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    home.activation.generateSSHKey = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       if [ ! -f ${config.home.homeDirectory}/.ssh/id_ed25519 ]; then
         ssh-keygen -t ed25519 -f ${config.home.homeDirectory}/.ssh/id_ed25519 -N ""
       fi

@@ -23,7 +23,8 @@
       nix-darwin,
       home-manager,
       ...
-    }@inputs: {
+    }@inputs:
+    {
       # Zephyr Laptop
       nixosConfigurations."bernoulli" = nixpkgs.lib.nixosSystem {
         modules = [
@@ -35,7 +36,9 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
             home-manager.users.ethan = {
               imports = [
                 ./hosts/bernoulli/home.nix
@@ -64,7 +67,9 @@
             nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
             home-manager.users.ethanbrady = {
               imports = [
                 ./hosts/newton/home.nix

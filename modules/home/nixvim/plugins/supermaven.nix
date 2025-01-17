@@ -25,7 +25,8 @@ in
       extraPlugins = [
         {
           plugin = supermaven;
-          config = "lua require(\"supermaven-nvim\").setup({disable_keymaps = true,disable_inline_completion = true,});"; }
+          config = "lua require(\"supermaven-nvim\").setup({disable_keymaps = true,disable_inline_completion = true,});";
+        }
       ];
     };
   };
