@@ -41,7 +41,7 @@
             installCargo = true;
             installRustc = true;
           };
-          ts_ls.enable = true;
+          ts_ls.enable = lib.mkDefault true;
         };
       };
     };

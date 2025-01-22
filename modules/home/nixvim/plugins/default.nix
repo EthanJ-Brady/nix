@@ -12,6 +12,7 @@
     ./lualine.nix
     ./mini.nix
     ./oil.nix
+    ./programming-languages
     ./supermaven.nix
     ./telescope.nix
     ./treesitter.nix

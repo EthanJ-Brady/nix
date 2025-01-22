@@ -10,6 +10,7 @@
       black
       google-java-format
       nixfmt-rfc-style
+      prettierd
     ];
 
     programs.nixvim.plugins.conform-nvim = {
