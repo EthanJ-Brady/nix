@@ -13,6 +13,7 @@
   jankyborders.enable = true;
 
   users.users.ethanbrady.home = "/Users/ethanbrady";
+  networking.hostName = "newton";
 
   environment.systemPackages = with pkgs; [
     neofetch
