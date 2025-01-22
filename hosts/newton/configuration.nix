@@ -16,8 +16,6 @@
 
   environment.systemPackages = with pkgs; [
     neofetch
-    nixd # Nix LSP
-    nixfmt-rfc-style # Nix formatter
   ];
 
   fonts.packages = with pkgs; [
