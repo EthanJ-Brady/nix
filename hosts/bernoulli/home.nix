@@ -14,7 +14,6 @@
   hyprland.enable = true;
   bananaCursor.enable = true;
   wofi.enable = true;
-  zellij.enable = true;
 
   programs.git.userEmail = "git@ethanbrady.xyz";
   programs.git.userName = "EthanJ-Brady";
