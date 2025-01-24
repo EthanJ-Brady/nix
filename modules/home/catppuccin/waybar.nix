@@ -5,6 +5,10 @@
 }:
 {
   config = lib.mkIf (config.catppuccin.enable && config.waybar.enable) {
+    programs.waybar.style = lib.mkAfter ''
+      @import "${lib.strings.toLower config.catppuccin.flavor}.css";
+    '';
+
     home.file = {
       ".config/waybar/latte.css".source = builtins.fetchurl {
         url = "https://raw.githubusercontent.com/catppuccin/waybar/ee8ed32b4f63e9c417249c109818dcc05a2e25da/themes/latte.css";
