@@ -17,6 +17,7 @@
     ./oh-my-posh
     ./ssh.nix
     ./tmux.nix
+    ./waybar.nix
     ./wofi.nix
     ./zellij
     ./zettel
