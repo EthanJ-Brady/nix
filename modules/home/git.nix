@@ -9,6 +9,7 @@
       enable = true;
       extraConfig = {
         advice.skippedCherryPicks = false;
+        push.autoSetupRemote = true;
       };
       delta = {
         enable = true;
