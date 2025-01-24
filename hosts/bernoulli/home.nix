@@ -13,6 +13,7 @@
   zettel.enable = true;
   hyprland.enable = true;
   bananaCursor.enable = true;
+  waybar.enable = true;
   wofi.enable = true;
 
   programs.git.userEmail = "git@ethanbrady.xyz";
