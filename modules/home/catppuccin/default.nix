@@ -6,6 +6,7 @@
     ./kitty.nix
     ./nixvim.nix
     ./tmux.nix
+    ./waybar.nix
     ./wofi
     ./zellij.nix
   ];
