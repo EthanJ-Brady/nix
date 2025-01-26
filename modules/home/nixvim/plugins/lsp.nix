@@ -41,6 +41,7 @@
             installCargo = true;
             installRustc = true;
           };
+          texlab.enable = true;
           ts_ls.enable = lib.mkDefault true;
         };
       };
