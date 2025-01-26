@@ -15,6 +15,8 @@
 
   security.sudo.wheelNeedsPassword = false;
 
+  hardware.keyboard.zsa.enable = true;
+
   networking.hostName = "bernoulli";
   networking.networkmanager.enable = true;
 
