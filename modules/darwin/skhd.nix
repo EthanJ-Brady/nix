@@ -17,7 +17,7 @@
         alt + shift + ctrl - m : open -a mail             #[M]ail
         alt + shift + ctrl - n : open -a obsidian         #[N]otes
         alt + shift + ctrl - s : open -a stickies         #[S]tickies
-        alt + shift + ctrl - t : open -a kitty            #[T]erminal
+        alt + shift + ctrl - t : open -a ghostty          #[T]erminal
 
         # Navigation
         alt - left : yabai -m window --focus west
