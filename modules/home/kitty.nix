@@ -15,7 +15,7 @@
       font = {
         name = "FiraCode Nerd Font";
         size = 14;
-        package = pkgs.fira-code-nerdfont;
+        package = pkgs.nerd-fonts.fira-code;
       };
       extraConfig = ''
         hide_window_decorations titlebar-only
