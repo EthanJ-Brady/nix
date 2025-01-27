@@ -8,6 +8,7 @@
     ./eza.nix
     ./firefox.nix
     ./fzf.nix
+    ./ghostty.nix
     ./git.nix
     ./gnome
     ./hyprland

@@ -3,6 +3,7 @@
 { lib, ... }:
 {
   imports = [
+    ./ghostty.nix
     ./kitty.nix
     ./nixvim.nix
     ./tmux.nix
