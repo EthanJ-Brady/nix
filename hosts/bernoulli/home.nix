@@ -38,5 +38,12 @@
 
   home.packages = with pkgs; [
     vesktop
+    tldr
+    neofetch
+    okular
+    texliveFull
+    ncpamixer
+    unzip
+    hyprshot
   ];
 }
