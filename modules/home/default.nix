@@ -21,6 +21,7 @@
     ./waybar.nix
     ./wofi.nix
     ./zellij
+    ./zen.nix
     ./zettel
     ./zoxide.nix
     ./zsh.nix
