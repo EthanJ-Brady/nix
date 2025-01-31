@@ -84,7 +84,7 @@
   environment.sessionVariables.FLAKE = "/home/ethan/Dotfiles/nix";
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    nerd-fonts.fira-code
   ];
 
   fileSystems."/run/media/ethan/Games" = {
