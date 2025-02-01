@@ -58,6 +58,15 @@
               bind-key -n 'C-Right' if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
             '';
           }
+          {
+            plugin = tmuxPlugins.resurrect;
+            extraConfig = ''
+              set - # for vim
+              set -g @resurrect-strategy-vim 'session'
+              # for neovim
+              set -g @resurrect-strategy-nvim 'session'
+            '';
+          }
         ];
         # At least on Mac, 'set -g default-command $SHELL' was needed to get tmux to use zsh instead of sh
         extraConfig = ''
