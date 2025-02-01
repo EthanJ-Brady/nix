@@ -20,6 +20,7 @@ in
       settings = {
         font-size = 16;
         macos-titlebar-style = "hidden";
+        # window-decoration = "auto";
         window-padding-x = 8;
         window-padding-y = 8;
         background-opacity = 0.9;
