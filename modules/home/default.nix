@@ -14,6 +14,7 @@
     ./hyprland
     ./kitty.nix
     ./lazygit.nix
+    ./mangohud.nix
     ./nixvim
     ./oh-my-posh
     ./ssh.nix
