@@ -29,12 +29,12 @@
 
     hardware.nvidia = {
       modesetting.enable = true;
-      open = false;
-      package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
+      open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       powerManagement.enable = true;
       prime = {
         offload.enable = false;
-        sync.enable = true;
+        reverseSync.enable = true;
         intelBusId = lib.mkDefault config.nvidia.intelBusId;
         amdgpuBusId = lib.mkDefault config.nvidia.amdBusId;
         nvidiaBusId = lib.mkDefault config.nvidia.nvidiaBusId;
