@@ -16,6 +16,7 @@
   waybar.enable = true;
   wofi.enable = true;
   ghostty.enable = true;
+  mangohud.enable = true;
 
   programs.git.userEmail = "git@ethanbrady.xyz";
   programs.git.userName = "EthanJ-Brady";
