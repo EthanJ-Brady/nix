@@ -74,7 +74,7 @@
     # wl-color-picker
     home-manager
     # appimage-run
-    # pavucontrol 
+    # pavucontrol
     # melonDS
     # nh
     kitty
