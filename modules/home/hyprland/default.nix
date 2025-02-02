@@ -21,7 +21,7 @@
           # Find clients by looking for `class: <class>` in `hyprctl clients`
           "$appLauncher, B, exec, raise -c \"Vivaldi-stable\" -e \"vivaldi\""
           "$appLauncher, D, exec, raise -c \"vesktop\" -e \"vesktop\""
-          "$appLauncher, T, exec, raise -c \"ghostty\" -e \"ghostty\""
+          "$appLauncher, T, exec, raise -c \"com.mitchellh.ghostty\" -e \"ghostty\""
           "$appLauncher, S, exec, raise -c \"steam\" -e \"steam\""
           "SUPER, Q, killactive"
           "$mod, left, movefocus, l"
