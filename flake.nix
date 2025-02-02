@@ -14,7 +14,7 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     raise.url = "github:knarkzel/raise";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:EthanJ-Brady/zen-browser-flake";
   };
 
   outputs =

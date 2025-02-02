@@ -7,7 +7,6 @@
 }:
 let
   system = pkgs.system;
-  isLinux = pkgs.stdenv.isLinux;
 in
 {
   options = {
@@ -15,8 +14,8 @@ in
   };
 
   config = lib.mkIf config.zen.enable {
-    home.packages = lib.mkIf isLinux [
-      inputs.zen-browser.packages."${system}".default
+    home.packages = [
+      inputs.zen-browser.packages."${system}".zen
     ];
   };
 }

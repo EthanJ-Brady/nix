@@ -11,6 +11,7 @@
   nixvim.enable = true;
   zettel.enable = true;
   ghostty.enable = true;
+  zen.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
