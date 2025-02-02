@@ -19,7 +19,7 @@
         "$mod_alt" = "ALT_SHIFT";
         bind = [
           # Find clients by looking for `class: <class>` in `hyprctl clients`
-          "$appLauncher, B, exec, raise -c \"Vivaldi-stable\" -e \"vivaldi\""
+          "$appLauncher, B, exec, raise -c \"zen\" -e \"zen\""
           "$appLauncher, D, exec, raise -c \"vesktop\" -e \"vesktop\""
           "$appLauncher, T, exec, raise -c \"com.mitchellh.ghostty\" -e \"ghostty\""
           "$appLauncher, S, exec, raise -c \"steam\" -e \"steam\""
