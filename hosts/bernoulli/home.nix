@@ -30,6 +30,14 @@
     ];
   };
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = "/home/ethan/Nix/static/wallpapers/frappe-maroon-duck.png";
+      wallpaper = ", /home/ethan/Nix/static/wallpapers/frappe-maroon-duck.png";
+    };
+  };
+
   home.username = "ethan";
   home.homeDirectory = "/home/ethan";
 
