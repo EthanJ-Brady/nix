@@ -18,6 +18,7 @@ in
       enable = true;
       package = lib.mkIf isDarwin ghostty-mock;
       settings = {
+        confirm-close-surface = false;
         font-size = 16;
         macos-titlebar-style = "hidden";
         window-decoration = "auto";
