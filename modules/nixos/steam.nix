@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 {
@@ -10,6 +11,14 @@
 
   config = lib.mkIf config.steam.enable {
     programs.gamemode.enable = true;
+    hardware.uinput.enable = true;
+    services.udev.packages = [ pkgs.game-devices-udev-rules ];
+
+    services.udev.extraRules = ''
+      ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+      ATTRS{name}=="Sony Interactive Entertainment DualSense Edge Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+      ATTRS{name}=="Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+    '';
 
     programs.steam = {
       enable = true;
