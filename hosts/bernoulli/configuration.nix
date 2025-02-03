@@ -17,6 +17,8 @@
 
   hardware.keyboard.zsa.enable = true;
 
+  services.blueman.enable = true;
+
   networking.hostName = "bernoulli";
   networking.networkmanager.enable = true;
 
