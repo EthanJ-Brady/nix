@@ -11,7 +11,6 @@
   config = lib.mkIf config.mangohud.enable {
     programs.mangohud = {
       enable = true;
-      enableSessionWide = true;
     };
   };
 }
