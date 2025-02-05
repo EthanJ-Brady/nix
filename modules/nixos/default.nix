@@ -13,5 +13,6 @@
     ./pipewire.nix
     ./steam.nix
     ./via.nix
+    ./virtualbox.nix
   ];
 }

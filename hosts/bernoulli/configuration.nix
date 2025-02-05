@@ -12,6 +12,7 @@
   pipewire.enable = true;
   steam.enable = true;
   via.enable = true;
+  virtualbox.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
 
