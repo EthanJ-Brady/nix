@@ -15,6 +15,7 @@
 
     wayland.windowManager.hyprland.settings.bind = lib.mkIf config.hyprland.enable [
       "SUPER, space, exec, wofi --show drun"
+      "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
     ];
   };
 }

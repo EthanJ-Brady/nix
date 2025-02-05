@@ -17,6 +17,10 @@
         "$appLauncher" = "ALT_SHIFT_CTRL";
         "$mod" = "ALT";
         "$mod_alt" = "ALT_SHIFT";
+        exec-once = [
+          "wl-paste --type text --watch cliphist store"
+          "wl-paste --type image --watch cliphist store"
+        ];
         bind = [
           # Find clients by looking for `class: <class>` in `hyprctl clients`
           "$appLauncher, B, exec, raise -c \"zen\" -e \"zen\""
@@ -64,6 +68,8 @@
         ];
       };
     };
+
+    services.cliphist.enable = true;
 
     home.packages = with pkgs; [
       hyprpicker

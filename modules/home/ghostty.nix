@@ -18,6 +18,8 @@ in
       enable = true;
       package = lib.mkIf isDarwin ghostty-mock;
       settings = {
+        clipboard-read = "allow";
+        clipboard-write = "allow";
         confirm-close-surface = false;
         font-size = 16;
         macos-titlebar-style = "hidden";
