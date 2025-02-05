@@ -72,6 +72,7 @@
     ripgrep # required for nvim
     fd # required for nvim
     cargo
+    gparted
     # gnome-usage
     # dotnet-sdk_8
     # wl-color-picker
