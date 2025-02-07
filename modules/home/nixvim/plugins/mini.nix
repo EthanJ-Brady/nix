@@ -11,6 +11,8 @@
       modules = {
         ai.enable = true;
         cursorword.enable = true;
+        diff.enable = true;
+        git.enable = true;
         icons.enable = true;
         pairs.enable = true;
         starter = {
