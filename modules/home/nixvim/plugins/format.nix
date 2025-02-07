@@ -11,6 +11,7 @@
       google-java-format
       nixfmt-rfc-style
       prettierd
+      rustfmt
     ];
 
     programs.nixvim.plugins.conform-nvim = {
@@ -22,9 +23,6 @@
           stop_after_first = true;
         };
         formatters_by_ft = {
-          python = [
-            "black"
-          ];
           java = [
             "google-java-format"
           ];
@@ -46,6 +44,12 @@
           ];
           nix = [
             "nixfmt"
+          ];
+          python = [
+            "black"
+          ];
+          rust = [
+            "rustfmt"
           ];
           typescript = [
             "prettierd"
