@@ -9,7 +9,7 @@
       enable = true;
       skhdConfig = ''
         # Launching applications
-        alt + shift + ctrl - b : open -a qutebrowser      #[B]rowser
+        alt + shift + ctrl - b : open -a 'zen browser'    #[B]rowser
         alt + shift + ctrl - d : open -a vesktop          #[D]iscord
         alt + shift + ctrl - f : open -a finder           #[F]iles
         alt + shift + ctrl - g : open -a ticktick         #[G]et things done
