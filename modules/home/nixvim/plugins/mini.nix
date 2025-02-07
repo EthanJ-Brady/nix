@@ -12,6 +12,7 @@
         ai.enable = true;
         cursorword.enable = true;
         icons.enable = true;
+        pairs.enable = true;
         starter = {
           enable = true;
           header = ''
