@@ -17,6 +17,7 @@ in
   };
 
   config = lib.mkIf config.ssh.enable {
+    services.openssh.enable = true;
     users.users."${config.ssh.username}".openssh.authorizedKeys.keyFiles = map (
       file: "${keyDir}/${file}"
     ) keyFiles;
