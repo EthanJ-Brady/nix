@@ -24,6 +24,16 @@
           hostname = "gitlab.cs.usu.edu";
           user = "git";
         };
+        bernoulli = lib.mkDefault {
+          host = "bernoulli";
+          hostname = "192.168.1.217";
+          user = "ethan";
+        };
+        newton = lib.mkDefault {
+          host = "newton";
+          hostname = "192.168.1.10";
+          user = "ethanbrady";
+        };
         morse = lib.mkDefault {
           host = "morse";
           hostname = "45.79.71.62";
