@@ -22,14 +22,21 @@
         {
           "type": "git",
           "style": "plain",
-          "foreground": "white",
+          "foreground": "magenta",
           "background": "transparent",
-          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>",
+          "template": "{{ if (.HEAD)}} {{ .HEAD }}{{end}}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<red>{{ if gt .Behind 0 }} ⇣{{ end }}{{ if gt .Ahead 0 }} ⇡{{ end }}</>",
           "properties": {
             "branch_icon": "",
             "commit_icon": "@",
             "fetch_status": true
           }
+        },
+        {
+          "type": "nix-shell",
+          "style": "plain",
+          "foreground": "cyan",
+          "background": "transparent",
+          "template": "{{ if ne .Type \"unknown\" }}<white> via </>󱄅 shell{{ end }}"
         }
       ]
     },
