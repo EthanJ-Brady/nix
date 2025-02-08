@@ -26,6 +26,7 @@
     };
 
     programs.nixvim.plugins = {
+      indent-blankline.enable = true;
       sleuth.enable = true;
     };
   };
