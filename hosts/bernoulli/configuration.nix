@@ -13,6 +13,10 @@
   steam.enable = true;
   via.enable = true;
   virtualbox.enable = true;
+  ssh = {
+    enable = true;
+    username = "ethanbrady";
+  };
 
   security.sudo.wheelNeedsPassword = false;
 

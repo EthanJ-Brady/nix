@@ -12,6 +12,7 @@
     ./nvidia.nix
     ./pipewire.nix
     ./steam.nix
+    ./ssh.nix
     ./via.nix
     ./virtualbox.nix
   ];
