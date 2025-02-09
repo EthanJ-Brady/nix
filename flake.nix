@@ -55,6 +55,7 @@
       nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/mohs/configuration.nix
+          ./hosts/mohs/hardware-configuration.nix
         ];
       };
 
