@@ -62,6 +62,12 @@
       "newline": true,
       "segments": [
         {
+          "type": "session",
+          "foreground": "green",
+          "background": "transparent",
+          "template": "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }} {{ end }}"
+        },
+        {
           "type": "text",
           "style": "plain",
           "foreground": "magenta",
