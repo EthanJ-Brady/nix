@@ -15,7 +15,7 @@
   virtualbox.enable = true;
   ssh = {
     enable = true;
-    username = "ethanbrady";
+    username = "ethan";
   };
 
   security.sudo.wheelNeedsPassword = false;
