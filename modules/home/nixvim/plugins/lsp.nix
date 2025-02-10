@@ -33,7 +33,12 @@
           jsonnet_ls.enable = true;
           lua_ls.enable = true;
           marksman.enable = true;
-          nixd.enable = true;
+          nixd = {
+            enable = true;
+            settings = {
+              nixpkgs.expr = "import <nixpkgs> { }";
+            };
+          };
           pyright.enable = true;
           rust_analyzer = {
             enable = true;

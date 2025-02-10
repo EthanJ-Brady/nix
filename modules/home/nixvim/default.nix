@@ -22,6 +22,7 @@
   };
 
   config = lib.mkIf config.nixvim.enable {
+    nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     programs.nixvim = {
       enable = true;
       globals.mapleader = " ";
