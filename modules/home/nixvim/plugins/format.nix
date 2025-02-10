@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.nixvim.enable {
     home.packages = with pkgs; [
       black
@@ -12,6 +11,7 @@
       nixfmt-rfc-style
       prettierd
       rustfmt
+      alejandra
     ];
 
     programs.nixvim.plugins.conform-nvim = {
@@ -43,6 +43,7 @@
             "prettier"
           ];
           nix = [
+            "alejandra"
             "nixfmt"
           ];
           python = [
