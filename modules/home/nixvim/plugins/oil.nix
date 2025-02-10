@@ -2,14 +2,13 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.nixvim.enable {
     programs.nixvim = {
       plugins.oil = {
         enable = true;
         settings = {
-          columns = [ "icon" ];
+          columns = ["icon"];
           keymaps = {
             "<C-h>" = false;
             "<M-h>" = "actions.select_split";

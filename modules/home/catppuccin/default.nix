@@ -1,7 +1,5 @@
 # TODO - Add support for firefox
-
-{ lib, ... }:
-{
+{lib, ...}: {
   imports = [
     ./ghostty.nix
     ./kitty.nix

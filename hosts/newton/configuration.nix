@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   yabai.enable = true;
   sketchybar.enable = true;
   skhd.enable = true;

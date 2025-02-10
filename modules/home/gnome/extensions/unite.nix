@@ -3,10 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.gnome.enable {
-    home.packages = with pkgs; [ gnomeExtensions.unite ];
+    home.packages = with pkgs; [gnomeExtensions.unite];
 
     dconf.settings = {
       "org/gnome/shell".enabled-extensions = [

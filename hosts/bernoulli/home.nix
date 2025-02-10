@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   profiles.apps = true;
   profiles.programming = true;
   profiles.shell = true;

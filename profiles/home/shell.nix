@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     profiles.shell = lib.mkEnableOption "Enables shell related tools";
   };

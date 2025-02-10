@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     skhd.enable = lib.mkEnableOption "Enables skhd, a simple hotkey daemon for macOS.";
   };

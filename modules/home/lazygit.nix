@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     lazygit.enable = lib.mkEnableOption "Enables lazygit and it's settings";
   };

@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   imports = [
     ./format.nix
     ./gitsigns.nix

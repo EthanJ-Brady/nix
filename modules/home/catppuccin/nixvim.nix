@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   config = lib.mkIf (config.catppuccin.enable && config.nixvim.enable) {
     programs.nixvim = {
       colorscheme = "catppuccin";

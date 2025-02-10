@@ -3,10 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.gnome.enable {
-    home.packages = with pkgs; [ gnomeExtensions.blur-my-shell ];
+    home.packages = with pkgs; [gnomeExtensions.blur-my-shell];
 
     dconf.settings = {
       "org/gnome/shell".enabled-extensions = [

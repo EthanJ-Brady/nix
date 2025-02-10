@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     oh-my-posh.enable = lib.mkEnableOption "Enable the oh my posh prompt for the terminal";
   };

@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     zettel.enable = lib.mkEnableOption "Installs the zettel script to local user binaries";
   };

@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     nixvim.plugins.hardtime.enable = lib.mkEnableOption "Enables the nixvim hardtime plugin";
   };

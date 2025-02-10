@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     bootloader.enable = lib.mkEnableOption "Enables boot configuration settings with grub";
   };

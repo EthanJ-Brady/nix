@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     profiles.apps = lib.mkEnableOption "Enables basic system apps";
   };

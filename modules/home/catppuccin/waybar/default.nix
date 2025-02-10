@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   config = lib.mkIf (config.catppuccin.enable && config.waybar.enable) {
     home.file = {
       ".config/waybar/latte.css".source = builtins.fetchurl {

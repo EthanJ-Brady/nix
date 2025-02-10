@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     logitech.enable = lib.mkEnableOption "Enables logitech universal receiver and customization tools";
   };
@@ -18,8 +17,8 @@
 
     systemd.user.services.solaar = {
       description = "Solaar user service for managing Logitech devices";
-      wantedBy = [ "default.target" ];
-      after = [ "network.target" ];
+      wantedBy = ["default.target"];
+      after = ["network.target"];
       serviceConfig = {
         ExecStart = "${pkgs.solaar}/bin/solaar --window=hide";
         Restart = "always";

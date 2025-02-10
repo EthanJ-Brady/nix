@@ -1,12 +1,10 @@
 # TODO - Setup themes and extensions
-
 {
   pkgs,
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     firefox.enable = lib.mkEnableOption "Enables firefox and it's settings";
   };
@@ -37,7 +35,7 @@
               ];
 
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@hopt" ];
+              definedAliases = ["@hopt"];
             };
 
             "Nix Options" = {
@@ -58,7 +56,7 @@
               ];
 
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@nopt" ];
+              definedAliases = ["@nopt"];
             };
 
             "Nix Packages" = {
@@ -79,7 +77,7 @@
               ];
 
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@np" ];
+              definedAliases = ["@np"];
             };
 
             "YouTube" = {
@@ -94,7 +92,7 @@
                   ];
                 }
               ];
-              definedAliases = [ "@y" ];
+              definedAliases = ["@y"];
             };
           };
         };

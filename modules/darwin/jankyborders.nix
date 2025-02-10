@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     jankyborders.enable = lib.mkEnableOption "Enables jankyborders, a simple window highlighting tool.";
   };

@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     bananaCursor.enable = lib.mkEnableOption "Enables the banana cursor";
   };

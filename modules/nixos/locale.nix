@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     locale.timezone = lib.mkOption {
       type = lib.types.str;

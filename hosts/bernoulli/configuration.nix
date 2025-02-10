@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   bootloader.enable = true;
   gamepads.enable = true;
   gamescope.enable = true;
@@ -54,7 +50,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   services.displayManager.autoLogin.enable = true;

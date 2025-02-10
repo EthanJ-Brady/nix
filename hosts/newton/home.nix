@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Profiles
   profiles.apps = true;
   profiles.programming = true;

@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     gamescope.enable = lib.mkEnableOption "Enables the gamescope microcompistor for gaming";
   };

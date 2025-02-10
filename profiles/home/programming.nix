@@ -3,8 +3,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     profiles.programming = lib.mkEnableOption "Enables programming related tools";
   };

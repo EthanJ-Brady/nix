@@ -3,14 +3,13 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     gamepads.enable = lib.mkEnableOption "Enables gamepad specific settings";
   };
 
   config = lib.mkIf config.gamepads.enable {
-    services.udev.packages = [ pkgs.game-devices-udev-rules ];
+    services.udev.packages = [pkgs.game-devices-udev-rules];
     hardware.uinput.enable = true;
 
     services.udev.extraRules = ''

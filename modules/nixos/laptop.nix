@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     laptop.enable = lib.mkEnableOption "Enables laptop specific power and preformance settings";
   };

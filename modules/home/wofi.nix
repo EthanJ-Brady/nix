@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     wofi.enable = lib.mkEnableOption "Enables the wofi application launcher";
   };

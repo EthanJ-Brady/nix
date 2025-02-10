@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     zoxide.enable = lib.mkEnableOption "Enable zoxide and cd shell alias";
   };

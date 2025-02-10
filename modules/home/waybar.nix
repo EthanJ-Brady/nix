@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     waybar.enable = lib.mkEnableOption "Enables waybar";
   };
@@ -12,7 +11,7 @@
     programs.waybar.enable = true;
 
     wayland.windowManager.hyprland.settings = lib.mkIf config.hyprland.enable {
-      "exec-once" = [ "waybar" ];
+      "exec-once" = ["waybar"];
     };
   };
 }

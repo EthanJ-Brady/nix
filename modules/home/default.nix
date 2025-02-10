@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./banana-cursor.nix
     ./bat.nix

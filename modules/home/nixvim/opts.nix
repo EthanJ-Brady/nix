@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.nixvim.enable {
     programs.nixvim.opts = {
       breakindent = true; # Indent wrapped lines

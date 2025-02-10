@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./alphabetical-app-grid.nix
     ./app-hider.nix

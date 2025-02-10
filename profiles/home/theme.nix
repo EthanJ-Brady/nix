@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     profiles.theme = lib.mkEnableOption "Enables user wide themes";
   };

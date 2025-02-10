@@ -3,12 +3,10 @@
   config,
   lib,
   ...
-}:
-let
+}: let
   isDarwin = pkgs.stdenv.isDarwin;
   ghostty-mock = pkgs.writeShellScriptBin "ghostty-mock" "";
-in
-{
+in {
   options = {
     ghostty.enable = lib.mkEnableOption "Enables the terminal emulator ghostty and the configuration";
   };

@@ -3,8 +3,7 @@
   lib,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./opts.nix

@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     kitty.enable = lib.mkEnableOption "Enables kitty terminal emulator";
   };
@@ -21,7 +20,7 @@
         hide_window_decorations titlebar-only
         window_padding_width 8
         background_opacity 0.9
-        background_blur 32 
+        background_blur 32
       '';
     };
   };

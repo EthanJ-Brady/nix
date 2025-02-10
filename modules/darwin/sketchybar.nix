@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     sketchybar.enable = lib.mkEnableOption "Enables sketchybar, a custom status bar for MacOS";
   };

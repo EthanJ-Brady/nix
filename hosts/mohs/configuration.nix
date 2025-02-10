@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -53,7 +49,7 @@
       "wheel"
       "minecraft"
     ];
-    packages = [ ];
+    packages = [];
   };
 
   users.users.minecraft = {
@@ -112,7 +108,7 @@
   systemd.services.ssh-tunnel = {
     enable = true;
     description = "SSH tunnel for the minecraft server";
-    after = [ "network.target" ];
+    after = ["network.target"];
 
     serviceConfig = {
       ExecStart = "${pkgs.autossh}/bin/autossh -M 0 -N -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -R 25565:localhost:25565 morse";
@@ -120,6 +116,6 @@
       RestartSec = "10s";
     };
 
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
   };
 }

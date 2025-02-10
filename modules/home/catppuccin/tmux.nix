@@ -3,8 +3,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   config = lib.mkIf (config.catppuccin.enable && config.tmux.enable) {
     programs.tmux.plugins = [
       {
@@ -34,7 +33,6 @@
     ];
   };
 }
-
 # set -g @catppuccin_flavour "${lib.strings.toLower config.catppuccin.flavor}"
 # set -g @catppuccin_window_left_separator " "
 # set -g @catppuccin_window_right_separator " "
@@ -54,3 +52,4 @@
 # set -g @catppuccin_status_connect_separator "no"
 #
 # set -g @catppuccin_directory_text "#{pane_current_path}"
+

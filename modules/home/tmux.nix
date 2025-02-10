@@ -3,8 +3,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     tmux.enable = lib.mkEnableOption "Enable tmux along with it's corresponding configuration";
     tmux.autostart.enable = lib.mkEnableOption "Automatically connect to a new tmux session when starting a new shell";
@@ -75,7 +74,7 @@
           set-option -g status-position top
 
           set -g 'status-format[1]' ""
-          set -g status 2 
+          set -g status 2
 
           unbind r
           bind r source-file ~/.config/tmux/tmux.conf

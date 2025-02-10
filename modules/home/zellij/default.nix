@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     zellij.enable = lib.mkEnableOption "Enables the terminal workspace zellij and its config";
   };

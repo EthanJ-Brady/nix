@@ -3,10 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.gnome.enable {
-    home.packages = with pkgs; [ gnomeExtensions.app-hider ];
+    home.packages = with pkgs; [gnomeExtensions.app-hider];
 
     dconf.settings = {
       "org/gnome/shell".enabled-extensions = [

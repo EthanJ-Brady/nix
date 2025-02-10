@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   supermaven = pkgs.vimUtils.buildVimPlugin {
     pname = "supermaven";
     version = "1.0.0";
@@ -15,12 +14,11 @@ let
       sha256 = "1h9h98wsnfhkfdmdxjvr2d4idhrvp4i56pp4q6l0m4d2i0ldcgfp";
     };
   };
-in
-{
+in {
   config = lib.mkIf (config.nixvim.enable && config.nixvim.ai-codewriter == "supermaven") {
     programs.nixvim = {
       plugins.cmp.settings.sources = [
-        { name = "supermaven"; }
+        {name = "supermaven";}
       ];
       extraPlugins = [
         {

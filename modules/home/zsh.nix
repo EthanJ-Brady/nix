@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     zsh.enable = lib.mkEnableOption "Enable zsh customizations";
   };

@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.nixvim.enable {
     programs.nixvim.plugins = {
       cmp = {
@@ -20,9 +19,9 @@
             "<C-y>" = "cmp.mapping.confirm({ select = true })";
           };
           sources = [
-            { name = "nvim_lsp"; }
-            { name = "luasnip"; }
-            { name = "path"; }
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {name = "path";}
           ];
         };
       };

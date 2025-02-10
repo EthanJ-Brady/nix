@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     gnome.enable = lib.mkEnableOption "Enables the gnome desktop environment";
   };
@@ -16,7 +15,7 @@
       desktopManager.gnome.enable = true;
     };
     services.gnome.core-utilities.enable = false;
-    environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+    environment.gnome.excludePackages = [pkgs.gnome-tour];
     environment.systemPackages = with pkgs; [
       gnome.adwaita-icon-theme
       gnome.gnome-tweaks

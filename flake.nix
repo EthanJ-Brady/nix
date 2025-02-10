@@ -17,70 +17,68 @@
     zen-browser.url = "github:EthanJ-Brady/zen-browser-flake";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nix-darwin,
-      home-manager,
-      ...
-    }@inputs:
-    {
-      # Zephyr Laptop
-      nixosConfigurations."bernoulli" = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/bernoulli/configuration.nix
-          ./hosts/bernoulli/hardware-configuration.nix
-          ./modules/nixos
-          inputs.nixos-hardware.nixosModules.asus-zephyrus-ga502
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-            home-manager.users.ethan = {
-              imports = [
-                ./hosts/bernoulli/home.nix
-                ./modules/home
-                ./profiles/home
-              ];
-            };
-          }
-        ];
-      };
-
-      # Minecraft Server
-      nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/mohs/configuration.nix
-          ./hosts/mohs/hardware-configuration.nix
-        ];
-      };
-
-      # Macbook Air
-      darwinConfigurations."newton" = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./hosts/newton/configuration.nix
-          ./modules/darwin
-          home-manager.darwinModules.home-manager
-          {
-            nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-            home-manager.users.ethanbrady = {
-              imports = [
-                ./hosts/newton/home.nix
-                ./modules/home
-                ./profiles/home
-              ];
-            };
-          }
-        ];
-      };
+  outputs = {
+    self,
+    nixpkgs,
+    nix-darwin,
+    home-manager,
+    ...
+  } @ inputs: {
+    # Zephyr Laptop
+    nixosConfigurations."bernoulli" = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./hosts/bernoulli/configuration.nix
+        ./hosts/bernoulli/hardware-configuration.nix
+        ./modules/nixos
+        inputs.nixos-hardware.nixosModules.asus-zephyrus-ga502
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+          home-manager.users.ethan = {
+            imports = [
+              ./hosts/bernoulli/home.nix
+              ./modules/home
+              ./profiles/home
+            ];
+          };
+        }
+      ];
     };
+
+    # Minecraft Server
+    nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./hosts/mohs/configuration.nix
+        ./hosts/mohs/hardware-configuration.nix
+      ];
+    };
+
+    # Macbook Air
+    darwinConfigurations."newton" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./hosts/newton/configuration.nix
+        ./modules/darwin
+        home-manager.darwinModules.home-manager
+        {
+          nixpkgs.overlays = [inputs.nixpkgs-firefox-darwin.overlay];
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+          home-manager.users.ethanbrady = {
+            imports = [
+              ./hosts/newton/home.nix
+              ./modules/home
+              ./profiles/home
+            ];
+          };
+        }
+      ];
+    };
+  };
 }

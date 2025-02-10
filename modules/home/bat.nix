@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     bat.enable = lib.mkEnableOption "Enable bat and cat shell alias";
   };

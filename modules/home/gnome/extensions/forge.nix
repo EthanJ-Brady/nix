@@ -3,10 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   config = lib.mkIf config.gnome.enable {
-    home.packages = with pkgs; [ gnomeExtensions.forge ];
+    home.packages = with pkgs; [gnomeExtensions.forge];
 
     dconf.settings = {
       "org/gnome/shell".enabled-extensions = [
@@ -19,15 +18,15 @@
       };
 
       "org/gnome/shell/extensions/forge/keybindings" = {
-        "window-focus-down" = [ "<Alt>Down" ];
-        "window-focus-up" = [ "<Alt>Up" ];
-        "window-focus-left" = [ "<Alt>Left" ];
-        "window-focus-right" = [ "<Alt>Right" ];
-        "window-move-down" = [ "<Alt><Shift>Down" ];
-        "window-move-up" = [ "<Alt><Shift>Up" ];
-        "window-move-left" = [ "<Alt><Shift>Left" ];
-        "window-move-right" = [ "<Alt><Shift>Right" ];
-        "window-toggle-float" = [ "<Alt>c" ];
+        "window-focus-down" = ["<Alt>Down"];
+        "window-focus-up" = ["<Alt>Up"];
+        "window-focus-left" = ["<Alt>Left"];
+        "window-focus-right" = ["<Alt>Right"];
+        "window-move-down" = ["<Alt><Shift>Down"];
+        "window-move-up" = ["<Alt><Shift>Up"];
+        "window-move-left" = ["<Alt><Shift>Left"];
+        "window-move-right" = ["<Alt><Shift>Right"];
+        "window-toggle-float" = ["<Alt>c"];
       };
     };
   };

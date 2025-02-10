@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-{
+}: {
   options = {
     pipewire.enable = lib.mkEnableOption "Enables pipewire and associated settings";
   };

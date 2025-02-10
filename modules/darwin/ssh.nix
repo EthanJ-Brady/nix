@@ -2,12 +2,10 @@
   config,
   lib,
   ...
-}:
-let
+}: let
   keyDir = ../../static/ssh;
   keyFiles = builtins.attrNames (builtins.readDir keyDir);
-in
-{
+in {
   options = {
     ssh.enable = lib.mkEnableOption "Enables the ssh configuration for darwin";
     ssh.username = lib.mkOption {
@@ -18,8 +16,10 @@ in
 
   config = lib.mkIf config.ssh.enable {
     services.openssh.enable = true;
-    users.users."${config.ssh.username}".openssh.authorizedKeys.keyFiles = map (
-      file: "${keyDir}/${file}"
-    ) keyFiles;
+    users.users."${config.ssh.username}".openssh.authorizedKeys.keyFiles =
+      map (
+        file: "${keyDir}/${file}"
+      )
+      keyFiles;
   };
 }

@@ -4,11 +4,9 @@
   pkgs,
   inputs,
   ...
-}:
-let
+}: let
   system = pkgs.system;
-in
-{
+in {
   options = {
     zen.enable = lib.mkEnableOption "Enables the zen browser";
   };

@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     eza.enable = lib.mkEnableOption "Enables eza and creates shell aliases for it.";
   };

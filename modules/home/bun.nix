@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     bun.enable = lib.mkEnableOption "Enables bun, a fast JavaScript runtime";
   };

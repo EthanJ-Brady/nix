@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   options = {
     nvidia.enable = lib.mkEnableOption "Enables support for Nvidia graphics card";
     nvidia.intelBusId = lib.mkOption {
@@ -23,7 +26,7 @@
   };
 
   config = lib.mkIf config.nvidia.enable {
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.videoDrivers = ["nvidia"];
 
     hardware.graphics.enable = true;
 
