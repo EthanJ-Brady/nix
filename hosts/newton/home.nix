@@ -1,14 +1,20 @@
 {pkgs, ...}: {
-  # Profiles
-  profiles.apps = true;
-  profiles.programming = true;
-  profiles.shell = true;
-  profiles.theme = true;
-
-  ssh.enable = true;
-  nixvim.enable = true;
-  zettel.enable = true;
+  bat.enable = true;
+  bun.enable = true;
+  catppuccin.enable = true;
+  eza.enable = true;
+  firefox.enable = true;
+  fzf.enable = true;
   ghostty.enable = true;
+  git.enable = true;
+  lazygit.enable = true;
+  nixvim.enable = true;
+  oh-my-posh.enable = true;
+  ssh.enable = true;
+  tmux.enable = true;
+  zettel.enable = true;
+  zoxide.enable = true;
+  zsh.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -32,5 +38,7 @@
   home.packages = with pkgs; [
     tlrc
     glow
+    rustc
+    cargo
   ];
 }

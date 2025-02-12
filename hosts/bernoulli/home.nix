@@ -1,19 +1,25 @@
 {pkgs, ...}: {
-  profiles.apps = true;
-  profiles.programming = true;
-  profiles.shell = true;
-  profiles.theme = true;
-
-  ssh.enable = true;
-  nixvim.enable = true;
-  zettel.enable = true;
-  hyprland.enable = true;
   bananaCursor.enable = true;
+  bat.enable = true;
+  bun.enable = true;
+  catppuccin.enable = true;
+  eza.enable = true;
+  firefox.enable = true;
+  fzf.enable = true;
+  ghostty.enable = true;
+  git.enable = true;
+  hyprland.enable = true;
+  mangohud.enable = true;
+  nixvim.enable = true;
+  oh-my-posh.enable = true;
+  ssh.enable = true;
+  tmux.enable = true;
   waybar.enable = true;
   wofi.enable = true;
-  ghostty.enable = true;
-  mangohud.enable = true;
+  zettel.enable = true;
   zen.enable = true;
+  zoxide.enable = true;
+  zsh.enable = true;
 
   programs.git.userEmail = "git@ethanbrady.xyz";
   programs.git.userName = "EthanJ-Brady";
@@ -51,5 +57,7 @@
     ncpamixer
     unzip
     hyprshot
+    rustc
+    cargo
   ];
 }

@@ -42,7 +42,6 @@
             imports = [
               ./hosts/bernoulli/home.nix
               ./modules/home
-              ./profiles/home
             ];
           };
         }
@@ -74,7 +73,6 @@
             imports = [
               ./hosts/newton/home.nix
               ./modules/home
-              ./profiles/home
             ];
           };
         }
