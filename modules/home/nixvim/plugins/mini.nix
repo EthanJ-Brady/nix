@@ -14,6 +14,12 @@
         git.enable = true;
         icons.enable = true;
         pairs.enable = true;
+        snippets = {
+          enable = true;
+          snippets = {
+            __raw = "{ require('mini.snippets').gen_loader.from_lang() }";
+          };
+        };
         starter = {
           enable = true;
           header = ''

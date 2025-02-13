@@ -30,5 +30,10 @@
       viAlias = true;
       vimAlias = true;
     };
+
+    home.file.".config/nvim/snippets" = {
+      source = ./snippets;
+      recursive = true;
+    };
   };
 }
