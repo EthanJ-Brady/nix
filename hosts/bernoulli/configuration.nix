@@ -73,6 +73,7 @@
     fd # required for nvim
     cargo
     gparted
+    brave
     # gnome-usage
     # dotnet-sdk_8
     # wl-color-picker

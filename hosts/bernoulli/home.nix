@@ -4,7 +4,6 @@
   bun.enable = true;
   catppuccin.enable = true;
   eza.enable = true;
-  firefox.enable = true;
   fzf.enable = true;
   ghostty.enable = true;
   git.enable = true;
