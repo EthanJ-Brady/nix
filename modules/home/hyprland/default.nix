@@ -16,6 +16,8 @@
         "$appLauncher" = "ALT_SHIFT_CTRL";
         "$mod" = "ALT";
         "$mod_alt" = "ALT_SHIFT";
+        "general:gaps_out" = 8;
+        "general:gaps_in" = 8;
         exec-once = [
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
