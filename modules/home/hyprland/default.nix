@@ -32,6 +32,9 @@
           "SUPER, Q, killactive"
 
           "SUPER_SHIFT, C, exec, hyprpicker -a"
+          "SUPER_SHIFT, 3, exec, hyprshot -m output"
+          "SUPER_SHIFT, 4, exec, hyprshot -m region"
+          "SUPER_SHIFT, 5, exec, hyprshot -m window"
 
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
@@ -83,6 +86,7 @@
 
     home.packages = with pkgs; [
       hyprpicker
+      hyprshot
       hyprsunset
       inputs.raise.defaultPackage.x86_64-linux
     ];
