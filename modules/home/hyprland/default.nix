@@ -28,7 +28,9 @@
           "$appLauncher, D, exec, raise -c \"vesktop\" -e \"vesktop\""
           "$appLauncher, T, exec, raise -c \"com.mitchellh.ghostty\" -e \"ghostty\""
           "$appLauncher, S, exec, raise -c \"steam\" -e \"steam\""
+
           "SUPER, Q, killactive"
+
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
@@ -49,6 +51,7 @@
           "$mod, 8, workspace, 8"
           "$mod, home, workspace, r-1"
           "$mod, end, workspace, r+1"
+          "$mod_alt, space, movetoworkspace, special"
           "$mod_alt, 1, movetoworkspace, 1"
           "$mod_alt, 2, movetoworkspace, 2"
           "$mod_alt, 3, movetoworkspace, 3"
