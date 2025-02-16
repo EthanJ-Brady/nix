@@ -36,8 +36,12 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       powerManagement.enable = true;
       prime = {
-        offload.enable = false;
-        reverseSync.enable = true;
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+        sync.enable = false;
+        reverseSync.enable = false;
         intelBusId = lib.mkDefault config.nvidia.intelBusId;
         amdgpuBusId = lib.mkDefault config.nvidia.amdBusId;
         nvidiaBusId = lib.mkDefault config.nvidia.nvidiaBusId;
