@@ -31,6 +31,8 @@
 
           "SUPER, Q, killactive"
 
+          "SUPER_SHIFT, C, exec, hyprpicker -a"
+
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
