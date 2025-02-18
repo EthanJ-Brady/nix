@@ -53,21 +53,21 @@
       modules = [
         ./hosts/morse/configuration.nix
         ./hosts/morse/hardware-configuration.nix
-        ./modules/nixos
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
-          };
-          home-manager.users.ethan = {
-            imports = [
-              ./hosts/morse/home.nix
-              ./modules/home
-            ];
-          };
-        }
+        # ./modules/nixos
+        # home-manager.nixosModules.home-manager
+        # {
+        #   home-manager.useGlobalPkgs = true;
+        #   home-manager.useUserPackages = true;
+        #   home-manager.extraSpecialArgs = {
+        #     inherit inputs;
+        #   };
+        #   home-manager.users.ethan = {
+        #     imports = [
+        #       ./hosts/morse/home.nix
+        #       ./modules/home
+        #     ];
+        #   };
+        # }
       ];
     };
 
