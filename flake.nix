@@ -48,6 +48,29 @@
       ];
     };
 
+    # Digital Ocean Server
+    nixosConfigurations."morse" = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./hosts/morse/configuration.nix
+        ./hosts/morse/hardware-configuration.nix
+        ./modules/nixos
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+          home-manager.users.ethan = {
+            imports = [
+              ./hosts/morse/home.nix
+              ./modules/home
+            ];
+          };
+        }
+      ];
+    };
+
     # Minecraft Server
     nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
       modules = [
