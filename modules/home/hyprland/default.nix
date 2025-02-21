@@ -77,7 +77,7 @@
           "$mod, mouse:273, resizewindow"
         ];
         windowrulev2 = [
-          "workspace 8, class:^steam_app_\\d+$"
+          "workspace name:game, class:^steam_app_\\d+$"
           "fullscreen, class:^steam_app_\\d+$"
         ];
       };
