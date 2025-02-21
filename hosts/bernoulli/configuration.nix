@@ -1,10 +1,16 @@
 {pkgs, ...}: {
+  custom = {
+    hardware = {
+      audio.enable = true;
+      laptop.enable = true;
+      nvidia.enable = true;
+      peripherals.enable = true;
+    };
+  };
+
   bootloader.enable = true;
   hyprland.enable = true;
   gaming.enable = true;
-  logitech.enable = true;
-  nvidia.enable = true;
-  pipewire.enable = true;
   ssh = {
     enable = true;
     username = "ethan";

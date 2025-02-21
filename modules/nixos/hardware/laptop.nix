@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    laptop.enable = lib.mkEnableOption "Enables laptop specific power and preformance settings";
+    custom.hardware.laptop.enable = lib.mkEnableOption "Enables laptop specific power and preformance settings";
   };
 
-  config = lib.mkIf config.laptop.enable {
+  config = lib.mkIf config.custom.hardware.laptop.enable {
     services.auto-cpufreq.enable = true;
     services.auto-cpufreq.settings = {
       battery = {

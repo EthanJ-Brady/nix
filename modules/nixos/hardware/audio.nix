@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    pipewire.enable = lib.mkEnableOption "Enables pipewire and associated settings";
+    custom.hardware.audio.enable = lib.mkEnableOption "Enables audio configuration for linux";
   };
 
-  config = lib.mkIf config.pipewire.enable {
+  config = lib.mkIf config.custom.hardware.audio.enable {
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {

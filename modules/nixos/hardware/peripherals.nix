@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    logitech.enable = lib.mkEnableOption "Enables logitech universal receiver and customization tools";
+    custom.hardware.peripherals.enable = lib.mkEnableOption "Enables configuration for peripherals";
   };
 
-  config = lib.mkIf config.logitech.enable {
+  config = lib.mkIf config.custom.hardware.peripherals.enable {
     environment.systemPackages = with pkgs; [
       solaar
     ];
