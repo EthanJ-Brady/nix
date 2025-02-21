@@ -6,7 +6,6 @@
   nvidia.enable = true;
   pipewire.enable = true;
   via.enable = true;
-  virtualbox.enable = true;
   ssh = {
     enable = true;
     username = "ethan";

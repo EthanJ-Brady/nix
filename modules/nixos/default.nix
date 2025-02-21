@@ -12,6 +12,5 @@
     ./pipewire.nix
     ./ssh.nix
     ./via.nix
-    ./virtualbox.nix
   ];
 }
