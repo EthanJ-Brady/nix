@@ -8,7 +8,10 @@
   ghostty.enable = true;
   git.enable = true;
   lazygit.enable = true;
-  nixvim.enable = true;
+  nixvim = {
+    enable = true;
+    ai-codewriter = "supermaven";
+  };
   oh-my-posh.enable = true;
   ssh.enable = true;
   tmux.enable = true;
