@@ -75,6 +75,21 @@
       modules = [
         ./hosts/mohs/configuration.nix
         ./hosts/mohs/hardware-configuration.nix
+	./modules/nixos
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+          home-manager.users.mohs = {
+            imports = [
+              ./hosts/mohs/home.nix
+              ./modules/home
+            ];
+          };
+        }
       ];
     };
 
