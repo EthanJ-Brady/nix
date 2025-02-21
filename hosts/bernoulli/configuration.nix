@@ -5,7 +5,6 @@
   logitech.enable = true;
   nvidia.enable = true;
   pipewire.enable = true;
-  via.enable = true;
   ssh = {
     enable = true;
     username = "ethan";
