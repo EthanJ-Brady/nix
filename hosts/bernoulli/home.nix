@@ -9,7 +9,10 @@
   git.enable = true;
   hyprland.enable = true;
   mangohud.enable = true;
-  nixvim.enable = true;
+  nixvim = {
+    enable = true;
+    ai-codewriter = "supermaven";
+  };
   oh-my-posh.enable = true;
   ssh.enable = true;
   tmux.enable = true;
