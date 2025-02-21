@@ -1,12 +1,10 @@
 {pkgs, ...}: {
   bootloader.enable = true;
-  gamepads.enable = true;
-  gamescope.enable = true;
   hyprland.enable = true;
+  gaming.enable = true;
   logitech.enable = true;
   nvidia.enable = true;
   pipewire.enable = true;
-  steam.enable = true;
   via.enable = true;
   virtualbox.enable = true;
   ssh = {

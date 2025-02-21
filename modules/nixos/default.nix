@@ -2,8 +2,7 @@
   imports = [
     ./blocky
     ./bootloader.nix
-    ./gamepads.nix
-    ./gamescope.nix
+    ./gaming.nix
     ./gnome.nix
     ./hyprland.nix
     ./laptop.nix
@@ -11,7 +10,6 @@
     ./logitech.nix
     ./nvidia.nix
     ./pipewire.nix
-    ./steam.nix
     ./ssh.nix
     ./via.nix
     ./virtualbox.nix
