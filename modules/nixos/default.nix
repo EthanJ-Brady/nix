@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./blocky.nix
+    ./blocky
     ./bootloader.nix
     ./gamepads.nix
     ./gamescope.nix
