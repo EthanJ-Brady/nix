@@ -40,7 +40,7 @@
         };
         morse = lib.mkDefault {
           host = "morse";
-          hostname = "45.79.71.62";
+          hostname = "209.38.73.18";
           user = "ethan";
         };
         mohs = lib.mkDefault {
