@@ -62,30 +62,14 @@
   nixpkgs.system = "x86_64-linux";
 
   environment.systemPackages = with pkgs; [
-    firefox
-    # gnome-disk-utility
-    # pciutils
     wl-clipboard
-    vivaldi
-    libgccjit # reqiured for nvim
-    nodejs_23 # required for nvim
-    binutils # required for nvim
-    gcc_multi # required for nvim
-    ripgrep # required for nvim
-    fd # required for nvim
+    nodejs_23
+    ripgrep
+    fd
     cargo
     gparted
     brave
-    # gnome-usage
-    # dotnet-sdk_8
-    # wl-color-picker
-    home-manager
-    # appimage-run
-    # pavucontrol
-    # melonDS
-    # nh
-    kitty
-    # easyeffects
+    ghostty
   ];
 
   environment.sessionVariables.FLAKE = "/home/ethan/Dotfiles/nix";
