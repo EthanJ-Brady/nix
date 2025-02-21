@@ -2,6 +2,7 @@
   custom = {
     hardware = {
       audio.enable = true;
+      bluetooth.enable = true;
       laptop.enable = true;
       nvidia.enable = true;
       peripherals.enable = true;
@@ -18,10 +19,6 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  hardware.keyboard.zsa.enable = true;
-
-  services.blueman.enable = true;
-
   networking.hostName = "bernoulli";
   networking.networkmanager.enable = true;
 
@@ -29,9 +26,6 @@
     "flakes"
     "nix-command"
   ];
-
-  services.printing.enable = true;
-  hardware.bluetooth.enable = true;
 
   programs.zsh.enable = true;
 

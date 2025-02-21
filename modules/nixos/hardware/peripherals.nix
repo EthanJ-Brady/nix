@@ -14,6 +14,7 @@
     ];
 
     hardware.logitech.wireless.enable = true;
+    hardware.keyboard.zsa.enable = true;
 
     systemd.user.services.solaar = {
       description = "Solaar user service for managing Logitech devices";
