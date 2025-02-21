@@ -19,13 +19,7 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  networking.hostName = "bernoulli";
   networking.networkmanager.enable = true;
-
-  nix.settings.experimental-features = [
-    "flakes"
-    "nix-command"
-  ];
 
   programs.zsh.enable = true;
 
@@ -52,9 +46,6 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "ethan";
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.system = "x86_64-linux";
-
   environment.systemPackages = with pkgs; [
     wl-clipboard
     nodejs_23
@@ -66,8 +57,6 @@
     ghostty
   ];
 
-  environment.sessionVariables.FLAKE = "/home/ethan/Dotfiles/nix";
-
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
@@ -76,5 +65,12 @@
     device = "/dev/nvme0n1p6";
   };
 
+  networking.hostName = "bernoulli";
+  nix.settings.experimental-features = [
+    "flakes"
+    "nix-command"
+  ];
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.system = "x86_64-linux";
   system.stateVersion = "23.11";
 }
