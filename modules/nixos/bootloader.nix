@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    bootloader.enable = lib.mkEnableOption "Enables boot configuration settings with grub";
+    custom.bootloader.enable = lib.mkEnableOption "Enables boot configuration settings with grub";
   };
 
-  config = lib.mkIf config.bootloader.enable {
+  config = lib.mkIf config.custom.bootloader.enable {
     boot = {
       plymouth = {
         enable = true;

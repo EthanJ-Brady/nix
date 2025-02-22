@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   custom = {
     enable = true;
+    bootloader.enable = true;
     desktop.enable = true;
     hardware = {
       audio.enable = true;
@@ -11,7 +12,6 @@
     };
   };
 
-  bootloader.enable = true;
   gaming.enable = true;
   ssh = {
     enable = true;
