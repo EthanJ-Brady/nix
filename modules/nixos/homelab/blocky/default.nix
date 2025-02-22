@@ -6,10 +6,10 @@
   blocklists = import ./blocklists.nix;
 in {
   options = {
-    blocky.enable = lib.mkEnableOption "Enable blocky";
+    custom.homelab.blocky.enable = lib.mkEnableOption "Enable blocky";
   };
 
-  config = lib.mkIf config.blocky.enable {
+  config = lib.mkIf config.custom.homelab.blocky.enable {
     services.blocky = {
       enable = true;
       settings = {

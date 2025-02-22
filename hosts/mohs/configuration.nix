@@ -1,9 +1,10 @@
 {pkgs, ...}: {
+  custom.homelab.enable = true;
+
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  blocky.enable = true;
   ssh = {
     enable = true;
     username = "mohs";
