@@ -39,7 +39,6 @@
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
-    wl-clipboard
     nodejs_23
     ripgrep
     fd

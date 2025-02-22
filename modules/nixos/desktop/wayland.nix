@@ -15,5 +15,8 @@
     };
     services.displayManager.autoLogin.enable = true;
     services.displayManager.autoLogin.user = "ethan";
+    environment.systemPackages = with pkgs; [
+      wl-clipboard
+    ];
   };
 }
