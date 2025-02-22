@@ -61,5 +61,9 @@
     hyprshot
     rustc
     cargo
+    brave
+    nodejs_23
+    ripgrep
+    fd
   ];
 }

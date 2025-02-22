@@ -22,12 +22,6 @@
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
-    nodejs_23
-    ripgrep
-    fd
-    cargo
-    gparted
-    brave
     ghostty
   ];
 
