@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -20,6 +21,12 @@
   };
 
   config = lib.mkIf config.custom.enable {
+    environment.systemPackages = with pkgs; [
+      ghostty
+    ];
+    fonts.packages = with pkgs; [
+      nerd-fonts.fira-code
+    ];
     networking.networkmanager.enable = lib.mkDefault true;
     nix.settings.experimental-features = [
       "flakes"

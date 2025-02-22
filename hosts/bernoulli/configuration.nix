@@ -21,14 +21,6 @@
 
   virtualisation.docker.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    ghostty
-  ];
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
-
   fileSystems."/run/media/ethan/Games" = {
     device = "/dev/nvme0n1p6";
   };
