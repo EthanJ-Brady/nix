@@ -10,25 +10,13 @@
       nvidia.enable = true;
       peripherals.enable = true;
     };
+    user.enable = true;
   };
 
   gaming.enable = true;
   ssh = {
     enable = true;
     username = "ethan";
-  };
-
-  programs.zsh.enable = true;
-
-  users.users.ethan = {
-    isNormalUser = true;
-    description = "Ethan Brady";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-    shell = pkgs.zsh;
   };
 
   virtualisation.docker.enable = true;
