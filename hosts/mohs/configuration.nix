@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  custom.homelab.enable = true;
+  custom = {
+    enable = true;
+    homelab.enable = true;
+  };
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -12,21 +15,8 @@
 
   programs.zsh.enable = true;
 
-  # Experimental features
-  nix.settings.experimental-features = [
-    "flakes"
-    "nix-command"
-  ];
-
   # Networking
   networking.hostName = "mohs";
-  networking.networkmanager.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Define user account
   users.users.mohs = {
@@ -47,9 +37,6 @@
 
   # Enable automatic login for the user
   services.getty.autologinUser = "mohs";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Packages
   environment.systemPackages = with pkgs; [
