@@ -5,6 +5,7 @@
 }: {
   bat.enable = true;
   bun.enable = true;
+  catppuccin.enable = true;
   eza.enable = true;
   fzf.enable = true;
   git.enable = true;
