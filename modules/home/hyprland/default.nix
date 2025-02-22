@@ -10,6 +10,11 @@
   };
 
   config = lib.mkIf config.hyprland.enable {
+    home.file.".config/hypr/toggle_zoom.sh" = {
+      source = ./toggle_zoom.sh;
+      executable = true;
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
@@ -29,10 +34,12 @@
           "$appLauncher, D, exec, raise -c \"vesktop\" -e \"vesktop\""
           "$appLauncher, T, exec, raise -c \"com.mitchellh.ghostty\" -e \"ghostty\""
           "$appLauncher, S, exec, raise -c \"steam\" -e \"steam\""
+          "$appLauncher, G, workspace, game"
 
           "SUPER, Q, killactive"
 
           "SUPER_SHIFT, C, exec, hyprpicker -a"
+          "SUPER_SHIFT, Z, exec, ~/.config/hypr/toggle_zoom.sh"
           "SUPER_SHIFT, 3, exec, hyprshot -m output"
           "SUPER_SHIFT, 4, exec, hyprshot -m region"
           "SUPER_SHIFT, 5, exec, hyprshot -m window"
@@ -79,6 +86,11 @@
         windowrulev2 = [
           "workspace name:game, class:^steam_app_\\d+$"
           "fullscreen, class:^steam_app_\\d+$"
+          "allowsinput on, class:^steam_app_\\d+$"
+        ];
+        workspace = [
+          "name:game, monitor:HDMI-A-1, default:true"
+          "special:special, on-created-empty:ghostty"
         ];
       };
     };
