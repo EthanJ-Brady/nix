@@ -23,8 +23,6 @@
 
   programs.zsh.enable = true;
 
-  services.openssh.enable = true;
-
   users.users.ethan = {
     isNormalUser = true;
     description = "Ethan Brady";
