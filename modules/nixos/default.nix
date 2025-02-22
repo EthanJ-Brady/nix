@@ -1,11 +1,11 @@
 {...}: {
   imports = [
     ./bootloader.nix
+    ./desktop
     ./gaming.nix
     ./gnome.nix
     ./hardware
     ./homelab
-    ./hyprland.nix
     ./locale.nix
     ./ssh.nix
   ];

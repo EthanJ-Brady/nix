@@ -48,7 +48,7 @@
       };
     };
 
-    environment.variables = lib.mkIf config.hyprland.enable {
+    environment.variables = lib.mkIf config.custom.desktop.hyprland.enable {
       LIBVA_DRIVER_NAME = "nvidia";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     };

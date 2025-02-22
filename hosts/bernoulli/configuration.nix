@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   custom = {
+    desktop.enable = true;
     hardware = {
       audio.enable = true;
       bluetooth.enable = true;
@@ -10,7 +11,6 @@
   };
 
   bootloader.enable = true;
-  hyprland.enable = true;
   gaming.enable = true;
   ssh = {
     enable = true;
@@ -37,14 +37,6 @@
   };
 
   virtualisation.docker.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
-
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "ethan";
 
   environment.systemPackages = with pkgs; [
     wl-clipboard
