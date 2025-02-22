@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   custom = {
+    enable = true;
     desktop.enable = true;
     hardware = {
       audio.enable = true;
@@ -16,10 +17,6 @@
     enable = true;
     username = "ethan";
   };
-
-  security.sudo.wheelNeedsPassword = false;
-
-  networking.networkmanager.enable = true;
 
   programs.zsh.enable = true;
 
@@ -55,11 +52,6 @@
   };
 
   networking.hostName = "bernoulli";
-  nix.settings.experimental-features = [
-    "flakes"
-    "nix-command"
-  ];
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.system = "x86_64-linux";
   system.stateVersion = "23.11";
 }
