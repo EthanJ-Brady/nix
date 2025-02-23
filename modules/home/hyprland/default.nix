@@ -24,6 +24,7 @@
         "general:gaps_out" = 8;
         "general:gaps_in" = 8;
         "cursor:inactive_timeout" = 3;
+        "cursor:no_hardware_cursors" = 1;
         exec-once = [
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
