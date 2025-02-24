@@ -89,6 +89,12 @@
           "workspace name:game, class:^steam_app_\\d+$"
           "fullscreen, class:^steam_app_\\d+$"
           "allowsinput on, class:^steam_app_\\d+$"
+
+          "stayfocused, title:pulsemixer"
+          "float, title:pulsemixer"
+          "pin, title:pulsemixer"
+          "size 37.5% 37.5%, title:pulsemixer"
+          "move 100%-w-8 48, title:pulsemixer"
         ];
         workspace = [
           "name:game, monitor:HDMI-A-1, default:true"

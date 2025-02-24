@@ -56,7 +56,6 @@
     neofetch
     okular
     texliveFull
-    ncpamixer
     unzip
     hyprshot
     rustc
