@@ -12,6 +12,7 @@
     ./hardware
     ./homelab
     ./locale.nix
+    ./obs.nix
     ./user.nix
     ./ssh.nix
   ];

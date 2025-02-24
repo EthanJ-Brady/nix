@@ -10,6 +10,7 @@
       nvidia.enable = true;
       peripherals.enable = true;
     };
+    obs.enable = true;
     user.enable = true;
   };
 
