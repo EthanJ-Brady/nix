@@ -10,7 +10,7 @@
 
   config = lib.mkIf config.custom.hardware.audio.enable {
     environment.systemPackages = with pkgs; [
-      qjackctl
+      qpwgraph
       pulsemixer
     ];
 
