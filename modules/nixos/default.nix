@@ -7,6 +7,7 @@
   imports = [
     ./bootloader.nix
     ./desktop
+    ./docker.nix
     ./gaming.nix
     ./hardware
     ./homelab

@@ -3,6 +3,7 @@
     enable = true;
     bootloader.enable = true;
     desktop.enable = true;
+    docker.enable = true;
     hardware = {
       audio.enable = true;
       bluetooth.enable = true;
@@ -19,8 +20,6 @@
     enable = true;
     username = "ethan";
   };
-
-  virtualisation.docker.enable = true;
 
   fileSystems."/run/media/ethan/Games" = {
     device = "/dev/nvme0n1p6";
