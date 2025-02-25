@@ -28,6 +28,7 @@
       lsp = {
         enable = true;
         servers = {
+          cssls.enable = true;
           eslint.enable = true;
           jdtls.enable = true;
           jsonnet_ls.enable = true;
