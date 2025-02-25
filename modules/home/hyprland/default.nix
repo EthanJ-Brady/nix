@@ -56,6 +56,7 @@
           "$mod_alt, down, movewindow, d"
           "$mod, f, fullscreen, 0"
           "$mod, space, togglespecialworkspace"
+          "$mod, m, togglespecialworkspace, mixer"
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
           "$mod, 3, workspace, 3"
