@@ -13,8 +13,6 @@
       peripherals.enable = true;
     };
     obs.enable = true;
-    ssh.enable = true;
-    user.enable = true;
   };
 
   fileSystems."/run/media/ethan/Games" = {
