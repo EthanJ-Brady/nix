@@ -12,6 +12,7 @@
     environment.systemPackages = with pkgs; [
       qpwgraph
       pulsemixer
+      easyeffects
     ];
 
     services.pulseaudio.enable = false;
