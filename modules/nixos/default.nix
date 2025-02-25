@@ -22,6 +22,7 @@
   };
 
   config = lib.mkIf config.custom.enable {
+    custom.locale.enable = lib.mkDefault true;
     environment.systemPackages = with pkgs; [
       ghostty
     ];
