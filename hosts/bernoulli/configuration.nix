@@ -4,6 +4,7 @@
     bootloader.enable = true;
     desktop.enable = true;
     docker.enable = true;
+    gaming.enable = true;
     hardware = {
       audio.enable = true;
       bluetooth.enable = true;
@@ -15,8 +16,6 @@
     ssh.enable = true;
     user.enable = true;
   };
-
-  gaming.enable = true;
 
   fileSystems."/run/media/ethan/Games" = {
     device = "/dev/nvme0n1p6";

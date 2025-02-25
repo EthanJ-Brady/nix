@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    gaming.enable = lib.mkEnableOption "Enables gaming specific settings such as steam, gamescope, gamemode, and gamepad support";
+    custom.gaming.enable = lib.mkEnableOption "Enables gaming specific settings such as steam, gamescope, gamemode, and gamepad support";
   };
 
-  config = lib.mkIf config.gaming.enable {
+  config = lib.mkIf config.custom.gaming.enable {
     programs.gamemode.enable = true;
     hardware.uinput.enable = true;
     services.udev.packages = [pkgs.game-devices-udev-rules];
