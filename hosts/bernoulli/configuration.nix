@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   custom = {
     enable = true;
     bootloader.enable = true;
