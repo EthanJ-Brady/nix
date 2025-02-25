@@ -7,19 +7,17 @@
   keyFiles = builtins.attrNames (builtins.readDir keyDir);
 in {
   options = {
-    ssh.enable = lib.mkEnableOption "Enables the ssh configuration for linux";
-    ssh.username = lib.mkOption {
-      default = "default";
-      type = lib.types.str;
-    };
+    custom.ssh.enable = lib.mkEnableOption "Enables the ssh configuration for linux";
   };
 
-  config = lib.mkIf config.ssh.enable {
+  config = lib.mkIf config.custom.ssh.enable {
     services.openssh.enable = true;
-    users.users."${config.ssh.username}".openssh.authorizedKeys.keyFiles =
-      map (
-        file: "${keyDir}/${file}"
-      )
-      keyFiles;
+    users.users = lib.mkIf config.custom.user.enable {
+      "${config.custom.user.username}".openssh.authorizedKeys.keyFiles =
+        map (
+          file: "${keyDir}/${file}"
+        )
+        keyFiles;
+    };
   };
 }

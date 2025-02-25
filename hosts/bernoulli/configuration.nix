@@ -12,14 +12,11 @@
       peripherals.enable = true;
     };
     obs.enable = true;
+    ssh.enable = true;
     user.enable = true;
   };
 
   gaming.enable = true;
-  ssh = {
-    enable = true;
-    username = "ethan";
-  };
 
   fileSystems."/run/media/ethan/Games" = {
     device = "/dev/nvme0n1p6";
