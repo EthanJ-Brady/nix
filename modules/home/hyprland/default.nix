@@ -25,7 +25,7 @@
         "general:gaps_in" = 8;
         "cursor:inactive_timeout" = 3;
         "cursor:no_hardware_cursors" = 1;
-        "bind:scroll_event_delay" = 0;
+        "binds:scroll_event_delay" = 0;
         "decoration:rounding" = 8;
         exec-once = [
           "wl-paste --type text --watch cliphist store"
@@ -42,9 +42,9 @@
           "SUPER, Q, killactive"
 
           "SUPER_SHIFT, C, exec, hyprpicker -a"
-          "SUPER_SHIFT, mouse_up, exec, ~/.config/hypr/adjust_zoom.sh -0.25"
-          "SUPER_SHIFT, mouse_down, exec, ~/.config/hypr/adjust_zoom.sh 0.25"
-          "SUPER_SHIFT, mouse:274, exec, ~/.config/hypr/adjust_zoom.sh -500"
+          "SUPER_SHIFT, mouse_up, exec, ~/.config/hypr/adjust_zoom.sh 0.8"
+          "SUPER_SHIFT, mouse_down, exec, ~/.config/hypr/adjust_zoom.sh 1.25"
+          "SUPER_SHIFT, mouse:274, exec, ~/.config/hypr/adjust_zoom.sh 0"
           "SUPER_SHIFT, 3, exec, hyprshot -m output"
           "SUPER_SHIFT, 4, exec, hyprshot -m region"
           "SUPER_SHIFT, 5, exec, hyprshot -m window"

@@ -16,7 +16,7 @@ fi
 current=$(hyprctl getoption cursor:zoom_factor | head -n 1 | awk -F': ' '{print $2}')
 
 # Calculate the new zoom factor
-new_zoom=$(echo "$current + $1" | bc)
+new_zoom=$(echo "$current * $1" | bc)
 
 # Ensure the new zoom factor is at least 1.0
 if [ "$(echo "$new_zoom < 1.0" | bc)" -eq 1 ]; then
