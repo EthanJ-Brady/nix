@@ -37,7 +37,6 @@
           "$appLauncher, D, exec, raise -c \"vesktop\" -e \"vesktop\""
           "$appLauncher, T, exec, raise -c \"com.mitchellh.ghostty\" -e \"ghostty\""
           "$appLauncher, S, exec, raise -c \"steam\" -e \"steam\""
-          "$appLauncher, G, workspace, game"
 
           "SUPER, Q, killactive"
 
@@ -59,6 +58,7 @@
           "$mod_alt, down, movewindow, d"
           "$mod, f, fullscreen, 0"
           "$mod, space, togglespecialworkspace"
+          "$mod, g, togglespecialworkspace, game"
           "$mod, m, togglespecialworkspace, mixer"
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
@@ -90,7 +90,7 @@
           "$mod, mouse:273, resizewindow"
         ];
         windowrulev2 = [
-          "workspace name:game, class:^steam_app_\\d+$"
+          "workspace special:game, class:^steam_app_\\d+$"
           "fullscreen, class:^steam_app_\\d+$"
           "allowsinput on, class:^steam_app_\\d+$"
 
@@ -101,7 +101,7 @@
           "move 100%-w-8 48, title:pulsemixer"
         ];
         workspace = [
-          "name:game, monitor:HDMI-A-1, default:true"
+          "special:game, monitor:HDMI-A-1, default:true"
           "special:special, on-created-empty:ghostty"
         ];
       };
