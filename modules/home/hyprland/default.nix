@@ -30,6 +30,7 @@
         exec-once = [
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
+          "swaync"
         ];
         bind = [
           # Find clients by looking for `class: <class>` in `hyprctl clients`
@@ -108,6 +109,8 @@
     };
 
     services.cliphist.enable = true;
+
+    services.swaync.enable = true;
 
     home.packages = with pkgs; [
       hyprpicker
