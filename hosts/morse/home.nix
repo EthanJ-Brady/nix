@@ -3,13 +3,13 @@
   catppuccin.enable = true;
   eza.enable = true;
   fzf.enable = true;
-  ghostty.enable = true;
+  # ghostty.enable = true;
   git.enable = true;
   nixvim.enable = true;
   oh-my-posh.enable = true;
   ssh.enable = true;
-  tmux.enable = true;
-  zettel.enable = true;
+  # tmux.enable = true;
+  # zettel.enable = true;
   zoxide.enable = true;
   zsh.enable = true;
 
