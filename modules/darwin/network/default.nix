@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./ssh.nix
+    ./vpn.nix
   ];
 
   options = {
@@ -13,5 +14,6 @@
 
   config = lib.mkIf config.custom.network.enable {
     custom.network.ssh.enable = lib.mkDefault true;
+    custom.network.vpn.enable = lib.mkDefault true;
   };
 }
