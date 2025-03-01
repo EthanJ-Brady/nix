@@ -7,6 +7,7 @@
     ./desktop
     ./network
     ./system.nix
+    ./user.nix
   ];
 
   options = {
@@ -17,6 +18,7 @@
     custom = {
       network.enable = lib.mkDefault true;
       system.enable = lib.mkDefault true;
+      user.enable = lib.mkDefault true;
     };
 
     nix.settings.experimental-features = "nix-command flakes";
