@@ -15,12 +15,6 @@
     neofetch
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-    noto-fonts
-    noto-fonts-monochrome-emoji
-  ];
-
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
 

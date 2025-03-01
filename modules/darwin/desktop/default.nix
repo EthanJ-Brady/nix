@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -21,5 +22,11 @@
       skhd.enable = lib.mkDefault true;
       yabai.enable = lib.mkDefault true;
     };
+
+    fonts.packages = with pkgs; [
+      nerd-fonts.fira-code
+      noto-fonts
+      noto-fonts-monochrome-emoji
+    ];
   };
 }
