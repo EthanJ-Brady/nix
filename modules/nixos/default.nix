@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./bootloader.nix
+    ./cloud
     ./desktop
     ./docker.nix
     ./gaming.nix

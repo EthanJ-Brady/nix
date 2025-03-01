@@ -5,6 +5,7 @@
 
   custom = {
     enable = true;
+    cloud.headscale.enable = true;
   };
 
   boot.loader.grub = {
