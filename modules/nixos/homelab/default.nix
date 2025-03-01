@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./blocky
+    ./tandoor.nix
   ];
 
   options = {
@@ -13,5 +14,6 @@
 
   config = lib.mkIf config.custom.homelab.enable {
     custom.homelab.blocky.enable = lib.mkDefault true;
+    custom.homelab.tandoor.enable = lib.mkDefault true;
   };
 }
