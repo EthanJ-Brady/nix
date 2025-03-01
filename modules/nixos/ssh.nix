@@ -11,7 +11,10 @@ in {
   };
 
   config = lib.mkIf config.custom.ssh.enable {
-    services.openssh.enable = true;
+    services.openssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+    };
     users.users = lib.mkIf config.custom.user.enable {
       "${config.custom.user.username}".openssh.authorizedKeys.keyFiles =
         map (
