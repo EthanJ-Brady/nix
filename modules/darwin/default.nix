@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./desktop
-    ./ssh.nix
+    ./network
   ];
 
   options = {
@@ -13,6 +13,8 @@
   };
 
   config = lib.mkIf config.custom.enable {
+    custom.network.enable = lib.mkDefault true;
+
     nix.settings.experimental-features = "nix-command flakes";
   };
 }

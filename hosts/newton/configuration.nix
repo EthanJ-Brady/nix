@@ -3,10 +3,6 @@
     enable = true;
     desktop.enable = true;
   };
-  ssh = {
-    enable = true;
-    username = "ethanbrady";
-  };
 
   users.users.ethanbrady.home = "/Users/ethanbrady";
   networking.hostName = "newton";
