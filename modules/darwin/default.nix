@@ -6,6 +6,7 @@
   imports = [
     ./desktop
     ./network
+    ./system.nix
   ];
 
   options = {
@@ -13,7 +14,10 @@
   };
 
   config = lib.mkIf config.custom.enable {
-    custom.network.enable = lib.mkDefault true;
+    custom = {
+      network.enable = lib.mkDefault true;
+      system.enable = lib.mkDefault true;
+    };
 
     nix.settings.experimental-features = "nix-command flakes";
   };
