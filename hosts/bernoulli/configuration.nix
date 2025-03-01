@@ -1,8 +1,10 @@
-{pkgs, ...}: {
+{...}: {
   custom = {
     enable = true;
     bootloader.enable = true;
     desktop.enable = true;
+    docker.enable = true;
+    gaming.enable = true;
     hardware = {
       audio.enable = true;
       bluetooth.enable = true;
@@ -10,16 +12,8 @@
       nvidia.enable = true;
       peripherals.enable = true;
     };
-    user.enable = true;
+    obs.enable = true;
   };
-
-  gaming.enable = true;
-  ssh = {
-    enable = true;
-    username = "ethan";
-  };
-
-  virtualisation.docker.enable = true;
 
   fileSystems."/run/media/ethan/Games" = {
     device = "/dev/nvme0n1p6";

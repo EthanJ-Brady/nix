@@ -4,31 +4,32 @@
   ...
 }: {
   options = {
-    locale.timezone = lib.mkOption {
+    custom.locale.enable = lib.mkEnableOption "Enables locale settings for the system";
+    custom.locale.timezone = lib.mkOption {
       type = lib.types.str;
       default = "America/Denver";
       description = "The time zone to use for the system";
     };
-    locale.identifier = lib.mkOption {
+    custom.locale.identifier = lib.mkOption {
       type = lib.types.str;
       default = "en_US.UTF-8";
       description = "The locale identifier to use for locale settings";
     };
   };
 
-  config = {
-    time.timeZone = config.locale.timezone;
-    i18n.defaultLocale = config.locale.identifier;
+  config = lib.mkIf config.custom.locale.enable {
+    time.timeZone = config.custom.locale.timezone;
+    i18n.defaultLocale = config.custom.locale.identifier;
     i18n.extraLocaleSettings = {
-      LC_ADDRESS = config.locale.identifier;
-      LC_IDENTIFICATION = config.locale.identifier;
-      LC_MEASUREMENT = config.locale.identifier;
-      LC_MONETARY = config.locale.identifier;
-      LC_NAME = config.locale.identifier;
-      LC_NUMERIC = config.locale.identifier;
-      LC_PAPER = config.locale.identifier;
-      LC_TELEPHONE = config.locale.identifier;
-      LC_TIME = config.locale.identifier;
+      LC_ADDRESS = config.custom.locale.identifier;
+      LC_IDENTIFICATION = config.custom.locale.identifier;
+      LC_MEASUREMENT = config.custom.locale.identifier;
+      LC_MONETARY = config.custom.locale.identifier;
+      LC_NAME = config.custom.locale.identifier;
+      LC_NUMERIC = config.custom.locale.identifier;
+      LC_PAPER = config.custom.locale.identifier;
+      LC_TELEPHONE = config.custom.locale.identifier;
+      LC_TIME = config.custom.locale.identifier;
     };
   };
 }

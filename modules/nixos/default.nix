@@ -6,14 +6,16 @@
 }: {
   imports = [
     ./bootloader.nix
+    ./cloud
     ./desktop
+    ./docker.nix
     ./gaming.nix
-    ./gnome.nix
     ./hardware
     ./homelab
     ./locale.nix
-    ./user.nix
+    ./obs.nix
     ./ssh.nix
+    ./user.nix
   ];
 
   options = {
@@ -21,6 +23,9 @@
   };
 
   config = lib.mkIf config.custom.enable {
+    custom.locale.enable = lib.mkDefault true;
+    custom.ssh.enable = lib.mkDefault true;
+    custom.user.enable = lib.mkDefault true;
     environment.systemPackages = with pkgs; [
       ghostty
     ];

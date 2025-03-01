@@ -18,5 +18,6 @@
     environment.systemPackages = with pkgs; [
       wl-clipboard
     ];
+    environment.sessionVariables.NIXOS_OZONE_WL = lib.mkDefault "1"; # hints to electron and chromium apps to use wayland
   };
 }
