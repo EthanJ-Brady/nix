@@ -3,14 +3,14 @@
   lib,
   ...
 }: let
-  keyDir = ../../static/ssh;
+  keyDir = ../../../static/ssh;
   keyFiles = builtins.attrNames (builtins.readDir keyDir);
 in {
   options = {
-    custom.ssh.enable = lib.mkEnableOption "Enables the ssh configuration for linux";
+    custom.network.ssh.enable = lib.mkEnableOption "Enables the ssh configuration for linux";
   };
 
-  config = lib.mkIf config.custom.ssh.enable {
+  config = lib.mkIf config.custom.network.ssh.enable {
     services.openssh = {
       enable = true;
       settings.PasswordAuthentication = false;
