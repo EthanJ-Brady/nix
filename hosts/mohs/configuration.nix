@@ -1,16 +1,12 @@
 {pkgs, ...}: {
   custom = {
     enable = true;
+    bootloader.enable = true;
     homelab.enable = true;
-  };
-
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  ssh = {
-    enable = true;
-    username = "mohs";
+    user = {
+      enable = false;
+      username = "mohs";
+    };
   };
 
   programs.zsh.enable = true;
