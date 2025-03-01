@@ -64,5 +64,6 @@
     nodejs_23
     ripgrep
     fd
+    amberol
   ];
 }
