@@ -10,6 +10,11 @@
   };
 
   config = lib.mkIf config.hyprland.enable {
+    home.file.".config/hypr/adjust_zoom.sh" = {
+      source = ./adjust_zoom.sh;
+      executable = true;
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
@@ -18,9 +23,14 @@
         "$mod_alt" = "ALT_SHIFT";
         "general:gaps_out" = 8;
         "general:gaps_in" = 8;
+        "cursor:inactive_timeout" = 3;
+        "cursor:no_hardware_cursors" = 1;
+        "binds:scroll_event_delay" = 0;
+        "decoration:rounding" = 8;
         exec-once = [
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
+          "swaync"
         ];
         bind = [
           # Find clients by looking for `class: <class>` in `hyprctl clients`
@@ -32,6 +42,9 @@
           "SUPER, Q, killactive"
 
           "SUPER_SHIFT, C, exec, hyprpicker -a"
+          "SUPER_SHIFT, mouse_up, exec, ~/.config/hypr/adjust_zoom.sh 0.8"
+          "SUPER_SHIFT, mouse_down, exec, ~/.config/hypr/adjust_zoom.sh 1.25"
+          "SUPER_SHIFT, mouse:274, exec, ~/.config/hypr/adjust_zoom.sh 0"
           "SUPER_SHIFT, 3, exec, hyprshot -m output"
           "SUPER_SHIFT, 4, exec, hyprshot -m region"
           "SUPER_SHIFT, 5, exec, hyprshot -m window"
@@ -46,6 +59,8 @@
           "$mod_alt, down, movewindow, d"
           "$mod, f, fullscreen, 0"
           "$mod, space, togglespecialworkspace"
+          "$mod, g, togglespecialworkspace, game"
+          "$mod, m, togglespecialworkspace, mixer"
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
           "$mod, 3, workspace, 3"
@@ -76,19 +91,33 @@
           "$mod, mouse:273, resizewindow"
         ];
         windowrulev2 = [
-          "workspace 8, class:^steam_app_\\d+$"
+          "workspace special:game, class:^steam_app_\\d+$"
           "fullscreen, class:^steam_app_\\d+$"
+          "allowsinput on, class:^steam_app_\\d+$"
+
+          "stayfocused, title:pulsemixer"
+          "float, title:pulsemixer"
+          "pin, title:pulsemixer"
+          "size 37.5% 37.5%, title:pulsemixer"
+          "move 100%-w-8 48, title:pulsemixer"
+        ];
+        workspace = [
+          "special:game, monitor:HDMI-A-1, default:true"
+          "special:special, on-created-empty:ghostty"
         ];
       };
     };
 
     services.cliphist.enable = true;
 
+    services.swaync.enable = true;
+
     home.packages = with pkgs; [
       hyprpicker
       hyprshot
       hyprsunset
       inputs.raise.defaultPackage.x86_64-linux
+      bc # for adjust_zoom.sh
     ];
   };
 }

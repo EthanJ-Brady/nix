@@ -3,7 +3,6 @@
   catppuccin.enable = true;
   eza.enable = true;
   fzf.enable = true;
-  ghostty.enable = true;
   git.enable = true;
   nixvim.enable = true;
   oh-my-posh.enable = true;

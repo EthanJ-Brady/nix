@@ -5,15 +5,16 @@
   ...
 }: {
   options = {
-    logitech.enable = lib.mkEnableOption "Enables logitech universal receiver and customization tools";
+    custom.hardware.peripherals.enable = lib.mkEnableOption "Enables configuration for peripherals";
   };
 
-  config = lib.mkIf config.logitech.enable {
+  config = lib.mkIf config.custom.hardware.peripherals.enable {
     environment.systemPackages = with pkgs; [
       solaar
     ];
 
     hardware.logitech.wireless.enable = true;
+    hardware.keyboard.zsa.enable = true;
 
     systemd.user.services.solaar = {
       description = "Solaar user service for managing Logitech devices";

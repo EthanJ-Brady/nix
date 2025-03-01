@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   lib,
   ...
@@ -10,7 +11,7 @@
   config = lib.mkIf config.ssh.enable {
     home.activation.generateSSHKey = lib.hm.dag.entryAfter ["writeBoundary"] ''
       if [ ! -f ${config.home.homeDirectory}/.ssh/id_ed25519 ]; then
-        ssh-keygen -t ed25519 -f ${config.home.homeDirectory}/.ssh/id_ed25519 -N ""
+        ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -f ${config.home.homeDirectory}/.ssh/id_ed25519 -q -N ""
       fi
     '';
 
@@ -39,7 +40,7 @@
         };
         morse = lib.mkDefault {
           host = "morse";
-          hostname = "45.79.71.62";
+          hostname = "209.38.73.18";
           user = "ethan";
         };
         mohs = lib.mkDefault {

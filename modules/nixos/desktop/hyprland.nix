@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    hyprland.enable = lib.mkEnableOption "Enables the hyprland window tiling manager and it's associated config";
+    custom.desktop.hyprland.enable = lib.mkEnableOption "Enables the hyprland window tiling manager and it's associated config";
   };
 
-  config = lib.mkIf config.hyprland.enable {
+  config = lib.mkIf config.custom.desktop.hyprland.enable {
     services.greetd = {
       enable = true;
       settings = rec {

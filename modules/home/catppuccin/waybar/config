@@ -38,7 +38,7 @@
         "format-icons": {
             "default": ["", "", " "]
         },
-        "on-click": "ghostty -e ncpamixer"
+        "on-click": "ghostty --title=pulsemixer -e pulsemixer"
     },
     "custom/sleep": {
         "tooltip": false,

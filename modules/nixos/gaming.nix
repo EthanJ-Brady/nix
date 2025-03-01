@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    steam.enable = lib.mkEnableOption "Enables steam and opens the associated ports/firewalls";
+    custom.gaming.enable = lib.mkEnableOption "Enables gaming specific settings such as steam, gamescope, gamemode, and gamepad support";
   };
 
-  config = lib.mkIf config.steam.enable {
+  config = lib.mkIf config.custom.gaming.enable {
     programs.gamemode.enable = true;
     hardware.uinput.enable = true;
     services.udev.packages = [pkgs.game-devices-udev-rules];
@@ -25,9 +25,15 @@
 
     programs.steam = {
       enable = true;
-      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+      gamescopeSession.enable = true;
+    };
+
+    programs.gamescope = {
+      enable = true;
+      capSysNice = true;
     };
   };
 }

@@ -29,9 +29,9 @@
   wayland.windowManager.hyprland.settings = {
     # Determine monitors with `hyprctl monitors all`
     monitor = [
-      "eDP-1,disable"
+      "eDP-1,1920x1080@60,-1920x240,1"
       "HDMI-A-1,2560x1440@144,0x0,1"
-      "DP-1,1920x1080@60,2560x-270,1,transform,1"
+      "DP-1,1920x1080@60,2560x-300,1,transform,1"
     ];
   };
 
@@ -56,10 +56,14 @@
     neofetch
     okular
     texliveFull
-    ncpamixer
     unzip
     hyprshot
     rustc
     cargo
+    brave
+    nodejs_23
+    ripgrep
+    fd
+    amberol
   ];
 }

@@ -4,6 +4,7 @@
     ./ghostty.nix
     ./kitty.nix
     ./nixvim.nix
+    ./swaync.nix
     ./tmux.nix
     ./waybar
     ./wofi
