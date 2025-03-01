@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    jankyborders.enable = lib.mkEnableOption "Enables jankyborders, a simple window highlighting tool.";
+    custom.desktop.jankyborders.enable = lib.mkEnableOption "Enables jankyborders, a simple window highlighting tool.";
   };
 
-  config = lib.mkIf config.jankyborders.enable {
+  config = lib.mkIf config.custom.desktop.jankyborders.enable {
     services.jankyborders = {
       enable = true;
       active_color = "0xffbabbf1";

@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    skhd.enable = lib.mkEnableOption "Enables skhd, a simple hotkey daemon for macOS.";
+    custom.desktop.skhd.enable = lib.mkEnableOption "Enables skhd, a simple hotkey daemon for macOS.";
   };
 
-  config = lib.mkIf config.skhd.enable {
+  config = lib.mkIf config.custom.desktop.skhd.enable {
     services.skhd = {
       enable = true;
       skhdConfig = ''

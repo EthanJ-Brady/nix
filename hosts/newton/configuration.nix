@@ -1,12 +1,12 @@
 {pkgs, ...}: {
-  yabai.enable = true;
-  sketchybar.enable = true;
-  skhd.enable = true;
+  custom = {
+    enable = true;
+    desktop.enable = true;
+  };
   ssh = {
     enable = true;
     username = "ethanbrady";
   };
-  jankyborders.enable = true;
 
   users.users.ethanbrady.home = "/Users/ethanbrady";
   networking.hostName = "newton";

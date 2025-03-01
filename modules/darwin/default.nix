@@ -1,9 +1,10 @@
-{...}: {
+{lib, ...}: {
   imports = [
-    ./jankyborders.nix
-    ./sketchybar.nix
-    ./skhd.nix
+    ./desktop
     ./ssh.nix
-    ./yabai.nix
   ];
+
+  options = {
+    custom.enable = lib.mkEnableOption "Enables the custom configuration for darwin";
+  };
 }
