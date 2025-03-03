@@ -13,8 +13,8 @@
     ./hardware
     ./homelab
     ./locale.nix
+    ./network
     ./obs.nix
-    ./ssh.nix
     ./user.nix
   ];
 
@@ -24,7 +24,7 @@
 
   config = lib.mkIf config.custom.enable {
     custom.locale.enable = lib.mkDefault true;
-    custom.ssh.enable = lib.mkDefault true;
+    custom.network.enable = lib.mkDefault true;
     custom.user.enable = lib.mkDefault true;
     environment.systemPackages = with pkgs; [
       ghostty
