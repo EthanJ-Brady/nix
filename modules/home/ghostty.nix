@@ -26,6 +26,12 @@ in {
         window-padding-y = 8;
         background-opacity = 0.9;
         background-blur-radius = 32;
+
+        keybind = [
+          "shift+ctrl+plus=increase_font_size:1"
+          "ctrl+minus=decrease_font_size:1"
+          "ctrl+0=reset_font_size"
+        ];
       };
     };
   };
