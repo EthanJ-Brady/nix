@@ -2,8 +2,13 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.nix-gaming.nixosModules.pipewireLowLatency
+  ];
+
   options = {
     custom.gaming.enable = lib.mkEnableOption "Enables gaming specific settings such as steam, gamescope, gamemode, and gamepad support";
   };
@@ -35,5 +40,10 @@
       enable = true;
       capSysNice = true;
     };
+
+    services.pipewire = lib.mkIf config.custom.hardware.audio.enable {
+      lowLatency.enable = true;
+    };
+    security.rtkit.enable = lib.mkIf config.custom.hardware.audio.enable true;
   };
 }

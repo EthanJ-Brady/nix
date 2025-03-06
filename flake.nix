@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-gaming.url = "github:fufexan/nix-gaming";
     raise.url = "github:knarkzel/raise";
     zen-browser.url = "github:EthanJ-Brady/zen-browser-flake";
   };
@@ -25,6 +26,7 @@
   } @ inputs: {
     # Zephyr Laptop
     nixosConfigurations."bernoulli" = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
       modules = [
         ./hosts/bernoulli/configuration.nix
         ./hosts/bernoulli/hardware-configuration.nix
@@ -75,7 +77,7 @@
       modules = [
         ./hosts/mohs/configuration.nix
         ./hosts/mohs/hardware-configuration.nix
-	./modules/nixos
+        ./modules/nixos
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
