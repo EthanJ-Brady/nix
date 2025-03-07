@@ -25,7 +25,7 @@
         };
         newton = lib.mkDefault {
           host = "newton";
-          hostname = "100.64.0.4";
+          hostname = "100.64.0.11";
           user = "ethanbrady";
         };
         morse = lib.mkDefault {
