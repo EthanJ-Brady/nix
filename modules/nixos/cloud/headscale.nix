@@ -19,7 +19,10 @@ in {
       settings = {
         server_url = "https://${headscaleSubdomain}.${domain}";
       };
-      settings.dns.magic_dns = false;
+      settings.dns = {
+        magic_dns = true;
+        base_domain = "tailnet.${domain}";
+      };
     };
 
     services.caddy = {
