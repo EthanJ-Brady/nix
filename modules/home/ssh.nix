@@ -20,12 +20,12 @@
       matchBlocks = {
         bernoulli = lib.mkDefault {
           host = "bernoulli";
-          hostname = "100.64.0.5";
+          hostname = "bernoulli.tailnet.ethanbrady.xyz";
           user = "ethan";
         };
         newton = lib.mkDefault {
           host = "newton";
-          hostname = "100.64.0.11";
+          hostname = "newton.tailnet.ethanbrady.xyz";
           user = "ethanbrady";
         };
         morse = lib.mkDefault {
@@ -35,7 +35,7 @@
         };
         mohs = lib.mkDefault {
           host = "mohs";
-          hostname = "100.64.0.6";
+          hostname = "mohs.tailnet.ethanbrady.xyz";
           user = "mohs";
         };
       };
