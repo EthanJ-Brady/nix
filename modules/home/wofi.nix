@@ -22,7 +22,7 @@
     wayland.windowManager.hyprland.settings.bind = lib.mkIf config.hyprland.enable [
       "SUPER, space, exec, wofi --show drun"
       "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
-      "SUPER, E, exec, cat ~/.config/wofi/nerdfont.txt | awk '{print $1, $4}' | wofi --dmenu | awk '{printf \"%s\", $1}' | wl-copy"
+      "SUPER, E, exec, awk '{print $1, $4}' ~/.config/wofi/nerdfont.txt | wofi --dmenu -i | awk '{printf \"%s\", $1}' | wl-copy"
     ];
   };
 }
