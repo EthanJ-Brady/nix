@@ -51,6 +51,7 @@
 
     # Digital Ocean Server
     nixosConfigurations."morse" = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
       modules = [
         ./hosts/morse/configuration.nix
         ./hosts/morse/hardware-configuration.nix
@@ -74,6 +75,7 @@
 
     # Minecraft Server
     nixosConfigurations."mohs" = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
       modules = [
         ./hosts/mohs/configuration.nix
         ./hosts/mohs/hardware-configuration.nix
