@@ -7,6 +7,7 @@
     ./eza.nix
     ./firefox.nix
     ./fzf.nix
+    ./gaming
     ./ghostty.nix
     ./git.nix
     ./gnome

@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  custom = {
+    gaming.games = {
+      nethack.enable = true;
+    };
+  };
+
   bananaCursor.enable = true;
   bat.enable = true;
   bun.enable = true;
@@ -65,5 +71,6 @@
     ripgrep
     fd
     amberol
+    prismlauncher
   ];
 }
