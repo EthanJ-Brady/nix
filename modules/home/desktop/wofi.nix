@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    wofi.enable = lib.mkEnableOption "Enables the wofi application launcher";
+    custom.desktop.wofi.enable = lib.mkEnableOption "Enables the wofi application launcher";
   };
 
-  config = lib.mkIf config.wofi.enable {
+  config = lib.mkIf config.custom.desktop.wofi.enable {
     programs.wofi = {
       enable = true;
     };
@@ -19,7 +19,7 @@
       };
     };
 
-    wayland.windowManager.hyprland.settings.bind = lib.mkIf config.hyprland.enable [
+    wayland.windowManager.hyprland.settings.bind = lib.mkIf config.custom.desktop.hyprland.enable [
       "SUPER, space, exec, wofi --show drun"
       "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
       "SUPER, E, exec, awk '{print $1, $4}' ~/.config/wofi/nerdfont.txt | wofi --dmenu -i | awk '{printf \"%s\", $1}' | wl-copy"

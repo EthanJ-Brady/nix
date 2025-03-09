@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    waybar.enable = lib.mkEnableOption "Enables waybar";
+    custom.desktop.waybar.enable = lib.mkEnableOption "Enables waybar";
   };
 
-  config = lib.mkIf config.waybar.enable {
+  config = lib.mkIf config.custom.desktop.waybar.enable {
     programs.waybar.enable = true;
 
     home.packages = with pkgs; [

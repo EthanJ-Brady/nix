@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    bananaCursor.enable = lib.mkEnableOption "Enables the banana cursor";
+    custom.desktop.bananaCursor.enable = lib.mkEnableOption "Enables the banana cursor";
   };
 
-  config = lib.mkIf config.bananaCursor.enable {
+  config = lib.mkIf config.custom.desktop.bananaCursor.enable {
     home.pointerCursor = {
       gtk.enable = true;
       x11.enable = true;

@@ -6,10 +6,10 @@
   ...
 }: {
   options = {
-    hyprland.enable = lib.mkEnableOption "Enables hyprland user configuration";
+    custom.desktop.hyprland.enable = lib.mkEnableOption "Enables hyprland user configuration";
   };
 
-  config = lib.mkIf config.hyprland.enable {
+  config = lib.mkIf config.custom.desktop.hyprland.enable {
     home.file.".config/hypr/adjust_zoom.sh" = {
       source = ./adjust_zoom.sh;
       executable = true;

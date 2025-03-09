@@ -4,7 +4,6 @@
   catppuccin.enable = true;
   eza.enable = true;
   fzf.enable = true;
-  ghostty.enable = true;
   git.enable = true;
   nixvim = {
     enable = true;
@@ -16,6 +15,10 @@
   zettel.enable = true;
   zoxide.enable = true;
   zsh.enable = true;
+
+  custom = {
+    desktop.enable = true;
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

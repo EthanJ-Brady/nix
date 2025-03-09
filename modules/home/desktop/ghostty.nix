@@ -8,10 +8,10 @@
   ghostty-mock = pkgs.writeShellScriptBin "ghostty-mock" "";
 in {
   options = {
-    ghostty.enable = lib.mkEnableOption "Enables the terminal emulator ghostty and the configuration";
+    custom.desktop.ghostty.enable = lib.mkEnableOption "Enables the terminal emulator ghostty and the configuration";
   };
 
-  config = lib.mkIf config.ghostty.enable {
+  config = lib.mkIf config.custom.desktop.ghostty.enable {
     programs.ghostty = {
       enable = true;
       package = lib.mkIf isDarwin ghostty-mock;
