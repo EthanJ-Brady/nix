@@ -10,7 +10,6 @@
     ./ghostty.nix
     ./git.nix
     ./hyprland
-    ./mangohud.nix
     ./nixvim
     ./oh-my-posh
     ./ssh.nix
