@@ -5,15 +5,11 @@
     ./bun.nix
     ./catppuccin
     ./eza.nix
-    ./firefox.nix
     ./fzf.nix
     ./gaming
     ./ghostty.nix
     ./git.nix
-    ./gnome
     ./hyprland
-    ./kitty.nix
-    ./lazygit.nix
     ./mangohud.nix
     ./nixvim
     ./oh-my-posh
@@ -21,8 +17,6 @@
     ./tmux.nix
     ./waybar.nix
     ./wofi.nix
-    ./zellij
-    ./zen.nix
     ./zettel
     ./zoxide.nix
     ./zsh.nix
