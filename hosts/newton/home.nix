@@ -3,11 +3,9 @@
   bun.enable = true;
   catppuccin.enable = true;
   eza.enable = true;
-  firefox.enable = true;
   fzf.enable = true;
   ghostty.enable = true;
   git.enable = true;
-  lazygit.enable = true;
   nixvim = {
     enable = true;
     ai-codewriter = "supermaven";
@@ -33,10 +31,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.firefox = {
-    package = pkgs.firefox-bin;
-  };
 
   home.packages = with pkgs; [
     tlrc

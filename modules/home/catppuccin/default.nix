@@ -2,13 +2,11 @@
 {lib, ...}: {
   imports = [
     ./ghostty.nix
-    ./kitty.nix
     ./nixvim.nix
     ./swaync.nix
     ./tmux.nix
     ./waybar
     ./wofi
-    ./zellij.nix
   ];
 
   options = {
