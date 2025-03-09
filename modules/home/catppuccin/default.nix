@@ -1,4 +1,3 @@
-# TODO - Add support for firefox
 {lib, ...}: {
   imports = [
     ./ghostty.nix
