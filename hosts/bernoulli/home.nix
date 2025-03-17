@@ -3,6 +3,7 @@
     gaming.games = {
       nethack.enable = true;
     };
+    tofi.enable = true;
   };
 
   bananaCursor.enable = true;
@@ -23,7 +24,6 @@
   ssh.enable = true;
   tmux.enable = true;
   waybar.enable = true;
-  wofi.enable = true;
   zettel.enable = true;
   zen.enable = true;
   zoxide.enable = true;

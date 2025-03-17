@@ -21,6 +21,7 @@
     ./tmux.nix
     ./waybar.nix
     ./wofi.nix
+    ./tofi.nix
     ./zellij
     ./zen.nix
     ./zettel
