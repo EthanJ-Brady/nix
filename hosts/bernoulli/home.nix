@@ -72,5 +72,6 @@
     fd
     amberol
     prismlauncher
+    graalvmPackages.graalvm-ce
   ];
 }
