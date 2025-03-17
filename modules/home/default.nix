@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./bun.nix
     ./catppuccin
     ./desktop
     ./gaming
