@@ -10,6 +10,7 @@ in {
     ./banana-cursor.nix
     ./ghostty.nix
     ./hyprland
+    ./tofi.nix
     ./waybar.nix
     ./wofi.nix
   ];
@@ -28,7 +29,7 @@ in {
         custom.desktop.bananaCursor.enable = lib.mkDefault true;
         custom.desktop.hyprland.enable = lib.mkDefault true;
         custom.desktop.waybar.enable = lib.mkDefault true;
-        custom.desktop.wofi.enable = lib.mkDefault true;
+        custom.desktop.tofi.enable = lib.mkDefault true;
       })
     ]
   );
