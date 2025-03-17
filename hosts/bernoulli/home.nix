@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   custom = {
+    enable = true;
     desktop.enable = true;
     gaming = {
       games = {
@@ -7,8 +8,6 @@
       };
       mangohud.enable = true;
     };
-    shell.enable = true;
-    ssh.enable = true;
   };
 
   catppuccin.enable = true;
