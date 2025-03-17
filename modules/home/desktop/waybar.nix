@@ -15,7 +15,7 @@
       pulsemixer
     ];
 
-    wayland.windowManager.hyprland.settings = lib.mkIf config.hyprland.enable {
+    wayland.windowManager.hyprland.settings = lib.mkIf config.custom.desktop.hyprland.enable {
       "exec-once" = ["waybar"];
     };
   };

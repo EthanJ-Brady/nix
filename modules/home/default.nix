@@ -5,6 +5,5 @@
     ./gaming
     ./shell
     ./ssh.nix
-    ./tofi.nix
   ];
 }

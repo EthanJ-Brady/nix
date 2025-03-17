@@ -1,33 +1,17 @@
 {pkgs, ...}: {
   custom = {
-    gaming.games = {
-      nethack.enable = true;
+    desktop.enable = true;
+    gaming = {
+      games = {
+        nethack.enable = true;
+      };
+      mangohud.enable = true;
     };
-    tofi.enable = true;
+    shell.enable = true;
   };
 
-  bananaCursor.enable = true;
-  bat.enable = true;
-  bun.enable = true;
   catppuccin.enable = true;
-  eza.enable = true;
-  fzf.enable = true;
-  ghostty.enable = true;
-  git.enable = true;
-  hyprland.enable = true;
-  mangohud.enable = true;
-  nixvim = {
-    enable = true;
-    ai-codewriter = "supermaven";
-  };
-  oh-my-posh.enable = true;
   ssh.enable = true;
-  tmux.enable = true;
-  waybar.enable = true;
-  zettel.enable = true;
-  zen.enable = true;
-  zoxide.enable = true;
-  zsh.enable = true;
 
   programs.git.userEmail = "git@ethanbrady.xyz";
   programs.git.userName = "EthanJ-Brady";
@@ -66,6 +50,7 @@
     hyprshot
     rustc
     cargo
+    bun
     brave
     nodejs_23
     ripgrep
