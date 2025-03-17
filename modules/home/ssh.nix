@@ -18,34 +18,24 @@
     programs.ssh = {
       enable = true;
       matchBlocks = {
-        github = lib.mkDefault {
-          host = "github";
-          hostname = "github.com";
-          user = "git";
-        };
-        gitlab = lib.mkDefault {
-          host = "gitlab";
-          hostname = "gitlab.cs.usu.edu";
-          user = "git";
-        };
         bernoulli = lib.mkDefault {
           host = "bernoulli";
-          hostname = "192.168.1.217";
+          hostname = "bernoulli.tailnet.ethanbrady.xyz";
           user = "ethan";
         };
         newton = lib.mkDefault {
           host = "newton";
-          hostname = "192.168.1.10";
+          hostname = "newton.tailnet.ethanbrady.xyz";
           user = "ethanbrady";
         };
         morse = lib.mkDefault {
           host = "morse";
-          hostname = "209.38.73.18";
+          hostname = "ethanbrady.xyz";
           user = "ethan";
         };
         mohs = lib.mkDefault {
           host = "mohs";
-          hostname = "192.168.1.134";
+          hostname = "mohs.tailnet.ethanbrady.xyz";
           user = "mohs";
         };
       };

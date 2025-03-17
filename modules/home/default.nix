@@ -1,31 +1,11 @@
 {...}: {
   imports = [
-    ./banana-cursor.nix
-    ./bat.nix
     ./bun.nix
     ./catppuccin
-    ./eza.nix
-    ./firefox.nix
-    ./fzf.nix
+    ./desktop
     ./gaming
-    ./ghostty.nix
-    ./git.nix
-    ./gnome
-    ./hyprland
-    ./kitty.nix
-    ./lazygit.nix
-    ./mangohud.nix
-    ./nixvim
-    ./oh-my-posh
+    ./shell
     ./ssh.nix
-    ./tmux.nix
-    ./waybar.nix
-    ./wofi.nix
     ./tofi.nix
-    ./zellij
-    ./zen.nix
-    ./zettel
-    ./zoxide.nix
-    ./zsh.nix
   ];
 }

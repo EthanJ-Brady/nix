@@ -1,51 +1,49 @@
 # Nix Configuration
 
+My personal nix configuration for awesome reproducible and declarative systems.
+
 ## Setup
 
-### MacOS
+### NixOS
 
-[Nix Darwin Github Repo](https://github.com/LnL7/nix-darwin/blob/master/README.md)
+#### Enable Flakes and Git
 
-1. Install Nix
-
-Find instructions [here](https://nix.dev/install-nix). As of writing this, the command is:
-
-```sh
-curl -L https://nixos.org/nix/install | sh
-```
-
-2. Install Nix Darwin
-
-Find instructions [here](https://github.com/LnL7/nix-darwin/blob/master/README.md#step-2-installing-nix-darwin). As of writing this, the command is:
-
-```sh
-nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/path/to/flake.nix#<profile>
-```
-
-The path to the `flake.nix` file depends on where you have it stored on your machine. The profile is the name of the profile defined in the `flake.nix` file. For example, if this is profile you want to use with the flake:
+In `/etc/nixos/configuration.nix`, add the following:
 
 ```nix
-darwinConfigurations."macbook-air" = nix-darwin.lib.darwinSystem {
-  modules = [ configuration ];
-};
+  nix.settings.experimental-features = [
+    "flakes"
+    "nix-command"
+  ];
+  environment.systemPackages = with pkgs; [
+    git
+  ];
 ```
 
-Then the profile is `macbook-air`.
+This will allow you to use flakes and git which are required for this confiugration. Once added, run `sudo nixos-rebuild switch` to apply the configuration.
 
-3. Using Nix Darwin
+#### Obtain this Configuration
 
-Find instructions [here](https://github.com/LnL7/nix-darwin/blob/master/README.md#step-3-using-nix-darwin). As of writing this, the command to apply the configuration is:
+Run `git clone https://github.com/EthanJ-Brady/nix.git` in your home directory to clone this repostiory.`
 
-```sh
-darwin-rebuild switch --flake ~/path/to/flake/directory#<profile>
-```
+#### Add a New System
 
-## Search
+In `flake.nix`, you will need to add a new profile for your system. The exact syntax for this is omitted here, but you should be able to find examples already in the file.
 
-To search for packages from `nixpkgs`, use the following command:
+Create a new directory in `hosts/` with the name of your system. Copy both `configuration.nix` and `hardware-configuration.nix` from the `/etc/nixos/` directory on your machine. If `hardware-configuration.nix` is not present, generate it with `nix-generate-config`.
 
-```sh
-nix search nixpkgs <package-name>
-```
+Switch to your new system with `sudo nixos-rebuild switch --flake ~/nix#profile-name` where `profile-name` is the name of the profile you created in the previous step.
 
-You can also use the web interface [here](https://search.nixos.org/packages).
+## Usage
+
+### Github
+
+TODO
+
+### SSH
+
+TODO
+
+### VPN
+
+TODO

@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  config = lib.mkIf config.wofi.enable {
+  config = lib.mkIf config.custom.desktop.wofi.enable {
     programs.wofi.style = ''${builtins.readFile ./frappe.css}'';
   };
 }

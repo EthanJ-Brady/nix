@@ -13,6 +13,10 @@
     device = "/dev/vda";
   };
 
+  networking.firewall.allowedTCPPorts = [25565];
+  networking.firewall.allowedUDPPorts = [25565];
+  services.openssh.settings.GatewayPorts = "yes";
+
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
   networking.hostName = "morse";

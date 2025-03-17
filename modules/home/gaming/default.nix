@@ -1,5 +1,6 @@
 {...}: {
   imports = [
     ./games
+    ./mangohud.nix
   ];
 }

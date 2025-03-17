@@ -3,10 +3,7 @@
     enable = true;
     bootloader.enable = true;
     homelab.enable = true;
-    user = {
-      enable = false;
-      username = "mohs";
-    };
+    user.username = "mohs";
   };
 
   programs.zsh.enable = true;
@@ -14,18 +11,7 @@
   # Networking
   networking.hostName = "mohs";
 
-  # Define user account
-  users.users.mohs = {
-    isNormalUser = true;
-    description = "mohs";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "minecraft"
-    ];
-    packages = [];
-    shell = pkgs.zsh;
-  };
+  users.users.mohs.extraGroups = ["minecraft"];
 
   users.users.minecraft = {
     shell = "${pkgs.bash}/bin/bash";
@@ -83,9 +69,10 @@
     after = ["network.target"];
 
     serviceConfig = {
-      ExecStart = "${pkgs.autossh}/bin/autossh -M 0 -N -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -R 25565:localhost:25565 morse";
+      ExecStart = "${pkgs.autossh}/bin/autossh -M 0 -N -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -R 0.0.0.0:25565:localhost:25565 morse";
       Restart = "always";
       RestartSec = "10s";
+      User = "mohs";
     };
 
     wantedBy = ["multi-user.target"];
