@@ -3,10 +3,10 @@
     enable = true;
     desktop.enable = true;
     gaming = {
+      enable = true;
       games = {
         nethack.enable = true;
       };
-      mangohud.enable = true;
     };
   };
 
