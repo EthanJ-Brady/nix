@@ -8,10 +8,10 @@
       mangohud.enable = true;
     };
     shell.enable = true;
+    ssh.enable = true;
   };
 
   catppuccin.enable = true;
-  ssh.enable = true;
 
   programs.git.userEmail = "git@ethanbrady.xyz";
   programs.git.userName = "EthanJ-Brady";
