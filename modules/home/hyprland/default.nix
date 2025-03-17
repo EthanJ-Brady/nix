@@ -27,6 +27,7 @@
         "cursor:no_hardware_cursors" = 1;
         "binds:scroll_event_delay" = 0;
         "decoration:rounding" = 8;
+        "input:kb_options" = "compose:ralt";
         exec-once = [
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
