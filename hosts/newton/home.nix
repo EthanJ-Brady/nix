@@ -1,11 +1,9 @@
 {pkgs, ...}: {
-  bun.enable = true;
   catppuccin.enable = true;
-  ssh.enable = true;
 
   custom = {
+    enable = true;
     desktop.enable = true;
-    shell.enable = true;
   };
 
   # This value determines the Home Manager release that your
