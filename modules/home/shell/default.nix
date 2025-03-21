@@ -32,8 +32,6 @@
       zettel.enable = lib.mkDefault true;
       zoxide.enable = lib.mkDefault true;
       zsh.enable = lib.mkDefault true;
-
-      nixvim.ai-codewriter = lib.mkDefault "supermaven";
     };
   };
 }

@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./avante.nix
     ./format.nix
     ./gitsigns.nix
     ./lsp.nix
