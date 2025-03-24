@@ -40,7 +40,7 @@
     vesktop
     tldr
     neofetch
-    okular
+    kdePackages.okular
     texliveFull
     unzip
     hyprshot
