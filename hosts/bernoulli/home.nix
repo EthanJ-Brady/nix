@@ -1,36 +1,16 @@
 {pkgs, ...}: {
   custom = {
-    gaming.games = {
-      nethack.enable = true;
+    enable = true;
+    desktop.enable = true;
+    gaming = {
+      enable = true;
+      games = {
+        nethack.enable = true;
+      };
     };
   };
 
-  bananaCursor.enable = true;
-  bat.enable = true;
-  bun.enable = true;
   catppuccin.enable = true;
-  eza.enable = true;
-  fzf.enable = true;
-  ghostty.enable = true;
-  git.enable = true;
-  hyprland.enable = true;
-  mangohud.enable = true;
-  nixvim = {
-    enable = true;
-    ai-codewriter = "supermaven";
-  };
-  oh-my-posh.enable = true;
-  ssh.enable = true;
-  tmux.enable = true;
-  waybar.enable = true;
-  wofi.enable = true;
-  zettel.enable = true;
-  zen.enable = true;
-  zoxide.enable = true;
-  zsh.enable = true;
-
-  programs.git.userEmail = "git@ethanbrady.xyz";
-  programs.git.userName = "EthanJ-Brady";
 
   wayland.windowManager.hyprland.settings = {
     # Determine monitors with `hyprctl monitors all`
@@ -44,8 +24,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = "/home/ethan/Nix/static/wallpapers/frappe-maroon-duck.png";
-      wallpaper = ", /home/ethan/Nix/static/wallpapers/frappe-maroon-duck.png";
+      preload = "/home/ethan/Nix/static/wallpapers/spirals-2560x2560.png";
+      wallpaper = ", /home/ethan/Nix/static/wallpapers/spirals-2560x2560.png";
     };
   };
 
@@ -60,17 +40,19 @@
     vesktop
     tldr
     neofetch
-    okular
+    kdePackages.okular
     texliveFull
     unzip
     hyprshot
     rustc
     cargo
+    bun
     brave
     nodejs_23
     ripgrep
     fd
     amberol
     prismlauncher
+    graalvmPackages.graalvm-ce
   ];
 }

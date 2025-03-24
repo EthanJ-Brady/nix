@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.custom.system.enable {
     # Allow sudo commands to be run with biometrics
-    security.pam.enableSudoTouchIdAuth = true;
+    security.pam.services.sudo_local.touchIdAuth = true;
     # Set mouse tracking speed
     system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
     # Set the dock to automatically hide

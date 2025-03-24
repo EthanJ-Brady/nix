@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./hyprland.nix
+    ./sunshine.nix
     ./wayland.nix
   ];
 

@@ -2,7 +2,10 @@
   custom = {
     enable = true;
     bootloader.enable = true;
-    desktop.enable = true;
+    desktop = {
+      enable = true;
+      sunshine.enable = true;
+    };
     docker.enable = true;
     gaming.enable = true;
     hardware = {
