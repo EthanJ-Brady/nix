@@ -10,9 +10,15 @@
   };
 
   config = lib.mkIf config.custom.desktop.hyprland.enable {
-    home.file.".config/hypr/adjust_zoom.sh" = {
-      source = ./adjust_zoom.sh;
-      executable = true;
+    home.file = {
+      ".config/hypr/adjust_zoom.sh" = {
+        source = ./adjust_zoom.sh;
+        executable = true;
+      };
+      ".config/hypr/preformance.sh" = {
+        source = ./preformance.sh;
+        executable = true;
+      };
     };
 
     wayland.windowManager.hyprland = {
@@ -43,6 +49,7 @@
           "SUPER, Q, killactive"
 
           "SUPER_SHIFT, C, exec, hyprpicker -a"
+          "SUPER_SHIFT, P, exec, ~/.config/hypr/preformance.sh"
           "SUPER_SHIFT, mouse_up, exec, ~/.config/hypr/adjust_zoom.sh 0.8"
           "SUPER_SHIFT, mouse_down, exec, ~/.config/hypr/adjust_zoom.sh 1.25"
           "SUPER_SHIFT, mouse:274, exec, ~/.config/hypr/adjust_zoom.sh 0"
