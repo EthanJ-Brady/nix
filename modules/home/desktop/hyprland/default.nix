@@ -108,6 +108,8 @@
           "pin, title:pulsemixer"
           "size 37.5% 37.5%, title:pulsemixer"
           "move 100%-w-8 48, title:pulsemixer"
+
+          "opacity 0.90, class:^com\.mitchellh\.ghostty$"
         ];
         workspace = [
           "special:game, monitor:HDMI-A-1, default:true"

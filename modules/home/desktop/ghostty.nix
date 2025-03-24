@@ -24,8 +24,6 @@ in {
         window-decoration = "auto";
         window-padding-x = 8;
         window-padding-y = 8;
-        background-opacity = 0.9;
-        background-blur-radius = 32;
 
         keybind = [
           "shift+ctrl+plus=increase_font_size:1"
