@@ -54,5 +54,6 @@
     amberol
     prismlauncher
     graalvmPackages.graalvm-ce
+    nextcloud-client
   ];
 }
