@@ -15,6 +15,8 @@
       easyeffects
     ];
 
+    programs.noisetorch.enable = true;
+
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
