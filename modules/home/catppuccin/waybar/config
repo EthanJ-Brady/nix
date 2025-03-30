@@ -4,8 +4,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "battery", "clock", "custom/sleep", "custom/exit"],
+    "modules-right": ["pulseaudio#output", "pulseaudio#input", "battery", "clock", "custom/sleep", "custom/exit"],
     "wlr/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -31,7 +30,7 @@
         "format-alt": "{icon} {capacity}",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-    "pulseaudio": {
+    "pulseaudio#output": {
         "scroll-step": 5,
         "format": "{icon}  {volume}%",
         "format-muted": "",
@@ -39,6 +38,13 @@
             "default": ["", "", " "]
         },
         "on-click": "ghostty --title=pulsemixer -e pulsemixer"
+    },
+    "pulseaudio#input": {
+        "scroll-step": 0,
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     },
     "custom/sleep": {
         "tooltip": false,

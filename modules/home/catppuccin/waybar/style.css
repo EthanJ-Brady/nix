@@ -7,7 +7,7 @@
 }
 
 #waybar {
-  background:transparent;
+  background: transparent;
   color: @text;
 }
 
@@ -30,7 +30,6 @@
   color: @sapphire;
 }
 
-#custom-music,
 #tray,
 #backlight,
 #clock,
@@ -66,24 +65,30 @@
 }
 
 #pulseaudio {
-  color: @maroon;
+  color: @green;
+}
+
+#pulseaudio.output {
   border-radius: 1rem 0px 0px 1rem;
 }
 
-#custom-music {
-  color: @mauve;
-  border-radius: 1rem;
+#pulseaudio.output.sink-muted {
+  color: @maroon;
+}
+
+#pulseaudio.input.source-muted {
+  color: @maroon;
 }
 
 #custom-sleep {
-    border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
 }
 
 #custom-exit {
-    border-radius: 0px 1rem 1rem 0px;
-    margin-right: 8px;
-    color: @red;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 8px;
+  color: @red;
 }
 
 #tray {
