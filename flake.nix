@@ -15,6 +15,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-gaming.url = "github:fufexan/nix-gaming";
     raise.url = "github:knarkzel/raise";
+    sourceweaver.url = "github:EthanJ-Brady/SourceWeaver";
     zen-browser.url = "github:EthanJ-Brady/zen-browser-flake";
   };
 

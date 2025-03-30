@@ -1,6 +1,8 @@
 {
   config,
+  inputs,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -33,5 +35,9 @@
       zoxide.enable = lib.mkDefault true;
       zsh.enable = lib.mkDefault true;
     };
+
+    home.packages = [
+      inputs.sourceweaver.packages.${pkgs.system}.default
+    ];
   };
 }
