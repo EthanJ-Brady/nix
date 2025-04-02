@@ -452,11 +452,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1743359717,
-        "narHash": "sha256-twmnHp+H9oQJ5g5VvUZSh99//Mz6k6bD9P983A6UwR8=",
+        "lastModified": 1743550719,
+        "narHash": "sha256-5MIoZoVEG0FuHiJ2bNO+ImiYoBei0jFGBfwOlX6kRSM=",
         "owner": "EthanJ-Brady",
         "repo": "SourceWeaver",
-        "rev": "a7578832eed2298a2e1f781f3aedfcce85f6789f",
+        "rev": "34c2533311d92fdfa9a24da2d06449011b3e03d2",
         "type": "github"
       },
       "original": {
