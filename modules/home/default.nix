@@ -9,6 +9,7 @@
     ./gaming
     ./shell
     ./ssh.nix
+    ./syncthing.nix
   ];
 
   options = {
@@ -18,5 +19,6 @@
   config = lib.mkIf config.custom.enable {
     custom.shell.enable = lib.mkDefault true;
     custom.ssh.enable = lib.mkDefault true;
+    custom.syncthing.enable = lib.mkDefault true;
   };
 }
