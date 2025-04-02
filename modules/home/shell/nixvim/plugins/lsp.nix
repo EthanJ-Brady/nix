@@ -23,6 +23,10 @@
             {name = "luasnip";}
             {name = "path";}
           ];
+          window = {
+            completion.__raw = "cmp.config.window.bordered()";
+            documentation.__raw = "cmp.config.window.bordered()";
+          };
         };
       };
       lsp = {
