@@ -10,6 +10,7 @@
     ./lsp.nix
     ./lualine.nix
     ./mini.nix
+    ./noice.nix
     ./oil.nix
     ./supermaven.nix
     ./telescope.nix

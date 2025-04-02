@@ -23,6 +23,7 @@
 
   config = lib.mkIf config.custom.shell.nixvim.enable {
     nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    custom.shell.nixvim.ai-codewriter = lib.mkDefault "supermaven";
     programs.nixvim = {
       enable = true;
       globals.mapleader = " ";
