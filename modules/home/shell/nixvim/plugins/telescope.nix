@@ -6,6 +6,11 @@
   config = lib.mkIf config.custom.shell.nixvim.enable {
     programs.nixvim.plugins.telescope = {
       enable = true;
+      settings = {
+        defaults = {
+          border = false;
+        };
+      };
       keymaps = {
         "<leader>sh" = {
           action = "help_tags";
