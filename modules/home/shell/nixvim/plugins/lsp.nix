@@ -32,26 +32,25 @@
       lsp = {
         enable = true;
         luaConfig.post = ''
-          -- lsp.lua
-          --- Borders on floating windows
-          local _border = "rounded"
+          local border = "rounded"
+
+          -- Configure borders for LSP hover and signature help
           vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-            vim.lsp.handlers.hover, {border = _border}
+            vim.lsp.handlers.hover, { border = border }
           )
           vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-            vim.lsp.handlers.signature_help, {border = _border}
+            vim.lsp.handlers.signature_help, { border = border }
           )
-          vim.diagnostic.config({
-            float = {border=_border},
-            virtual_text = false, -- Disables inline virtual text
-            signs = true, -- Enables signs in the sign column
-            underline = false, -- Disables underlining of text
-            update_in_insert = false, -- Avoid updates while typing
-            severity_sort = true, -- Sorts messages by severity
-          })
 
-          -- highlight FloatBorder ctermfg=NONE ctermbg=NONE cterm=NONE
-          require('lspconfig.ui.windows').default_options = {border = _border}
+          -- Configure borders for diagnostics float
+          vim.diagnostic.config({
+            float = { border = border },
+            virtual_text = true,
+            signs = true,
+            underline = false,
+            update_in_insert = false,
+            severity_sort = true,
+          })
         '';
         servers = {
           cssls.enable = true;
