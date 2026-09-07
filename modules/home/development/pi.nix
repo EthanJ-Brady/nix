@@ -18,8 +18,8 @@ in {
       settings = {
         branchSummary.skipPrompt = lib.mkDefault true;
         defaultProvider = lib.mkDefault "openai-codex";
-        defaultModel = lib.mkDefault "gpt-5.6-sol";
-        enabledModels = lib.mkDefault ["openai-codex/gpt-5.6-*"];
+        defaultModel = lib.mkDefault "gpt-6-astra";
+        enabledModels = lib.mkDefault ["openai-codex/gpt-6-astra"];
         packages = [
           "npm:pi-web-access"
         ];
