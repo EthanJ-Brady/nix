@@ -22,6 +22,7 @@ in {
         enabledModels = lib.mkDefault ["openai-codex/gpt-6-astra"];
         packages = [
           "npm:pi-web-access"
+          "npm:pi-spawn"
         ];
         skills = [
           ../../../static/ai/skills
