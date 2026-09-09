@@ -98,11 +98,11 @@ No observations have been recorded yet.
 ## Revision anchors
 
 - **Baseline revision:** `0495b78ec23c8111eb91f163b8a60fb84724c958`
-- **Trial definition revision:** Pending the separate trial-definition commit
+- **Trial definition revision:** `d415d84409e0695f393b4db0e00406ce28470644`
 - **Implementation revisions:** Not started
 - **Outcome revision:** Not started
 
-The baseline contains the existing principle selector and predates the proposed leaf principle. Commit this definition separately before runtime implementation, then record full revision hashes according to the evolution model.
+The baseline contains the existing principle selector and predates the proposed leaf principle. The definition is committed separately from runtime implementation. Record future implementation and outcome hashes according to the evolution model.
 
 ## Rollback
 
