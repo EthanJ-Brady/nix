@@ -88,6 +88,12 @@
 
       documentation = import ./checks/documentation.nix {inherit pkgs;};
 
+      neovim = import ./checks/neovim.nix {
+        inherit pkgs;
+        inherit (self.nixosConfigurations.turing.config.home-manager.users.ethan.programs.nixvim.build) initFile extraFiles;
+        neovim = self.nixosConfigurations.turing.config.home-manager.users.ethan.programs.nixvim.build.package;
+      };
+
       module-contracts = import ./checks {
         inherit home-manager inputs nixpkgs pkgs;
         darwinModules = self.darwinModules;

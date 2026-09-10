@@ -1,14 +1,28 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   cfg = config.my.development;
   inherit (config.lib.nixvim) mkRaw;
+  projectFormatters = mkRaw ''require("project-formatters").formatters'';
 in {
   config = lib.mkIf cfg.enable {
     programs.nixvim = {
       globals.autoformat = lib.mkDefault true;
+      extraFiles = {
+        "lua/project-formatters.lua".source = ./project-formatters.lua;
+        "oxfmt-default.json".text = "{}";
+      };
+      extraPackagesAfter = with pkgs; [
+        alejandra
+        biome
+        black
+        oxfmt
+        prettier
+        rustfmt
+      ];
 
       keymaps = [
         {
@@ -46,41 +60,37 @@ in {
       ];
 
       plugins.conform-nvim = {
-        autoInstall.enable = lib.mkDefault true;
+        autoInstall.enable = lib.mkDefault false;
         enable = lib.mkDefault true;
         settings = {
+          default_format_opts = {
+            lsp_format = lib.mkDefault "fallback";
+            timeout_ms = lib.mkDefault 2000;
+            stop_after_first = lib.mkDefault true;
+          };
+          formatters = {
+            oxfmt = lib.mkDefault (mkRaw ''require("project-formatters").override("oxfmt")'');
+            prettier = lib.mkDefault (mkRaw ''require("project-formatters").override("prettier")'');
+            biome = lib.mkDefault (mkRaw ''require("project-formatters").override("biome")'');
+            rustfmt.cwd = lib.mkDefault (mkRaw ''function(_, ctx) return ctx.dirname end'');
+            project_formatter_error = lib.mkDefault (mkRaw ''require("project-formatters").blocked'');
+          };
           format_on_save = lib.mkDefault (mkRaw ''
             function(bufnr)
               if vim.g.autoformat == false or vim.b[bufnr].autoformat == false then
                 return
               end
 
-              return {
-                lsp_format = "fallback",
-                timeout_ms = 2000,
-                stop_after_first = true,
-              }
+              return {}
             end
           '');
           formatters_by_ft = {
-            css = lib.mkDefault [
-              "oxfmt"
-            ];
-            html = lib.mkDefault [
-              "oxfmt"
-            ];
-            javascript = lib.mkDefault [
-              "oxfmt"
-            ];
-            javascriptreact = lib.mkDefault [
-              "oxfmt"
-            ];
-            json = lib.mkDefault [
-              "oxfmt"
-            ];
-            jsonc = lib.mkDefault [
-              "oxfmt"
-            ];
+            css = lib.mkDefault projectFormatters;
+            html = lib.mkDefault projectFormatters;
+            javascript = lib.mkDefault projectFormatters;
+            javascriptreact = lib.mkDefault projectFormatters;
+            json = lib.mkDefault projectFormatters;
+            jsonc = lib.mkDefault projectFormatters;
             nix = lib.mkDefault [
               "alejandra"
             ];
@@ -90,14 +100,10 @@ in {
             rust = lib.mkDefault [
               "rustfmt"
             ];
-            typescript = lib.mkDefault [
-              "oxfmt"
-            ];
-            typescriptreact = lib.mkDefault [
-              "oxfmt"
-            ];
+            typescript = lib.mkDefault projectFormatters;
+            typescriptreact = lib.mkDefault projectFormatters;
           };
-          notify_on_error = lib.mkDefault false;
+          notify_on_error = lib.mkDefault true;
           notify_no_formatters = lib.mkDefault false;
         };
       };
