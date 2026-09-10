@@ -34,7 +34,11 @@ in {
           # Tailwind
           tailwindcss.enable = lib.mkDefault true;
           # Typescript
-          tsgo.enable = lib.mkDefault true;
+          tsgo = {
+            enable = lib.mkDefault true;
+            package = lib.mkDefault pkgs.typescript;
+            cmd = lib.mkDefault [(lib.getExe pkgs.typescript) "--lsp" "--stdio"];
+          };
         };
       };
     };
