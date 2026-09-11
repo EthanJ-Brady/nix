@@ -71,7 +71,10 @@
       enable = true;
       enableFishIntegration = true;
     };
-    fish.shellAliases.pi = "nix develop ~/.config/nix#pi --command pi";
+    fish = {
+      shellAliases.pi = "nix develop ~/.config/nix#pi --command pi";
+      shellAbbrs.pic = "pi -e npm:@agent-sh/computer-use-linux";
+    };
     ghostty = {
       clearDefaultKeybinds = true;
       enable = true;
