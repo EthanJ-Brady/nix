@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./hyprland.nix
+    ./notification-forwarding.nix
     ./xdg.nix
     inputs.zen-browser.homeModules.default
   ];
@@ -53,7 +54,6 @@
   };
 
   my = {
-    desktop.notificationForwarding.enable = true;
     graphics.enable = true;
     development = {
       enable = true;

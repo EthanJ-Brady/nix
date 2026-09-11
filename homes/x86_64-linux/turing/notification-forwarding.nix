@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  cfg = config.my.desktop.notificationForwarding;
+  topicFile = "${config.xdg.configHome}/notification-forwarding/ntfy-topic";
   python = pkgs.python3.withPackages (pythonPackages: [pythonPackages.dbus-next]);
   agentNotificationHandler = pkgs.writeTextFile {
     name = "locked-agent-notification";
@@ -167,7 +167,7 @@
       from dbus_next import Message, MessageType
       from dbus_next.aio import MessageBus
 
-      TOPIC_FILE = Path(${builtins.toJSON cfg.topicFile})
+      TOPIC_FILE = Path(${builtins.toJSON topicFile})
       TOPIC_PATTERN = re.compile(r"[-_A-Za-z0-9]{1,64}")
       NTFY_URL = "https://ntfy.sh/"
 
@@ -283,70 +283,38 @@
     '';
   };
 in {
-  options.my.desktop.notificationForwarding = {
-    enable = lib.mkEnableOption "forwarding desktop notification titles to ntfy while the session is locked";
-    topicFile = lib.mkOption {
-      type = lib.types.str;
-      default = "${config.xdg.configHome}/notification-forwarding/ntfy-topic";
-      description = "Runtime path to a private file containing the ntfy topic name.";
+  home.activation = {
+    initializeNotificationForwardingTopic = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      topic_file=${lib.escapeShellArg topicFile}
+      topic_dir="$(${lib.getExe' pkgs.coreutils "dirname"} "$topic_file")"
+      ${lib.getExe' pkgs.coreutils "install"} -d -m 0700 "$topic_dir"
+      ${lib.getExe' pkgs.coreutils "chmod"} 0700 "$topic_dir"
+      if [[ ! -e "$topic_file" ]]; then
+        umask 077
+        topic="$(${lib.getExe' pkgs.coreutils "tr"} -d - </proc/sys/kernel/random/uuid)$(${lib.getExe' pkgs.coreutils "tr"} -d - </proc/sys/kernel/random/uuid)"
+        printf '%s\n' "$topic" > "$topic_file"
+      fi
+      ${lib.getExe' pkgs.coreutils "chmod"} 0600 "$topic_file"
+    '';
+    reconcileNotificationForwardingHerdrPlugin = lib.hm.dag.entryAfter ["linkGeneration"] ''
+      ${lib.getExe config.programs.herdr.package} plugin link ${lib.escapeShellArg "${config.xdg.configHome}/herdr/managed-plugins/locked-agent-notifications"} --enabled >/dev/null
+    '';
+  };
+
+  programs.noctalia.settings.hooks = {
+    session_locked = "systemctl --user start notification-forwarding.service";
+    session_unlocked = "systemctl --user stop notification-forwarding.service";
+  };
+
+  systemd.user.services.notification-forwarding = {
+    Unit.Description = "Forward desktop notification titles to ntfy";
+    Service = {
+      ExecStart = lib.getExe forwarder;
+      Restart = "on-failure";
+      RestartSec = 1;
+      Type = "notify";
     };
   };
 
-  config = lib.mkMerge [
-    (lib.mkIf cfg.enable {
-      assertions = [
-        {
-          assertion = pkgs.stdenv.hostPlatform.isLinux;
-          message = "Desktop notification forwarding requires Linux.";
-        }
-        {
-          assertion = config.my.graphics.enable;
-          message = "Desktop notification forwarding requires the graphical environment.";
-        }
-      ];
-
-      home.activation.initializeNotificationForwardingTopic = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        topic_file=${lib.escapeShellArg cfg.topicFile}
-        topic_dir="$(${lib.getExe' pkgs.coreutils "dirname"} "$topic_file")"
-        ${lib.getExe' pkgs.coreutils "install"} -d -m 0700 "$topic_dir"
-        ${lib.getExe' pkgs.coreutils "chmod"} 0700 "$topic_dir"
-        if [[ ! -e "$topic_file" ]]; then
-          umask 077
-          topic="$(${lib.getExe' pkgs.coreutils "tr"} -d - </proc/sys/kernel/random/uuid)$(${lib.getExe' pkgs.coreutils "tr"} -d - </proc/sys/kernel/random/uuid)"
-          printf '%s\n' "$topic" > "$topic_file"
-        fi
-        ${lib.getExe' pkgs.coreutils "chmod"} 0600 "$topic_file"
-      '';
-
-      programs.noctalia.settings.hooks = {
-        session_locked = "systemctl --user start notification-forwarding.service";
-        session_unlocked = "systemctl --user stop notification-forwarding.service";
-      };
-
-      systemd.user.services.notification-forwarding = {
-        Unit.Description = "Forward desktop notification titles to ntfy";
-        Service = {
-          ExecStart = lib.getExe forwarder;
-          Restart = "on-failure";
-          RestartSec = 1;
-          Type = "notify";
-        };
-      };
-
-      xdg.configFile."herdr/managed-plugins/locked-agent-notifications" = lib.mkIf config.programs.herdr.enable {
-        source = herdrPlugin;
-      };
-    })
-    (lib.mkIf config.programs.herdr.enable {
-      home.activation.reconcileNotificationForwardingHerdrPlugin = lib.hm.dag.entryAfter ["linkGeneration"] ''
-        herdr=${lib.escapeShellArg (lib.getExe config.programs.herdr.package)}
-        plugin_id=local.locked-agent-notifications
-        if [[ ${lib.boolToString cfg.enable} == true ]]; then
-          "$herdr" plugin link ${lib.escapeShellArg "${config.xdg.configHome}/herdr/managed-plugins/locked-agent-notifications"} --enabled >/dev/null
-        else
-          "$herdr" plugin unlink "$plugin_id" >/dev/null 2>&1 || true
-        fi
-      '';
-    })
-  ];
+  xdg.configFile."herdr/managed-plugins/locked-agent-notifications".source = herdrPlugin;
 }

@@ -69,15 +69,13 @@
   disabledHome = mkHome [];
   enabledNotificationForwarding = mkHome [
     {
-      imports = [inputs.stylix.homeModules.stylix];
-      my = {
-        desktop.notificationForwarding = {
-          enable = true;
-          topicFile = "/build/module-contracts-notification/ntfy-topic";
-        };
-        graphics.enable = true;
-      };
+      imports = [
+        ../homes/x86_64-linux/turing/notification-forwarding.nix
+        inputs.stylix.homeModules.stylix
+      ];
+      my.graphics.enable = true;
       programs.herdr.enable = true;
+      xdg.configHome = "/build/module-contracts-notification";
       stylix = {
         enable = true;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/espresso.yaml";
@@ -107,6 +105,8 @@
     lib.findFirst (candidate: candidate.message == message) null assertions;
 
   notificationActivation = enabledNotificationForwarding.config.home.activation.initializeNotificationForwardingTopic.data;
+  notificationTopicDirectory = "/build/module-contracts-notification/notification-forwarding";
+  notificationTopicFile = "${notificationTopicDirectory}/ntfy-topic";
   notificationHerdrPlugin = enabledNotificationForwarding.config.xdg.configFile."herdr/managed-plugins/locked-agent-notifications".source;
   notificationFakeSystemctl = pkgs.writeShellScript "notification-fake-systemctl" ''
     [[ "''${LOCKED:-0}" == 1 ]]
@@ -135,13 +135,13 @@ in
   assert !overriddenTerminal.config.programs.fish.enable;
     pkgs.runCommand "module-contracts" {} ''
       ${notificationActivation}
-      first_topic="$(< /build/module-contracts-notification/ntfy-topic)"
+      first_topic="$(< ${notificationTopicFile})"
       [[ "$first_topic" =~ ^[0-9a-f]{64}$ ]]
-      [[ "$(stat -c '%a' /build/module-contracts-notification)" == 700 ]]
-      [[ "$(stat -c '%a' /build/module-contracts-notification/ntfy-topic)" == 600 ]]
+      [[ "$(stat -c '%a' ${notificationTopicDirectory})" == 700 ]]
+      [[ "$(stat -c '%a' ${notificationTopicFile})" == 600 ]]
 
       ${notificationActivation}
-      [[ "$(< /build/module-contracts-notification/ntfy-topic)" == "$first_topic" ]]
+      [[ "$(< ${notificationTopicFile})" == "$first_topic" ]]
 
       handler="$(${lib.getExe pkgs.python3} -c 'import sys, tomllib; print(tomllib.load(open(sys.argv[1], "rb"))["events"][0]["command"][0])' ${notificationHerdrPlugin}/herdr-plugin.toml)"
       state_dir="$TMPDIR/plugin-state"
