@@ -144,7 +144,7 @@ Revise when activation precision improves but scheduled-review recall, gate sele
 
 - **Baseline revision:** `10d3b70a3080f1b4fd739351d93ffaf9eaf383ac`
 - **Predecessor definition revision:** `124fb393c6d85e23853331dac06728d1f15552b5` — defined the experiment in the development-review trial before the ownership correction
-- **Trial definition revision:** Pending standalone definition commit
+- **Trial definition revision:** `44c248d00b4ac57a4d40a3287af3af2429e1dd8f` — moved the experiment and metrics into their canonical standalone owner
 - **Implementation revisions:**
   - `e6890716e736a2451f26f37811905444f61876f9` — explicit review authority, proportional implementation gates, and focused per-unit verification
 - **Outcome revision:** Not started
