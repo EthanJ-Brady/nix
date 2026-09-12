@@ -1,10 +1,10 @@
 # Trial: Inline `wait what` trigger
 
-- **Status:** Trialing
+- **Status:** Revised
 - **Created:** 2026-09-01
 - **Implemented:** 2026-09-01
-- **Earliest review:** 2026-09-08
-- **Review condition:** At least one week of use and five genuine clarification opportunities after implementation
+- **Reviewed:** 2026-09-12
+- **Initial review condition:** At least one week of use and five genuine clarification opportunities after implementation
 - **Evolution model:** [AI Asset Evolution](../evolution.md)
 
 ## Problem
@@ -13,7 +13,7 @@ The `wait-what` skill is available only through explicit user invocation. Ethan 
 
 During a grilling round, for example, Ethan may answer several questions while marking one question with `wait what`. The desired interaction preserves the other answers and re-explains only the marked question.
 
-## Hypothesis
+## Initial hypothesis
 
 Making `wait what` available as an automatic, scope-sensitive clarification trigger will make the capability easier to use without disrupting the surrounding workflow or activating when the phrase is merely being discussed.
 
@@ -26,7 +26,7 @@ Making `wait what` available as an automatic, scope-sensitive clarification trig
 
 The trial may change only `static/ai/skills/wait-what/SKILL.md` initially. A change to `grilling` requires evidence that scoped clarification cannot preserve its design tree through the `wait-what` skill alone.
 
-## Intended behavior
+## Initial intended behavior
 
 - When Ethan uses `wait what` as a clarification request, the agent recognizes it without explicit `/skill:wait-what` invocation.
 - A numbered `wait what` answer targets the corresponding numbered question.
@@ -55,9 +55,9 @@ The agent:
 - preserves the grilling design tree and does not treat question 4 as answered; and
 - waits for the revised answer before advancing branches that depend on question 4.
 
-## Non-goals
+## Initial non-goals
 
-This trial does not:
+The initial revision did not:
 
 - guarantee deterministic model invocation before evidence shows whether skill discovery is sufficient;
 - introduce a Pi extension or other message interceptor;
@@ -77,14 +77,18 @@ Record an event as a failure when:
 - a marked grilling question is treated as answered; or
 - the clarification adds substantial unrelated content without making the target easier to answer.
 
-## Evaluation
+## Initial evaluation
 
-For each genuine opportunity, record:
-
-| Date | Context | Trigger used | Trigger recognized | Correct target | State preserved | Proceeded next turn | Notes |
+| Date | Context | Trigger used | Trigger recognized | Correct scope | State preserved | Proceeded next turn | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-09-01 | Numbered development-review question | Inline | Yes | Yes | Yes | Yes | Re-pitched the marked question with a concrete example. |
+| 2026-09-03 | Development-review report | Standalone | Yes | No | Yes | No | Reduced the whole report to its blocking finding; Ethan asked whether the response covered the whole report. |
+| 2026-09-03 | Numbered production-dependency question | Inline | Yes | Yes | Yes | Yes | Re-pitched the marked Durable Streams question. |
+| 2026-09-03 | Short authentication diagnosis | Standalone | Yes | Partial | Yes | Yes | Restated most of the short message but also added a new instruction. |
+| 2026-09-03 | Numbered data-classification question | Inline | Yes | Yes | Yes | Yes | Re-pitched the marked question and preserved the other answers. |
+| 2026-09-05 | Proposed library interface | Standalone | Yes | No | Yes | No | Selected only the final interface choice and explained the earlier recommendation; Ethan again requested a simpler explanation. |
 
-No observations have been recorded yet.
+The trigger was recognized in all six genuine opportunities, and no false activation was observed. Explicit inline scope worked in all three numbered cases. The narrowest-target default failed in two of three standalone cases because `wait what` meant that the preceding response as a whole had not landed. Those failures also framed the clarification as an explanation of one claim or of why it was made, rather than a fresh, simpler presentation of the complete idea.
 
 ### Measures
 
@@ -95,9 +99,9 @@ No observations have been recorded yet.
 - **Next-turn resolution:** Events after which Ethan could answer or proceed without another re-explanation.
 - **Practical usage:** Genuine opportunities in which the inline trigger was used instead of explicit skill invocation or abandoning clarification.
 
-### Adoption criteria
+### Initial adoption criteria
 
-Evaluate the trial only after its review condition is satisfied. Adopt the behavior when:
+The initial review condition was satisfied. The initial behavior would have been adopted when:
 
 - at least four of five clarification triggers are recognized;
 - every recognized trigger selects the correct target;
@@ -105,7 +109,40 @@ Evaluate the trial only after its review condition is satisfied. Adopt the behav
 - no false activation is observed while discussing the phrase or skill; and
 - at least three events allow Ethan to proceed on the next turn.
 
-Revise rather than adopt when invocation is useful but target selection or workflow preservation fails. Reject the behavior when false activation or disruption outweighs improved access. Mark the result `Inconclusive` when fewer than five genuine opportunities occur.
+The evidence supports revision rather than adoption: automatic invocation and explicit inline targeting are useful, but the default target and the meaning of “re-pitch” are wrong.
+
+## Revision 2
+
+### Hypothesis
+
+Defaulting a standalone `wait what` to the complete preceding response, while retaining explicit inline targeting, will preserve the original re-pitch experience and the useful inline extension.
+
+### Intended behavior
+
+- A standalone `wait what` means that the complete preceding assistant response did not land. Re-pitch that response as one coherent explanation.
+- A numbered answer, quotation, or named reference scopes the request to that explicit target. Re-pitch the complete target and preserve unaffected answers and workflow state.
+- Re-pitch from the beginning with enough context to orient Ethan, the same core meaning and decisions, a simpler conceptual order, ASD-STE100 Simplified Technical English, and applicable ubiquitous language. Use examples when they make the idea easier to understand.
+- Present a replacement explanation. Do not append detail to the prior explanation, justify why it was written, or select one claim from a broader response unless Ethan explicitly scoped the request to that claim.
+- Keep the target unresolved and do not advance dependent work until Ethan responds.
+
+Ask one concise targeting question only when an explicit inline reference is genuinely ambiguous. A standalone trigger already identifies the complete preceding response.
+
+### Non-goals
+
+Revision 2 does not restart the conversation, discard established decisions, or require a verbatim restatement of the prior response. It preserves meaning and state while replacing the explanation.
+
+### Evaluation
+
+Observe at least five further genuine opportunities, including at least two standalone and two explicitly scoped triggers. Adopt revision 2 when:
+
+- every standalone trigger re-pitches the complete preceding response;
+- every explicit trigger re-pitches the complete named target;
+- every clarification is a replacement explanation rather than appended rationale;
+- unaffected decisions and workflow state are preserved;
+- at least four of five events allow Ethan to proceed on the next turn; and
+- no false activation is observed while discussing the phrase or skill.
+
+Revise again when automatic invocation remains useful but explanation scope or form still fails. Reject automatic invocation when false activation or workflow disruption outweighs easier access.
 
 ## Revision anchors
 
@@ -115,6 +152,10 @@ Revise rather than adopt when invocation is useful but target selection or workf
   - `a0ee2fc7e4ae40d121ca6e2a5265c4487c4bce7a` — initial inline trigger implementation
   - `2412948d82346e1e637b53f814397a2681dc40aa` — simplified trigger guidance before evaluation
   - `c64ea215116c2a8bc376f80b874f88b59e2051be` — removed runtime coupling to the grilling skill
+- **Initial outcome:** Revised on 2026-09-12
+- **Revision 2 baseline:** `c64ea215116c2a8bc376f80b874f88b59e2051be`
+- **Revision 2 definition revision:** Pending commit
+- **Revision 2 implementation revisions:** None yet
 - **Outcome revision:** Not started
 - **Implementation path:** `static/ai/skills/wait-what/SKILL.md`
 
@@ -141,7 +182,7 @@ Rollback must preserve this trial artifact and record the rejected or revised ou
 
 ## Outcome
 
-No outcome has been recorded. The trial remains `Trialing` until its review condition is satisfied and the evidence supports adoption, revision, rejection, or an inconclusive result.
+Revision 1 is **Revised**. Its automatic trigger and explicit inline targeting remain useful, but its narrowest-target default changed the original capability into selective follow-up explanation. Revision 2 restores whole-response re-pitching as the default and keeps narrow scope only when Ethan supplies it explicitly.
 
 ## Sources
 
