@@ -3,62 +3,11 @@ name: commit
 description: Stage and commit changes with conventional commit style. Push only when the user explicitly requests it.
 ---
 
-# Commit Skill
+# Commit
 
-Professional git workflow with conventional commits.
+1. Use the current task context to identify the completed work. Inspect Git status and diffs only as needed to select its paths and write the message; do not repeat checks or perform a review unless the user explicitly requests it.
+2. Stage only the changes belonging to that work. Ask only when unrelated changes make the intended commit scope materially ambiguous.
+3. Create the commit with a concise conventional commit message that states the purpose of the change.
+4. Report the commit hash and subject, or the exact reason the commit failed.
 
-## When to Activate
-
-This skill is relevant when:
-- Staging and committing code changes
-- Creating meaningful commit messages
-- Following conventional commit standards
-- Maintaining clean git history
-
-## Core Principles
-
-### Clean History
-- Commits tell a story
-- Make them meaningful and descriptive
-- Each commit is a logical unit
-- Easy to understand in hindsight
-
-### Conventional Commits
-- Use standard prefixes consistently
-- `feat:` for new features
-- `fix:` for bug fixes
-- `chore:` for maintenance
-- `docs:` for documentation
-- `refactor:` for code restructuring
-- `test:` for test changes
-
-### Atomic Changes
-- Each commit = single logical change
-- Don't mix unrelated changes
-- Makes reverting easier
-- Simplifies code review
-
-### Explicit Pushes
-- Push only when the user explicitly requests it
-- A request to commit does not imply permission to push
-- Verify the branch and remote before pushing
-
-### Pre-Commit Verification
-- All tests should pass
-- Code has been reviewed
-- No broken functionality
-- Build succeeds
-
-## Quick Checks
-
-Before committing, verify:
-- [ ] All changes are intentional
-- [ ] Tests pass locally
-- [ ] Code has been reviewed (or self-reviewed)
-- [ ] Commit message follows conventional format
-- [ ] Message describes "why" not just "what"
-- [ ] No sensitive data included (credentials, keys)
-- [ ] No debug code or console.logs left behind
-- [ ] Related changes grouped together
-- [ ] Unrelated changes separated
-- [ ] Breaking changes documented
+Push only when the user explicitly requests it. A request to commit does not imply permission to push. Before pushing, verify the branch and remote.
