@@ -1,6 +1,6 @@
 ---
 name: development-review
-description: Review or audit development work using a target-specific lens. Use for governance, specifications, domain context, plans, architecture, implementations, diffs, branches, or complete features.
+description: Conduct a target-specific development review only when the user explicitly requests review or audit, or an authoritative workflow artifact explicitly schedules one. Do not infer review from implementation, delegation, verification, or phase completion.
 ---
 
 # Development Review
@@ -8,6 +8,14 @@ description: Review or audit development work using a target-specific lens. Use 
 Independently inspect a bounded target against its authoritative context and return one evidence-backed review in chat. Review is read-only: recommend changes to the canonical owner without applying them or changing lifecycle state.
 
 A fresh agent or session provides the strongest independence because it does not inherit the assumptions that shaped the work. The skill remains usable in an authoring session; identify that context in the review scope when it affects confidence.
+
+## Confirm review authority
+
+Run this skill only when the user explicitly requests review intent or an authoritative plan, task, or repository instruction schedules a review at the current boundary. Explicit intent does not require the words `review` or `audit`, but it must ask for independent judgment of a development target.
+
+Implementation, delegation, verification, phase completion, or the possible value of a fresh perspective does not authorize review. When review authority is absent, continue the active workflow with its direct inspection and verification steps instead of loading a review lens or spawning a reviewer.
+
+A scheduled review authorizes one pass at its stated boundary. Run another pass only when the user requests it or another authoritative task independently schedules it.
 
 ## Select the target and scope
 
