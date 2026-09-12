@@ -1,18 +1,23 @@
 ---
 name: wait-what
-description: Re-explain a specific statement or question when the user uses "wait what" as a clarification request, including as a numbered answer.
+description: Re-pitch the complete previous response when the user says "wait what" as a clarification request; when attached to a numbered, quoted, or named target, re-pitch that complete target instead.
 ---
 
 # Wait What
 
-Re-pitch only the part that did not land while preserving the surrounding conversation and workflow state.
+The explanation did not land. Replace it with a simpler explanation rather than extending or defending it.
 
-1. Identify the narrowest responsible target:
-   - In a numbered answer, target the corresponding numbered question.
-   - When the user names or quotes something, target that content.
-   - Otherwise target the immediately preceding claim, question, or bounded section that reasonably prompted the request.
-2. Preserve every unaffected answer, decision, and workflow state. Keep the target unresolved and do not advance work that depends on it.
-3. Re-explain the target with only the context needed to understand it. Use ASD-STE100 Simplified Technical English and the established ubiquitous language from the applicable `CONTEXT.md` when one exists.
-4. Stop after the scoped clarification so the user can respond.
+1. Select the scope:
+   - A standalone `wait what` targets the complete preceding assistant response.
+   - In a numbered reply, `2. wait what` targets the complete question 2, including context and examples that belong to it. A quotation or named reference similarly targets that complete item.
+   - Ask one concise targeting question only when an explicit reference is genuinely ambiguous or no preceding response exists.
+2. Preserve the target's core meaning. Retain the conversational state of every unaffected answer and decision without repeating them. Keep the target unresolved and do not advance dependent work.
+3. Re-pitch the target from the beginning:
+   - Give enough context to orient the user.
+   - Present the ideas again in a simpler conceptual order.
+   - Cover every core idea, relationship, decision, and question needed to retain the target's meaning.
+   - Use ASD-STE100 Simplified Technical English and the ubiquitous language from the applicable `CONTEXT.md`; follow `CONTEXT-MAP.md` when the repository has more than one context.
+   - Use concrete examples when they make the idea easier to understand.
+4. Stop after the replacement explanation so the user can respond.
 
-When no target can be identified responsibly, ask one concise targeting question instead of re-pitching the whole response.
+A re-pitch is not a summary of one selected point, an explanation of why the prior answer said something, or extra detail appended to the prior answer. Omit incidental wording, not substantive parts of the selected scope.
