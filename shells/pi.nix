@@ -29,6 +29,7 @@ in
       pkgs.lychee
       pkgs.nodejs
       pkgs.openssl
+      pkgs.pandoc
       pkgs.pi-coding-agent
       pkgs.poppler-utils
       python
