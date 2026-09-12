@@ -1,7 +1,8 @@
 # Trial: Design deep modules routing
 
-- **Status:** Proposed
+- **Status:** Trialing
 - **Created:** 2026-09-11
+- **Implemented:** 2026-09-11
 - **Review condition:** Observe at least ten genuine deep-module design opportunities across at least three projects, including direct requests and routing from interacting skills
 - **Evolution model:** [AI Asset Evolution](../evolution.md)
 
@@ -125,9 +126,23 @@ Revise when the organization reduces top-level context but router wording or int
 ## Revision anchors
 
 - **Baseline revision:** `ba6b69f515129ed188480bcb19fb569206ec4685`
-- **Trial definition revision:** Not recorded yet
-- **Implementation revisions:** Not started
+- **Trial definition revision:** `bcba63eb86324b459e40af41b135a030459982c0`
+- **Implementation revisions:**
+  - `da14c2713cef136e435e869d81d247dcbef7eb1e` — relocated the capability, added router selection, and reconciled interacting pointers
 - **Outcome revision:** Not started
+
+## Activation evidence
+
+- **Activated:** 2026-09-11 19:52 MDT
+- **Command:** `sudo nixos-rebuild switch --flake .#turing`
+- **System generation:** `/nix/store/dgy2nd4qmlbk44finl8m4jrpgx5rl5ia-nixos-system-turing-26.11.20260908.d6524aa`
+- **Skill store:** `/nix/store/40x2h0vkj7yzphl3vmlz2yh8hgmfxwsp-skills`
+- **Top-level discovery:** 16 skills after activation, down from 17 at baseline; `codebase-design` was the only removed name and no top-level name was added.
+- **Context evidence:** Normalizing the skill-root path, Pi's `formatSkillsForPrompt` output is 415 characters shorter than at baseline.
+- **Leaf evidence:** Direct loading reports `principle-design-deep-modules` with valid metadata and `disable-model-invocation: true`; the selector and all interacting pointers resolve to the relocated files.
+- **Activation health:** The NixOS switch completed, and system and user failed-unit checks returned no failures.
+
+Observation events begin after this activation. Existing Pi processes must run `/reload` or restart before their behavior counts toward the trial.
 
 ## Rollback
 
@@ -135,7 +150,7 @@ After implementation, prefer reverting its atomic runtime commit. If later work 
 
 ## Outcome
 
-The trial remains `Proposed`. Runtime behavior has not changed.
+The trial remains `Trialing` until its observation period supports adoption, revision, rejection, or an inconclusive result.
 
 ## Sources
 
