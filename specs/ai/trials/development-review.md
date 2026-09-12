@@ -3,7 +3,7 @@
 - **Status:** Trialing
 - **Created:** 2026-09-01
 - **Implemented:** 2026-09-01
-- **Current revision:** Proposed — explicit review activation and proportional verification
+- **Current revision:** Trialing — explicit review activation and proportional verification
 - **Review condition:** Complete the current revision's observation period, then evaluate whether it reduces review overhead without weakening delivery evidence
 - **Evolution model:** [AI Asset Evolution](../evolution.md)
 
@@ -199,8 +199,9 @@ At evaluation, adopt the capability when its routing and review protocol are dep
 ### Explicit review gate revision
 
 - **Baseline revision:** `10d3b70a3080f1b4fd739351d93ffaf9eaf383ac`
-- **Trial definition revision:** Pending definition commit
-- **Implementation revisions:** Not started
+- **Trial definition revision:** `124fb393c6d85e23853331dac06728d1f15552b5`
+- **Implementation revisions:**
+  - `e6890716e736a2451f26f37811905444f61876f9` — explicit review authority, proportional implementation gates, and focused per-unit verification
 - **Outcome revision:** Not started
 - **Runtime paths:**
   - `static/ai/skills/development-review/SKILL.md`
@@ -209,6 +210,8 @@ At evaluation, adopt the capability when its routing and review protocol are dep
 
 ## Rollback
 
+### Initial trial
+
 Before dependent work builds on the trial, revert the implementation commit:
 
 ```sh
@@ -216,6 +219,16 @@ git revert e73bcbf62621f7ff607e7de1e1c1203e760e1d77
 ```
 
 If later work prevents a clean revert, remove `static/ai/skills/development-review/` and reconcile dependents explicitly. The baseline predates every runtime path in that directory.
+
+### Explicit review gate revision
+
+Revert the runtime revision while preserving this trial and its baseline evidence:
+
+```sh
+git revert e6890716e736a2451f26f37811905444f61876f9
+```
+
+If later work prevents a clean revert, restore only the three runtime paths listed in the revision anchors from `10d3b70a3080f1b4fd739351d93ffaf9eaf383ac`, then reconcile later dependent instructions explicitly.
 
 Rollback preserves this trial artifact and records the rejected or revised outcome. It does not erase the evidence or the trial definition from history.
 
