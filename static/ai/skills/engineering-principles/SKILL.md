@@ -23,6 +23,7 @@ Select the smallest relevant set of principles for the task, read each selected 
 
 ### Architecture
 
+- **Design Deep Modules**: Designing or improving a module interface, deepening shallow structure, placing a seam, or making behavior testable through the interface. Read [principle-design-deep-modules](principles/principle-design-deep-modules/SKILL.md).
 - **Model the Domain**: Stateful, highly branching logic or repeated shape assumptions. Read [principle-model-the-domain](principles/principle-model-the-domain/SKILL.md).
 - **Boundary Discipline**: Validation, error handling, external data, or framework adapters. Read [principle-boundary-discipline](principles/principle-boundary-discipline/SKILL.md).
 - **Type System Discipline**: Designing types or signatures in a typed language. Read [principle-type-system-discipline](principles/principle-type-system-discipline/SKILL.md).

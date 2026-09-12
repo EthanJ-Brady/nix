@@ -1,6 +1,6 @@
 # Architecture review
 
-Survey repository structure for evidence-backed opportunities to improve interfaces, locality, leverage, testability, and navigability. Load `codebase-design` and use its module, interface, depth, seam, adapter, leverage, locality, and deletion-test vocabulary.
+Survey repository structure for evidence-backed opportunities to improve interfaces, locality, leverage, testability, and navigability. Load `engineering-principles`, select **Design Deep Modules**, and use its module, interface, depth, seam, adapter, leverage, locality, and deletion-test vocabulary.
 
 ## Establish the system view
 

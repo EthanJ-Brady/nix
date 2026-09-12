@@ -1,6 +1,6 @@
 # Plan review
 
-Review whether an accepted behavioral contract has a sufficient, economical, and verifiable technical design. Load `project-documentation` and its planning guidance before applying this lens. Load `codebase-design` when interfaces, seams, or testability materially affect the design.
+Review whether an accepted behavioral contract has a sufficient, economical, and verifiable technical design. Load `project-documentation` and its planning guidance before applying this lens. When interfaces, seams, or testability materially affect the design, load `engineering-principles` and select **Design Deep Modules**.
 
 ## Inspect
 
