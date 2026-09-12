@@ -149,6 +149,16 @@ Revise when activation precision improves but scheduled-review recall, gate sele
   - `e6890716e736a2451f26f37811905444f61876f9` — explicit review authority, proportional implementation gates, and focused per-unit verification
 - **Outcome revision:** Not started
 
+## Activation evidence
+
+- **Activated:** 2026-09-11 18:21 MDT
+- **Command:** `sudo nixos-rebuild switch --flake .#turing`
+- **System generation:** `/nix/store/kazpvsl6gmy0xcgiw2qx07602pbqpw3w-nixos-system-turing-26.11.20260908.d6524aa`
+- **Skill store:** `/nix/store/zsyym73ldv7pvf0qrk52dh95c9ad5p3h-skills`
+- **Verification:** The activated development-review, implement-phase, and sequence-verifiable-units files contain the trial instructions; system and user failed-unit checks returned no failures.
+
+Observation events begin after this activation. Existing Pi processes must run `/reload` or restart before their behavior counts toward the trial.
+
 ## Rollback
 
 Revert the runtime revision while preserving this trial and its evidence:
