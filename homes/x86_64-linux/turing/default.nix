@@ -17,6 +17,7 @@
   home = {
     username = "ethan";
     homeDirectory = "/home/ethan";
+    sessionPath = ["${config.home.homeDirectory}/.cache/.bun/bin"];
     stateVersion = "25.11";
 
     pointerCursor = {
