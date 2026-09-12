@@ -53,4 +53,3 @@ Select the smallest relevant set of principles for the task, read each selected 
 3. Resolve tension according to the task. Prefer the smallest sufficient change unless evidence shows that a redesign, prototype, or reusable tool is warranted.
 4. Use only capabilities available in the current Pi environment. Adapt delegation advice to targeted reads and concise summaries when no subagent facility is available.
 5. Before declaring implementation work complete, apply **Prove It Works** and inspect the real result.
-6. In the final response, briefly name only the principles that materially changed a decision and state what changed.
