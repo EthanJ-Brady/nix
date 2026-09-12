@@ -158,6 +158,7 @@ Revise again when automatic invocation remains useful but explanation scope or f
 - **Revision 2 definition revision:** `6317c30b9f3f4297208b19cf7262ef4e163b280e`
 - **Revision 2 implementation revisions:**
   - `66ee80df56cb67f09b8e31ade6f6b5e1df4dbaa0` — restored whole-response re-pitching as the default
+  - `bc5d85f95347c05d9f586be1c93639bf14b3f7e8` — simplified the revised guidance without changing its intended behavior
 - **Outcome revision:** Not started
 - **Implementation path:** `static/ai/skills/wait-what/SKILL.md`
 
@@ -168,12 +169,14 @@ The baseline revision contains the accepted runtime skill before this trial. The
 To remove revision 2 while retaining the initial inline-trigger implementation:
 
 ```sh
+git revert bc5d85f95347c05d9f586be1c93639bf14b3f7e8
 git revert 66ee80df56cb67f09b8e31ade6f6b5e1df4dbaa0
 ```
 
 To remove the complete trial before dependent work builds on it, revert all runtime implementation commits in reverse chronological order:
 
 ```sh
+git revert bc5d85f95347c05d9f586be1c93639bf14b3f7e8
 git revert 66ee80df56cb67f09b8e31ade6f6b5e1df4dbaa0
 git revert c64ea215116c2a8bc376f80b874f88b59e2051be
 git revert 2412948d82346e1e637b53f814397a2681dc40aa
