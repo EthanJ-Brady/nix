@@ -4,6 +4,7 @@
 - **Created:** 2026-09-01
 - **Implemented:** 2026-09-01
 - **Reviewed:** 2026-09-12
+- **Revision 2 implemented:** 2026-09-12
 - **Initial review condition:** At least one week of use and five genuine clarification opportunities after implementation
 - **Evolution model:** [AI Asset Evolution](../evolution.md)
 
@@ -152,10 +153,11 @@ Revise again when automatic invocation remains useful but explanation scope or f
   - `a0ee2fc7e4ae40d121ca6e2a5265c4487c4bce7a` — initial inline trigger implementation
   - `2412948d82346e1e637b53f814397a2681dc40aa` — simplified trigger guidance before evaluation
   - `c64ea215116c2a8bc376f80b874f88b59e2051be` — removed runtime coupling to the grilling skill
-- **Initial outcome:** Revised on 2026-09-12
+- **Initial outcome revision:** `6317c30b9f3f4297208b19cf7262ef4e163b280e`
 - **Revision 2 baseline:** `c64ea215116c2a8bc376f80b874f88b59e2051be`
-- **Revision 2 definition revision:** Pending commit
-- **Revision 2 implementation revisions:** None yet
+- **Revision 2 definition revision:** `6317c30b9f3f4297208b19cf7262ef4e163b280e`
+- **Revision 2 implementation revisions:**
+  - `66ee80df56cb67f09b8e31ade6f6b5e1df4dbaa0` — restored whole-response re-pitching as the default
 - **Outcome revision:** Not started
 - **Implementation path:** `static/ai/skills/wait-what/SKILL.md`
 
@@ -163,9 +165,16 @@ The baseline revision contains the accepted runtime skill before this trial. The
 
 ## Rollback
 
-Before dependent work builds on the trial, revert its atomic implementation commits in reverse chronological order:
+To remove revision 2 while retaining the initial inline-trigger implementation:
 
 ```sh
+git revert 66ee80df56cb67f09b8e31ade6f6b5e1df4dbaa0
+```
+
+To remove the complete trial before dependent work builds on it, revert all runtime implementation commits in reverse chronological order:
+
+```sh
+git revert 66ee80df56cb67f09b8e31ade6f6b5e1df4dbaa0
 git revert c64ea215116c2a8bc376f80b874f88b59e2051be
 git revert 2412948d82346e1e637b53f814397a2681dc40aa
 git revert a0ee2fc7e4ae40d121ca6e2a5265c4487c4bce7a
@@ -182,7 +191,7 @@ Rollback must preserve this trial artifact and record the rejected or revised ou
 
 ## Outcome
 
-Revision 1 is **Revised**. Its automatic trigger and explicit inline targeting remain useful, but its narrowest-target default changed the original capability into selective follow-up explanation. Revision 2 restores whole-response re-pitching as the default and keeps narrow scope only when Ethan supplies it explicitly.
+Revision 1 is **Revised**. Its automatic trigger and explicit inline targeting remain useful, but its narrowest-target default changed the original capability into selective follow-up explanation. Revision 2 restores whole-response re-pitching as the default and keeps narrow scope only when Ethan supplies it explicitly. Its implementation is committed; observation begins after the next configuration deployment.
 
 ## Sources
 
